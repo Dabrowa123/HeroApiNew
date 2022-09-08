@@ -5,22 +5,26 @@ function HeroSimplified({ name, imgUrl, powerstats }) {
   return (
     <div className="featured__hero">
       <h2>{name}</h2>
-      <img src={imgUrl} alt={`${name}'s photo`}></img>
+      <img
+        className="featured__hero__img"
+        src={imgUrl}
+        alt={`${name}'s photo`}
+      ></img>
       <div className="featured__hero__stats">
         <div>
-          <p>combat: {powerstats.combat}</p>
+          <p>{powerstats.combat}</p>
         </div>
         <div>
-          <p>durability: {powerstats.durability}</p>
+          <p>{powerstats.durability}</p>
         </div>
         <div>
-          <p>intelligence: {powerstats.intelligence}</p>
+          <p>{powerstats.intelligence}</p>
         </div>
         <div>
-          <p>speed: {powerstats.speed}</p>
+          <p>{powerstats.speed}</p>
         </div>
         <div>
-          <p>strength: {powerstats.strength}</p>
+          <p>{powerstats.strength}</p>
         </div>
       </div>
     </div>

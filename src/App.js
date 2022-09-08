@@ -9,7 +9,9 @@ function App() {
       <Nav></Nav>
 
       <main>
-        <HeroesFeatured />
+        <div className="container">
+          <HeroesFeatured className="featured__list" />
+        </div>
       </main>
 
       <footer></footer>
