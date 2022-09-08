@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { getBasicHeroInfoById } from "./requests";
+import "./App.css";
+import Nav from "./Components/Nav/Nav";
+
+const featuredHeroesIds = [10, 502, 505];
 
 function App() {
+  useEffect(() => {
+    fetchAndRenderFeaturedHeroes();
+  }, []);
+
+  const [featuredHeroesList, setfeaturedHeroesList] = useState([]);
+
+  const fetchAndRenderFeaturedHeroes = async () => {
+    let heroes = [];
+    for (const heroId of featuredHeroesIds) {
+      const { data } = await getBasicHeroInfoById(heroId);
+      heroes.push(data);
+    }
+    setfeaturedHeroesList(heroes);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav></Nav>
+
+      <main></main>
+      {featuredHeroesList.map((hero) => (
+        <h2>{hero.name}</h2>
+      ))}
+      <footer></footer>
+    </>
   );
 }
 
