@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import HeroesFeatured from "./Components/HeroesFeatured/HeroesFeatured";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -12,16 +12,32 @@ function App() {
 
         <main>
           <div className="container">
-            <Switch>
+            <Routes>
+              <Route
+                path="/"
+                element={<HeroesFeatured className="featured__list" />}
+              />
+              <Route path="/search/:name" />
+              <Route path="/hero/:id" />
+            </Routes>
+
+            {/* <Switch>
               <Route exact path="/">
                 <HeroesFeatured className="featured__list" />
               </Route>
               <Route path="/hero/:id"></Route>
-            </Switch>
+            </Switch> */}
           </div>
         </main>
 
-        <footer></footer>
+        <footer>
+          <div className="container">
+            <p>
+              This content is kindly provided by{" "}
+              <a href="https://superheroapi.com/">Superhero API</a>
+            </p>
+          </div>
+        </footer>
       </Router>
     </>
   );

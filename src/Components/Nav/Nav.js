@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Nav.css";
 import logo from "../../assets/img/nav_logo.png";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Nav() {
-  const [SearchInputValue, setSearchInputValue] = useState("");
+  const [searchInputValue, setSearchInputValue] = useState("");
 
   return (
     <nav className="nav">
