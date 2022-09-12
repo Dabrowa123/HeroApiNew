@@ -20,18 +20,12 @@ function App() {
               <Route path="/search/:name" />
               <Route path="/hero/:id" />
             </Routes>
-
-            {/* <Switch>
-              <Route exact path="/">
-                <HeroesFeatured className="featured__list" />
-              </Route>
-              <Route path="/hero/:id"></Route>
-            </Switch> */}
           </div>
         </main>
 
         <footer>
           <div className="container">
+            {/* <img src={require("./menu.png")}></img> */}
             <p>
               This content is kindly provided by{" "}
               <a href="https://superheroapi.com/">Superhero API</a>
