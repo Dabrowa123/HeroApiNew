@@ -3,3 +3,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

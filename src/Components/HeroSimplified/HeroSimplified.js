@@ -1,16 +1,19 @@
 import React from "react";
 import * as icon from "../../assets/icons";
 import "./HeroSimplified.css";
+import { Link } from "react-router-dom";
 
-function HeroSimplified({ name, imgUrl, powerstats }) {
+function HeroSimplified({ name, imgUrl, powerstats, id }) {
   return (
     <div className="featured__hero">
       <h2>{name}</h2>
-      <img
-        className="featured__hero__img"
-        src={imgUrl}
-        alt={`${name}'s photo`}
-      ></img>
+      <Link to={`/hero/${id}`}>
+        <img
+          className="featured__hero__img"
+          src={imgUrl}
+          alt={`${name}'s photo`}
+        ></img>
+      </Link>
       <div className="featured__hero__stats">
         <div>
           <img
