@@ -21,5 +21,6 @@ export const getBasicHeroInfoById = async (id) => {
 export const searchHeroesByName = (name) => {
   return axios.get(
     `https://superheroapi.com/api/${ACCESS_TOKEN}/search/${name}`
+    // `https://superheroapi.com/api/2346700318816566/search/batman`
   );
 };
