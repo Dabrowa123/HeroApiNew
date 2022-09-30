@@ -19,11 +19,8 @@ function App() {
                 path="/"
                 element={<HeroesFeatured className="featured__list" />}
               />
-              <Route
-                path="/superheroapi/search/:name"
-                element={<SearchView />}
-              />
-              <Route path="/superheroapi/hero/:id" element={<HeroDetails />} />
+              <Route path="/search/:name" element={<SearchView />} />
+              <Route path="/hero/:id" element={<HeroDetails />} />
             </Routes>
           </div>
         </main>
