@@ -16,7 +16,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route
-                path="/superheroapi/"
+                path="/"
                 element={<HeroesFeatured className="featured__list" />}
               />
               <Route
