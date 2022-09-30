@@ -1,7 +1,0 @@
-[build]
-    functions = "netlify_functions"
-
-[[redirects]]
-  from = "/api/*"
-  to = "https://superheroapi.com/api/2346700318816566/search/batman"
-  status = 200
