@@ -16,11 +16,14 @@ function App() {
           <div className="container">
             <Routes>
               <Route
-                path="/"
+                path="/superheroapi/"
                 element={<HeroesFeatured className="featured__list" />}
               />
-              <Route path="/search/:name" element={<SearchView />} />
-              <Route path="/hero/:id" element={<HeroDetails />} />
+              <Route
+                path="/superheroapi/search/:name"
+                element={<SearchView />}
+              />
+              <Route path="/superheroapi/hero/:id" element={<HeroDetails />} />
             </Routes>
           </div>
         </main>
