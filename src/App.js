@@ -20,7 +20,8 @@ function App() {
                 element={<HeroesFeatured className="featured__list" />}
               />
               <Route path="/search/:name" element={<SearchView />} />
-              <Route path="/hero/:id" element={<HeroDetails />} />
+              <Route path="/hero" element={<HeroDetails />} />
+              {/* <Route path="/hero/:id" element={<HeroDetails />} /> */}
             </Routes>
           </div>
         </main>
