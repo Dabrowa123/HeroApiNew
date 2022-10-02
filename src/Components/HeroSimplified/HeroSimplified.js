@@ -1,5 +1,5 @@
 import React from "react";
-import * as icon from "../../assets/icons";
+import * as icon from "../../assets/icons/index.js";
 import "./HeroSimplified.css";
 import { Link } from "react-router-dom";
 

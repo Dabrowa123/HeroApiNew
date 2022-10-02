@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
-import { getBasicHeroInfoById } from "../../requests";
-import HeroSimplified from "../HeroSimplified/HeroSimplified";
-import Loader from "../Loader/Loader";
+import { getBasicHeroInfoById } from "../../requests.js";
+import HeroSimplified from "../HeroSimplified/HeroSimplified.js";
+import Loader from "../Loader/Loader.js";
 import "./HeroesFeatured.css";
 
 const featuredHeroesIds = [70, 457, 514];

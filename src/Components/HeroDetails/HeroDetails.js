@@ -5,7 +5,7 @@ import axios from "axios";
 function HeroDetails() {
   const fetchData = async () => {
     const results = await axios.get("/.netlify/functions/batman");
-    console.log(results.data);
+    console.log(results);
   };
 
   useEffect(() => {

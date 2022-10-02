@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import Nav from "./Components/Nav/Nav";
-import HeroesFeatured from "./Components/HeroesFeatured/HeroesFeatured";
+import Nav from "./Components/Nav/Nav.js";
+import HeroesFeatured from "./Components/HeroesFeatured/HeroesFeatured.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SearchView from "./Components/SearchView/SearchView";
-import HeroDetails from "./Components/HeroDetails/HeroDetails";
+import SearchView from "./Components/SearchView/SearchView.js";
+import HeroDetails from "./Components/HeroDetails/HeroDetails.js";
 
 function App() {
   return (
