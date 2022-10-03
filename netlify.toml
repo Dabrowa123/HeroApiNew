@@ -2,3 +2,7 @@
 	command = "npm run build"
 	functions = "functions"
 	publish = "build"
+
+[functions]
+  directory = "functions"
+  node_bundler = "esbuild"
