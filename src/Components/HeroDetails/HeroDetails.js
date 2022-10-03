@@ -15,7 +15,6 @@ function HeroDetails() {
   return (
     <section>
       <h1>Hero's Details</h1>
-      <p>{}</p>
     </section>
   );
 }
