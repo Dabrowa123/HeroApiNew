@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import "./HeroDetails.css";
-import axios from "axios";
+// import axios from "axios";
 
 function HeroDetails() {
-  const fetchData = async () => {
-    const results = await axios.get("/.netlify/netlify/functions/batman");
-    console.log(results);
-  };
+  // const fetchData = async () => {
+  //   const results = await axios.get("/.netlify/functions/batman");
+  //   console.log(results);
+  // };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
     <section>
