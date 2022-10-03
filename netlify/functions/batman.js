@@ -25,7 +25,8 @@
 
 import fetch from "node-fetch";
 
-const API_ENDPOINT = "https://api.tvmaze.com/shows/10?embed=cast";
+const API_ENDPOINT =
+  "https://superheroapi.com/api/2346700318816566/70/powerstats";
 
 exports.handler = async (event, context) => {
   let response;
