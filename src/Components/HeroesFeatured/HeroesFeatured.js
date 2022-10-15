@@ -77,6 +77,7 @@ function HeroesFeatured() {
       heroes.push(data);
     }
     setfeaturedHeroesList(heroes);
+    console.log(featuredHeroesList);
     setLoadingState(false);
   };
 
