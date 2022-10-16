@@ -8,7 +8,7 @@ The app uses **functional components & hooks**, which provide **dynamic renderin
 
 CSS is maintained in **BEM metodology** and **RWD principles**.
 
-The site is fully **accessible**.
+The site is **fully accessible**.
 
 **React Router & Axios liblaries** are both in use, in order to fetch wide range of data provided by Superhero API.
 
