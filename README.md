@@ -6,6 +6,8 @@ Superhero Database is created in **React**.
 
 The app uses **functional components & hooks**, which provide **dynamic rendering of the site views**. 
 
+CSS is maintained in **BEM metodology** and **RWD principles**.
+
 **React Router & Axios liblaries** are both in use, in order to fetch wide range of data provided by Superhero API.
 
 <br /><br />
