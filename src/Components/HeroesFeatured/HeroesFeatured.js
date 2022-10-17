@@ -64,22 +64,22 @@ const featuredHeroesIds = [70, 457, 514];
 
 function HeroesFeatured() {
   useEffect(() => {
+    const fetchAndRenderFeaturedHeroes = async () => {
+      let heroes = [];
+      for (const heroId of featuredHeroesIds) {
+        const data = await getBasicHeroInfoById(heroId);
+        heroes.push(data);
+      }
+      setfeaturedHeroesList(heroes);
+      console.log(featuredHeroesList);
+      setLoadingState(false);
+    };
+
     fetchAndRenderFeaturedHeroes();
   }, []);
 
   const [featuredHeroesList, setfeaturedHeroesList] = useState([]);
   const [isLoading, setLoadingState] = useState(true);
-
-  const fetchAndRenderFeaturedHeroes = async () => {
-    let heroes = [];
-    for (const heroId of featuredHeroesIds) {
-      const data = await getBasicHeroInfoById(heroId);
-      heroes.push(data);
-    }
-    setfeaturedHeroesList(heroes);
-    console.log(featuredHeroesList);
-    setLoadingState(false);
-  };
 
   return (
     <section className="featured">
