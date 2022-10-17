@@ -63,6 +63,9 @@ const featuredHeroesIds = [70, 457, 514];
 // //// Function Component
 
 function HeroesFeatured() {
+  const [featuredHeroesList, setfeaturedHeroesList] = useState([]);
+  const [isLoading, setLoadingState] = useState(true);
+
   useEffect(() => {
     const fetchAndRenderFeaturedHeroes = async () => {
       let heroes = [];
@@ -77,9 +80,6 @@ function HeroesFeatured() {
 
     fetchAndRenderFeaturedHeroes();
   }, []);
-
-  const [featuredHeroesList, setfeaturedHeroesList] = useState([]);
-  const [isLoading, setLoadingState] = useState(true);
 
   return (
     <section className="featured">
