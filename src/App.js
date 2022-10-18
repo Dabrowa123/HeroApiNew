@@ -20,15 +20,13 @@ function App() {
                 element={<HeroesFeatured className="featured__list" />}
               />
               <Route path="/search/:name" element={<SearchView />} />
-              <Route path="/hero" element={<HeroDetails />} />
-              {/* <Route path="/hero/:id" element={<HeroDetails />} /> */}
+              <Route path="/hero/:id" element={<HeroDetails />} />
             </Routes>
           </div>
         </main>
 
         <footer>
           <div className="container">
-            {/* <img src={require("./menu.png")}></img> */}
             <p>
               This content is kindly provided by{" "}
               <a href="https://superheroapi.com/">Superhero API</a>
