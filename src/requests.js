@@ -18,10 +18,12 @@ export const getBasicHeroInfoById = async (id) => {
   };
 };
 
-export const getAllHeroInfoById = (id) => {
-  return axios.get(
+export const getAllHeroInfoById = async (id) => {
+  const data = await axios.get(
     `https://www.superheroapi.com/api.php/${ACCESS_TOKEN}/${id}`
   );
+
+  return data;
 };
 
 export const searchHeroesByName = (name) => {

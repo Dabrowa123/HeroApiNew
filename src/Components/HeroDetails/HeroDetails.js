@@ -15,12 +15,23 @@ function HeroDetails() {
 
   useEffect(() => {
     fetchAndRenderHeroData(id);
+    console.log(heroData.image["url"]);
   }, []);
 
   return (
     <section>
-      <h1>Hero's Details</h1>
-      <h2>{heroData.name}</h2>
+      <div className="details">
+        <img
+          className="details__img"
+          src={`${heroData.image["url"]}`}
+          alt={`${heroData.name}`}
+        ></img>
+        <div className="details__info">
+          <h2>{heroData.name}</h2>
+          <h4>Full name: {heroData.biography["full-name"]}</h4>
+          <h4>Place of birth: {heroData.biography["place-of-birth"]}</h4>
+        </div>
+      </div>
     </section>
   );
 }
