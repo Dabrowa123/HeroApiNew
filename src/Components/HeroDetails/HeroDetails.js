@@ -1,20 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./HeroDetails.css";
-import axios from "axios";
+import { getAllHeroInfoById } from "../../requests.js";
+import { useParams } from "react-router";
 
 function HeroDetails() {
-  const fetchData = async () => {
-    const results = await axios.get("/.netlify/functions/batman");
-    console.log(results);
+  const { id } = useParams();
+  const [heroData, setHeroData] = useState({});
+
+  const fetchAndRenderHeroData = async (id) => {
+    const { data } = await getAllHeroInfoById(id);
+    console.log(data);
+    setHeroData(data);
   };
 
   useEffect(() => {
-    fetchData();
+    fetchAndRenderHeroData(id);
+    console.log(heroData.image["url"]);
   }, []);
 
   return (
     <section>
-      <h1>Hero's Details</h1>
+      <div className="details">
+        <img
+          className="details__img"
+          src={`${heroData.image["url"]}`}
+          alt={`${heroData.name}`}
+        ></img>
+        <div className="details__info">
+          <h2>{heroData.name}</h2>
+          <h4>Full name: {heroData.biography["full-name"]}</h4>
+          <h4>Place of birth: {heroData.biography["place-of-birth"]}</h4>
+        </div>
+      </div>
     </section>
   );
 }
