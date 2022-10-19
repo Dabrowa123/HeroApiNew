@@ -71,7 +71,7 @@ function HeroDetails() {
               src={icon.speed}
               alt="combat speed"
             />
-            <p>Combat: {heroData.powerstats?.speed}</p>
+            <p>Speed: {heroData.powerstats?.speed}</p>
           </div>
           <div>
             <img
