@@ -4,6 +4,13 @@
 
 .featured h1 {
   margin-bottom: 25px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .featured h1 {
+    text-align: initial;
+  }
 }
 
 .featured__list {
