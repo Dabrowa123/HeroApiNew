@@ -65,7 +65,13 @@
 }
 
 .details__info__data {
-  padding-left: 50px;
+  padding-left: 20px;
+}
+
+@media (min-width: 768px) {
+  .details__info__data {
+    padding-left: 50px;
+  }
 }
 
 .details__stats {
