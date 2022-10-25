@@ -4,10 +4,11 @@ const ACCESS_TOKEN = 2346700318816566;
 
 export const getBasicHeroInfoById = async (id) => {
   const { data: powerstats } = await axios.get(
-    `https://www.superheroapi.com/api.php/${ACCESS_TOKEN}/${id}/powerstats`
+    `/.netlify/functions/getBasicHeroInfoByIdPowerstats?id=${id}`
   );
+
   const { data: image } = await axios.get(
-    `https://www.superheroapi.com/api.php/${ACCESS_TOKEN}/${id}/image`
+    `/.netlify/functions/getBasicHeroInfoByIdImage?id=${id}`
   );
 
   return {
@@ -18,13 +19,10 @@ export const getBasicHeroInfoById = async (id) => {
   };
 };
 
-export const getAllHeroInfoById = async (id) => {
-  const resp = await axios.get(`/.netlify/functions/heroid?id=${id}`);
-  return resp;
+export const getAllHeroInfoById = (id) => {
+  return axios.get(`/.netlify/functions/getAllHeroInfoById?id=${id}`);
 };
 
 export const searchHeroesByName = (name) => {
-  return axios.get(
-    `https://www.superheroapi.com/api.php/${ACCESS_TOKEN}/search/${name}`
-  );
+  return axios.get(`/.netlify/functions/searchHeroesByName?name=${name}`);
 };
