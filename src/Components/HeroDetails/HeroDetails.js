@@ -9,7 +9,6 @@ function HeroDetails() {
   const [heroData, setHeroData] = useState({});
 
   useEffect(() => {
-    console.log(id);
     const fetchAndRenderHeroData = async (id) => {
       const { data } = await getAllHeroInfoById(id);
       console.log(data);

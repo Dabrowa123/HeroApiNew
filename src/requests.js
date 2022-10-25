@@ -18,10 +18,9 @@ export const getBasicHeroInfoById = async (id) => {
   };
 };
 
-export const getAllHeroInfoById = (id) => {
-  return axios.get(
-    `https://www.superheroapi.com/api.php/${ACCESS_TOKEN}/${id}`
-  );
+export const getAllHeroInfoById = async (id) => {
+  const resp = await axios.get(`/.netlify/functions/heroid?id=${id}`);
+  return resp;
 };
 
 export const searchHeroesByName = (name) => {
