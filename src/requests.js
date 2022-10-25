@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const ACCESS_TOKEN = 2346700318816566;
-
 export const getBasicHeroInfoById = async (id) => {
   const { data: powerstats } = await axios.get(
     `/.netlify/functions/getBasicHeroInfoByIdPowerstats?id=${id}`
