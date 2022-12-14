@@ -14,7 +14,6 @@ function HeroDetails() {
   useEffect(() => {
     const fetchAndRenderHeroData = async (id) => {
       const { data } = await getAllHeroInfoById(id);
-      console.log(data);
       setHeroData(data);
       setIsLoading(false);
     };

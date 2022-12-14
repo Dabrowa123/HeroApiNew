@@ -1,52 +1,77 @@
-import { React, useState, useEffect } from "react";
-import { getBasicHeroInfoById } from "../../requests.js";
+import { React } from "react";
 import HeroSimplified from "../HeroSimplified/HeroSimplified.js";
-import Loader from "../Loader/Loader.js";
 import "./HeroesFeatured.css";
 import "../Loader/Loader.css";
-
-const featuredHeroesIds = [70, 457, 514];
+import batmanImg from "../../assets/img/batman.jpg";
+import freezeImg from "../../assets/img/freeze.jpg";
+import penguinImg from "../../assets/img/penguin.jpg";
 
 function HeroesFeatured() {
-  const [featuredHeroesList, setfeaturedHeroesList] = useState([]);
-  const [isLoading, setLoadingState] = useState(true);
-
-  useEffect(() => {
-    const fetchAndRenderFeaturedHeroes = async () => {
-      let heroes = [];
-      for (const heroId of featuredHeroesIds) {
-        const data = await getBasicHeroInfoById(heroId);
-        heroes.push(data);
-      }
-      setfeaturedHeroesList(heroes);
-      setLoadingState(false);
-    };
-
-    fetchAndRenderFeaturedHeroes();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const featuredHeroes = [
+    {
+      id: 639,
+      name: "Batman",
+      imgUrl: batmanImg,
+      powerstats: {
+        combat: "100",
+        durability: "50",
+        id: "70",
+        intelligence: "100",
+        name: "Batman",
+        power: "47",
+        response: "success",
+        speed: "27",
+        strength: "26",
+      },
+    },
+    {
+      id: 457,
+      name: "Mister Freeze",
+      imgUrl: freezeImg,
+      powerstats: {
+        combat: "28",
+        durability: "70",
+        id: "457",
+        intelligence: "75",
+        name: "Mister Freeze",
+        power: "37",
+        response: "success",
+        speed: "12",
+        strength: "32",
+      },
+    },
+    {
+      id: 514,
+      name: "Penguin",
+      imgUrl: penguinImg,
+      powerstats: {
+        combat: "45",
+        durability: "28",
+        id: "514",
+        intelligence: "75",
+        name: "Penguin",
+        power: "30",
+        response: "success",
+        speed: "12",
+        strength: "10",
+      },
+    },
+  ];
 
   return (
     <section className="featured">
       <h1>Featured Heroes</h1>
-      {!isLoading && (
-        <div className="featured__list">
-          {featuredHeroesList.map(({ name, imgUrl, powerstats, id }) => (
-            <HeroSimplified
-              key={id}
-              name={name}
-              imgUrl={imgUrl}
-              powerstats={powerstats}
-              id={id}
-            />
-          ))}
-        </div>
-      )}{" "}
-      {isLoading && (
-        <div className="loader-container">
-          <Loader />
-        </div>
-      )}
+      <div className="featured__list">
+        {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
+          <HeroSimplified
+            key={id}
+            name={name}
+            imgUrl={imgUrl}
+            powerstats={powerstats}
+            id={id}
+          />
+        ))}
+      </div>
     </section>
   );
 }
