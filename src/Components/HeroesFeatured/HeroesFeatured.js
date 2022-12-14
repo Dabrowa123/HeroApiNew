@@ -9,7 +9,7 @@ import penguinImg from "../../assets/img/penguin.jpg";
 function HeroesFeatured() {
   const featuredHeroes = [
     {
-      id: 639,
+      id: 70,
       name: "Batman",
       imgUrl: batmanImg,
       powerstats: {
