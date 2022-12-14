@@ -3,6 +3,7 @@ import { getBasicHeroInfoById } from "../../requests.js";
 import HeroSimplified from "../HeroSimplified/HeroSimplified.js";
 import Loader from "../Loader/Loader.js";
 import "./HeroesFeatured.css";
+import "../Loader/Loader.css";
 
 const featuredHeroesIds = [70, 457, 514];
 
