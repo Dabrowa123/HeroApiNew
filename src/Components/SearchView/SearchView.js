@@ -10,6 +10,7 @@ function SearchView() {
   const [characterNotFound, setcharacterNotFound] = useState(false);
   const [isLoading, setLoadingState] = useState(true);
   const { name } = useParams();
+  const uppercaseName = name.charAt(0).toUpperCase() + name.slice(1);
 
   useEffect(() => {
     setLoadingState(true);
@@ -17,6 +18,7 @@ function SearchView() {
       const { data } = searchResults;
 
       if (data.error) {
+        setSearchListContent([]);
         setcharacterNotFound(true);
         setLoadingState(false);
         return;
@@ -24,8 +26,8 @@ function SearchView() {
 
       const { results } = data;
 
+      setcharacterNotFound(false);
       setSearchListContent(results);
-      console.log(searchList);
       setLoadingState(false);
     });
   }, [name]);
@@ -52,10 +54,10 @@ function SearchView() {
           <Loader />
         </div>
       )}
-      {characterNotFound && (
+      {characterNotFound && !isLoading && (
         <div className="search_notfound">
           <h3>Unfortunately, we did not find a character with name:</h3>
-          <h2 className="search_notfound-span">{name.charAt(0).toUpperCase() + name.slice(1)}</h2>
+          <h2 className="search_notfound-span">{uppercaseName}</h2>
         </div>
       )}
     </>
