@@ -1,4 +1,5 @@
 import { React } from "react";
+import Fade from 'react-reveal/Fade.js';
 import HeroSimplified from "../HeroSimplified/HeroSimplified.js";
 import "./HeroesFeatured.css";
 import "../Loader/Loader.css";
@@ -61,17 +62,19 @@ function HeroesFeatured() {
   return (
     <section className="featured">
       <h1>Featured Heroes</h1>
-      <div className="featured__list">
-        {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
-          <HeroSimplified
-            key={id}
-            name={name}
-            imgUrl={imgUrl}
-            powerstats={powerstats}
-            id={id}
-          />
-        ))}
-      </div>
+      <Fade>
+        <div className="featured__list">
+          {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
+            <HeroSimplified
+              key={id}
+              name={name}
+              imgUrl={imgUrl}
+              powerstats={powerstats}
+              id={id}
+            />
+          ))}
+        </div>
+      </Fade>
     </section>
   );
 }
