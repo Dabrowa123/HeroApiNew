@@ -36,17 +36,27 @@ function SearchView() {
     <>
       {!isLoading && (
         <section className="search">
-          {searchList.map(({ powerstats, image, name, id }) => {
-            return (
-              <HeroSimplified
-                key={id}
-                powerstats={powerstats}
-                imgUrl={image.url}
-                name={name}
-                id={id}
-              />
-            );
-          })}
+          {!characterNotFound && (
+            <h2 className="search__heading">
+              We found below heroes matching name:{" "}
+              <span className="search_uppercase-name-span">
+                &nbsp;{uppercaseName}
+              </span>
+            </h2>
+          )}
+          <div className="search__list-wrapper">
+            {searchList.map(({ powerstats, image, name, id }) => {
+              return (
+                <HeroSimplified
+                  key={id}
+                  powerstats={powerstats}
+                  imgUrl={image.url}
+                  name={name}
+                  id={id}
+                />
+              );
+            })}
+          </div>
         </section>
       )}{" "}
       {isLoading && (
@@ -57,7 +67,7 @@ function SearchView() {
       {characterNotFound && !isLoading && (
         <div className="search_notfound">
           <h3>Unfortunately, we did not find a character with name:</h3>
-          <h2 className="search_notfound-span">{uppercaseName}</h2>
+          <span className="search_uppercase-name-span">{uppercaseName}</span>
         </div>
       )}
     </>
