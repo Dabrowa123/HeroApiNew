@@ -2,16 +2,23 @@
   position: relative;
   margin: 10px auto;
   width: 100%;
-  max-width: 425px;
+  max-width: 320px;
   border-radius: 20px;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
   transition: transform 0.5s ease-in-out;
   background-color: white;
 }
 
+.hero-simplified__img {
+  height: 450px;
+}
+
 @media (min-width: 768px) {
   .hero-simplified {
-    width: 49%;
+    width: 43%;
+  }
+  .hero-simplified__img {
+    height: 500px;
   }
 }
 
@@ -53,6 +60,7 @@
   position: relative;
   display: block;
   width: 95%;
+  height: 390px;
   margin: 0 auto;
   border-radius: 20px;
 }
