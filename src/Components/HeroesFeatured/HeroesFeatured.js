@@ -62,7 +62,7 @@ function HeroesFeatured() {
   return (
     <section className="featured">
       <h1>Featured Heroes</h1>
-      <Fade>
+      {/* <Fade> */}
         <div className="featured__list">
           {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
             <HeroSimplified
@@ -74,7 +74,7 @@ function HeroesFeatured() {
             />
           ))}
         </div>
-      </Fade>
+      {/* </Fade> */}
     </section>
   );
 }
