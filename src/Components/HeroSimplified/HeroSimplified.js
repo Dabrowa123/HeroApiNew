@@ -3,6 +3,9 @@ import Fade from "react-reveal/Fade.js";
 import * as icon from "../../assets/icons/index.js";
 import "./HeroSimplified.css";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function HeroSimplified({ name, imgUrl, powerstats, id }) {
   return (
@@ -10,11 +13,15 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
       <div className="hero-simplified">
         <h2>{name}</h2>
         <Link to={`/hero/${id}`}>
-          <img
+          <LazyLoadImage
             className="hero-simplified__img"
             src={imgUrl}
+            width={300}
+            height={400}
             alt={`${name}`}
-          ></img>
+            placeholderSrc={PlaceholderImage}
+            effect="blur"
+          />
         </Link>
         <div className="hero-simplified__stats">
           <div>
