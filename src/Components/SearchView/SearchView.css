@@ -4,6 +4,21 @@
   justify-content: space-around;
 }
 
+.search_notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.search_notfound-span {
+  color: orangered;
+  font-weight: bold;
+  margin-top: 0;
+}
+
 .loader-container {
   display: flex;
   align-items: center;

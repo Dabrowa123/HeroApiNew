@@ -7,6 +7,7 @@ import "./SearchView.css";
 
 function SearchView() {
   const [searchList, setSearchListContent] = useState([]);
+  const [characterNotFound, setcharacterNotFound] = useState(false);
   const [isLoading, setLoadingState] = useState(true);
   const { name } = useParams();
 
@@ -16,12 +17,15 @@ function SearchView() {
       const { data } = searchResults;
 
       if (data.error) {
+        setcharacterNotFound(true);
+        setLoadingState(false);
         return;
       }
 
       const { results } = data;
 
       setSearchListContent(results);
+      console.log(searchList);
       setLoadingState(false);
     });
   }, [name]);
@@ -46,6 +50,12 @@ function SearchView() {
       {isLoading && (
         <div className="loader-container">
           <Loader />
+        </div>
+      )}
+      {characterNotFound && (
+        <div className="search_notfound">
+          <h3>Unfortunately, we did not find a character with name:</h3>
+          <h2 className="search_notfound-span">{name.charAt(0).toUpperCase() + name.slice(1)}</h2>
         </div>
       )}
     </>
