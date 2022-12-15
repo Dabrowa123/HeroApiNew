@@ -1,5 +1,5 @@
 import React from "react";
-import Fade from 'react-reveal/Fade.js';
+import Fade from "react-reveal/Fade.js";
 import * as icon from "../../assets/icons/index.js";
 import "./HeroSimplified.css";
 import { Link } from "react-router-dom";
@@ -7,15 +7,19 @@ import { Link } from "react-router-dom";
 function HeroSimplified({ name, imgUrl, powerstats, id }) {
   return (
     <Fade>
-      <div className="featured__hero">
+      <div className="hero-simplified">
         <h2>{name}</h2>
         <Link to={`/hero/${id}`}>
-          <img className="featured__hero__img" src={imgUrl} alt={`${name}`}></img>
+          <img
+            className="hero-simplified__img"
+            src={imgUrl}
+            alt={`${name}`}
+          ></img>
         </Link>
-        <div className="featured__hero__stats">
+        <div className="hero-simplified__stats">
           <div>
             <img
-              className="featured__hero__stats__icon"
+              className="hero-simplified__stats__icon"
               src={icon.combat}
               alt="combat icon"
             />
@@ -23,7 +27,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
           </div>
           <div>
             <img
-              className="featured__hero__stats__icon"
+              className="hero-simplified__stats__icon"
               src={icon.durability}
               alt="durability icon"
             />
@@ -31,7 +35,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
           </div>
           <div>
             <img
-              className="featured__hero__stats__icon"
+              className="hero-simplified__stats__icon"
               src={icon.intelligence}
               alt="intelligence icon"
             />
@@ -39,7 +43,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
           </div>
           <div>
             <img
-              className="featured__hero__stats__icon"
+              className="hero-simplified__stats__icon"
               src={icon.speed}
               alt="combat speed"
             />
@@ -47,7 +51,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
           </div>
           <div>
             <img
-              className="featured__hero__stats__icon"
+              className="hero-simplified__stats__icon"
               src={icon.strength}
               alt="strength icon"
             />
