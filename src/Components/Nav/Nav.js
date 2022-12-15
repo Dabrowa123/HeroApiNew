@@ -7,6 +7,7 @@ function Nav() {
   const [searchInputValue, setSearchInputValue] = useState("");
 
   const navigate = useNavigate();
+  const inputCleanup = () => {};
 
   return (
     <nav className="nav">
@@ -23,7 +24,7 @@ function Nav() {
                 navigate(`/search/${searchInputValue}`);
               }
             }}
-            value={searchInputValue}
+            // value={searchInputValue}
             type="text"
             name="search"
           />

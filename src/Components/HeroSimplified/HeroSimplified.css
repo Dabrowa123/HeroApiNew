@@ -9,7 +9,12 @@
   background-color: white;
 }
 
-.hero-simplified__img {
+.hero-simplified__img-container {
+display: flex;
+justify-content: center;
+}
+
+.hero-simplified__img-component {
   height: 450px;
 }
 
@@ -17,7 +22,7 @@
   .hero-simplified {
     width: 43%;
   }
-  .hero-simplified__img {
+  .hero-simplified__img-component {
     height: 500px;
   }
 }
@@ -56,7 +61,7 @@
   text-align: center;
 }
 
-.hero-simplified__img {
+.hero-simplified__img-component {
   position: relative;
   display: block;
   width: 93%;

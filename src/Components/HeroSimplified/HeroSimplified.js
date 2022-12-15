@@ -12,17 +12,19 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
     <Fade>
       <div className="hero-simplified">
         <h2>{name}</h2>
-        <Link to={`/hero/${id}`}>
-          <LazyLoadImage
-            className="hero-simplified__img"
-            src={imgUrl}
-            width={300}
-            height={400}
-            alt={`${name}`}
-            placeholderSrc={PlaceholderImage}
-            effect="blur"
-          />
-        </Link>
+        <div className="hero-simplified__img-container">
+          <Link to={`/hero/${id}`}>
+            <LazyLoadImage
+              className="hero-simplified__img-component"
+              src={imgUrl}
+              width={300}
+              height={400}
+              alt={`${name}`}
+              placeholderSrc={PlaceholderImage}
+              effect="blur"
+            />
+          </Link>
+        </div>
         <div className="hero-simplified__stats">
           <div>
             <img
