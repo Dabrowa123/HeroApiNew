@@ -11,6 +11,23 @@
   margin: 0 auto;
 }
 
+.details__heading {
+  font-size: 27px;
+  padding-bottom: 10px;
+}
+
+.details__info-position {
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 14px;
+  margin: 13px 0;
+}
+
+.details__rendered-info {
+  font-size: 20px;
+  color: black;
+  margin-left: 8px;
+}
+
 @media (min-width: 768px) {
   .details {
     width: 700px;
@@ -33,22 +50,16 @@
 
 .details__info__img {
   display: block;
-  margin: 10px auto;
-  width: 90%;
+  margin: 5px auto 5px auto;
+  width: 95%;
   height: auto;
   border-radius: 20px;
 }
 
 @media (min-width: 768px) {
   .details__info__img {
-    margin: 0;
-    max-width: 45%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .details__info__img {
-    max-width: 30%;
+    margin: 0; 
+    width: 300px;
   }
 }
 
