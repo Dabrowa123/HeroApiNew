@@ -32,7 +32,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
               src={icon.combat}
               alt="combat icon"
             />
-            <p>{powerstats.combat}</p>
+            <p>{(powerstats.combat === "null")? "?" : powerstats.combat }</p>
           </div>
           <div>
             <img
@@ -40,7 +40,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
               src={icon.durability}
               alt="durability icon"
             />
-            <p>{powerstats.durability}</p>
+            <p>{(powerstats.durability === "null")? "?" : powerstats.durability }</p>
           </div>
           <div>
             <img
@@ -48,7 +48,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
               src={icon.intelligence}
               alt="intelligence icon"
             />
-            <p>{powerstats.intelligence}</p>
+            <p>{(powerstats.intelligence === "null")? "?" : powerstats.intelligence }</p>
           </div>
           <div>
             <img
@@ -56,7 +56,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
               src={icon.speed}
               alt="combat speed"
             />
-            <p>{powerstats.speed}</p>
+            <p>{(powerstats.speed === "null")? "?" : powerstats.speed }</p>
           </div>
           <div>
             <img
@@ -64,7 +64,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
               src={icon.strength}
               alt="strength icon"
             />
-            <p>{powerstats.strength}</p>
+            <p>{(powerstats.strength === "null")? "?" : powerstats.strength }</p>
           </div>
         </div>
       </div>
