@@ -4,8 +4,13 @@ import { getAllHeroInfoById } from "../../requests.js";
 import { useParams } from "react-router";
 import Loader from "../Loader/Loader.js";
 import Fade from "react-reveal/Fade.js";
+import Roll from "react-reveal/Roll.js";
+import Zoom from "react-reveal/Zoom.js";
 import * as icon from "../../assets/icons/index.js";
 import "../Loader/Loader.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function HeroDetails() {
   const { id } = useParams();
@@ -35,68 +40,86 @@ function HeroDetails() {
         <Fade>
           <div className="details">
             <div className="details__info">
-              <img
+              <LazyLoadImage
                 className="details__info__img"
                 src={`${heroData.image?.url}`}
                 alt={`${heroData.name}`}
-              ></img>
+                placeholderSrc={PlaceholderImage}
+                effect="blur"
+              />
               <div className="details__info__data">
-                <h2 className="details__heading">{heroData.name}</h2>
+                <Roll cascade>
+                  <h2 className="details__heading">{heroData.name}</h2>
+                </Roll>
                 <h4 className="details__info-position">
                   Full name:{" "}
-                  <span className="details__rendered-info">
-                    {heroData.biography?.["full-name"] === ""
-                      ? "Unknown"
-                      : heroData.biography?.["full-name"]}
-                  </span>
+                  <Roll top cascade>
+                    <span className="details__rendered-info">
+                      {heroData.biography?.["full-name"] === ""
+                        ? "unknown"
+                        : heroData.biography?.["full-name"]}
+                    </span>
+                  </Roll>
                 </h4>
                 <h4 className="details__info-position">
                   Eye color:{" "}
-                  <span className="details__rendered-info">
-                    {heroData.appearance?.["eye-color"] === "-"
-                      ? "Unknown"
-                      : heroData.appearance?.["eye-color"]}
-                  </span>
+                  <Roll top cascade>
+                    <span className="details__rendered-info">
+                      {heroData.appearance?.["eye-color"] === "-"
+                        ? "unknown"
+                        : heroData.appearance?.["eye-color"]}
+                    </span>
+                  </Roll>
                 </h4>
                 <h4 className="details__info-position">
                   Height:{" "}
-                  <span className="details__rendered-info">
-                    {heroData.appearance?.height?.[1] === "0 cm"
-                      ? "Unknown"
-                      : heroData.appearance?.height?.[1]}
-                  </span>
+                  <Roll top cascade>
+                    <span className="details__rendered-info">
+                      {heroData.appearance?.height?.[1] === "0 cm"
+                        ? "unknown"
+                        : heroData.appearance?.height?.[1]}
+                    </span>
+                  </Roll>
                 </h4>
                 <h4 className="details__info-position">
                   Weight:{" "}
-                  <span className="details__rendered-info">
-                    {heroData.appearance?.weight?.[1] === "0 kg"
-                      ? "Unknown"
-                      : heroData.appearance?.weight?.[1]}
-                  </span>
+                  <Roll top cascade>
+                    <span className="details__rendered-info">
+                      {heroData.appearance?.weight?.[1] === "0 kg"
+                        ? "unknown"
+                        : heroData.appearance?.weight?.[1]}
+                    </span>
+                  </Roll>
                 </h4>
                 <h4 className="details__info-position">
                   Place of birth:{" "}
-                  <span className="details__rendered-info">
-                    {heroData.biography?.["place-of-birth"] === "-"
-                      ? "Unknown"
-                      : heroData.biography?.["place-of-birth"]}
-                  </span>
+                  <Roll top cascade>
+                    <span className="details__rendered-info">
+                      {heroData.biography?.["place-of-birth"] === "-"
+                        ? "unknown"
+                        : heroData.biography?.["place-of-birth"]}
+                    </span>
+                  </Roll>
                 </h4>
                 <h4 className="details__info-position">
                   Occupation:{" "}
-                  <span className="details__rendered-info">
-                    {heroData.work?.occupation === "-"
-                      ? "Unknown"
-                      : heroData.appearance?.["eye-color"]}
-                  </span>
+                  <Roll top cascade>
+                    <span className="details__rendered-info">
+                      {heroData.work?.occupation === "-"
+                        ? "unknown"
+                        : heroData.appearance?.["eye-color"]}
+                    </span>
+                  </Roll>
                 </h4>
                 <h4 className="details__info-position">
                   Aligment:{" "}
-                  <span className="details__rendered-info">
-                    {heroData.biography?.alignment === "-"
-                      ? "Unknown"
-                      : heroData.biography?.alignment}
-                  </span>
+                  <Roll top cascade>
+                    <span className="details__rendered-info">
+                      {heroData.biography?.alignment === "-"
+                        ? "unknown"
+                        : heroData.biography?.alignment}
+                    </span>
+                  </Roll>
                 </h4>
               </div>
             </div>
