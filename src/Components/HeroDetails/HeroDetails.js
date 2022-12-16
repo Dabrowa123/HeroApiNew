@@ -5,7 +5,6 @@ import { useParams } from "react-router";
 import Loader from "../Loader/Loader.js";
 import Fade from "react-reveal/Fade.js";
 import Roll from "react-reveal/Roll.js";
-import Zoom from "react-reveal/Zoom.js";
 import * as icon from "../../assets/icons/index.js";
 import "../Loader/Loader.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
