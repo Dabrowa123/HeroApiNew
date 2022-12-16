@@ -1,0 +1,21 @@
+.landing {
+  min-height: 100vh;
+  min-width: 100vw;
+  /* position: absolute; */
+}
+
+.landing__img-superman {
+  width: 33%;
+  min-width: 500px;
+  height: auto;
+  position: absolute;
+  top: 70px;
+  left: 18%;
+}
+
+.landing__searchform {
+  position: absolute;
+  top: 45%;
+  left: 57%
+}
+
