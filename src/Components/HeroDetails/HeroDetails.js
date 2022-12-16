@@ -41,48 +41,62 @@ function HeroDetails() {
                 alt={`${heroData.name}`}
               ></img>
               <div className="details__info__data">
-                <h2>{heroData.name}</h2>
-                <h4>
+                <h2 className="details__heading">{heroData.name}</h2>
+                <h4 className="details__info-position">
                   Full name:{" "}
-                  {heroData.biography?.["full-name"] === ""
-                    ? "Unknown"
-                    : heroData.biography?.["full-name"]}
+                  <span className="details__rendered-info">
+                    {heroData.biography?.["full-name"] === ""
+                      ? "Unknown"
+                      : heroData.biography?.["full-name"]}
+                  </span>
                 </h4>
-                <h4>
+                <h4 className="details__info-position">
                   Eye color:{" "}
-                  {heroData.appearance?.["eye-color"] === "-"
-                    ? "Unknown"
-                    : heroData.appearance?.["eye-color"]}
+                  <span className="details__rendered-info">
+                    {heroData.appearance?.["eye-color"] === "-"
+                      ? "Unknown"
+                      : heroData.appearance?.["eye-color"]}
+                  </span>
                 </h4>
-                <h4>
+                <h4 className="details__info-position">
                   Height:{" "}
-                  {heroData.appearance?.height?.[1] === "0 cm"
-                    ? "Unknown"
-                    : heroData.appearance?.height?.[1]}
+                  <span className="details__rendered-info">
+                    {heroData.appearance?.height?.[1] === "0 cm"
+                      ? "Unknown"
+                      : heroData.appearance?.height?.[1]}
+                  </span>
                 </h4>
-                <h4>
+                <h4 className="details__info-position">
                   Weight:{" "}
-                  {heroData.appearance?.weight?.[1] === "0 kg"
-                    ? "Unknown"
-                    : heroData.appearance?.weight?.[1]}
+                  <span className="details__rendered-info">
+                    {heroData.appearance?.weight?.[1] === "0 kg"
+                      ? "Unknown"
+                      : heroData.appearance?.weight?.[1]}
+                  </span>
                 </h4>
-                <h4>
+                <h4 className="details__info-position">
                   Place of birth:{" "}
-                  {heroData.biography?.["place-of-birth"] === "-"
-                    ? "Unknown"
-                    : heroData.biography?.["place-of-birth"]}
+                  <span className="details__rendered-info">
+                    {heroData.biography?.["place-of-birth"] === "-"
+                      ? "Unknown"
+                      : heroData.biography?.["place-of-birth"]}
+                  </span>
                 </h4>
-                <h4>
+                <h4 className="details__info-position">
                   Occupation:{" "}
-                  {heroData.work?.occupation === "-"
-                    ? "Unknown"
-                    : heroData.appearance?.["eye-color"]}
+                  <span className="details__rendered-info">
+                    {heroData.work?.occupation === "-"
+                      ? "Unknown"
+                      : heroData.appearance?.["eye-color"]}
+                  </span>
                 </h4>
-                <h4>
+                <h4 className="details__info-position">
                   Aligment:{" "}
-                  {heroData.biography?.alignment === "-"
-                    ? "Unknown"
-                    : heroData.biography?.alignment}
+                  <span className="details__rendered-info">
+                    {heroData.biography?.alignment === "-"
+                      ? "Unknown"
+                      : heroData.biography?.alignment}
+                  </span>
                 </h4>
               </div>
             </div>
