@@ -21,7 +21,6 @@ function HeroDetails() {
       const { data } = await getAllHeroInfoById(id);
       setHeroData(data);
       setIsLoading(false);
-      console.log(data);
     };
 
     fetchAndRenderHeroData(id);
