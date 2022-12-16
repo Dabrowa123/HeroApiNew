@@ -4,18 +4,25 @@
   /* position: absolute; */
 }
 
+.landing__heading {
+  position: absolute;
+  right: 22%;
+  font-size: 75px;
+  text-align: right;
+}
+
 .landing__img-superman {
   width: 33%;
   min-width: 500px;
   height: auto;
   position: absolute;
-  top: 70px;
+  top: 100px;
   left: 18%;
 }
 
 .landing__searchform {
   position: absolute;
   top: 45%;
-  left: 57%
+  right: 22%;
 }
 

@@ -31,6 +31,7 @@
 2.0 - SEARCH FORM
 --------------------------------------------------------------*/
 .searchform {
+  
   background: #f4f4f4;
   background: rgba(244, 244, 244, 0.79);
   border: 1px solid #d3d3d3;
@@ -39,7 +40,7 @@
   /* position: absolute; */
   /* margin: -22px 0 0 -170px; */
   /* top: 50%; */
-  width: 339px;
+  width: 400px;
   box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
   -moz-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
   -webkit-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
@@ -51,14 +52,16 @@
 .searchform input,
 .searchform button {
   float: left;
+  font-size: 17px;
 }
 .searchform input {
   background: #fefefe;
   border: none;
-  font: 12px/12px "HelveticaNeue", Helvetica, Arial, sans-serif;
+  /* font: 12px/12px "HelveticaNeue", Helvetica, Arial, sans-serif; */
+  font-family: "MuseoModerno", cursive;
   margin-right: 5px;
   padding: 10px;
-  width: 216px;
+  width: 250px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.4) inset,
     1px 1px 1px rgba(255, 255, 255, 0.75);
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4) inset,
@@ -76,12 +79,12 @@
   -webkit-box-shadow: 0 0 4px #0d76be inset;
 }
 .searchform input::-webkit-input-placeholder {
-  font-style: italic;
+  /* font-style: italic; */
   line-height: 15px;
 }
 
 .searchform input:-moz-placeholder {
-  font-style: italic;
+  /* font-style: italic; */
   line-height: 15px;
 }
 
@@ -123,9 +126,10 @@
   border: none;
   color: #fff;
   cursor: pointer;
-  font: 13px/13px "HelveticaNeue", Helvetica, Arial, sans-serif;
+  /* font: 13px/13px "HelveticaNeue", Helvetica, Arial, sans-serif; */
+  font-family: "MuseoModerno", cursive;
   padding: 10px;
-  width: 106px;
+  width: 133px;
   box-shadow: 0 0 2px #2692dd inset;
   -moz-box-shadow: 0 0 2px #2692dd inset;
   -webkit-box-shadow: 0 0 2px #2692dd inset;
