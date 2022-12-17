@@ -28,7 +28,7 @@ function LandingPage() {
           </div>
           <div>
             <Fade right duration={1000} delay={1200} distance="50px">
-              <button className="landing__featured-button cta-btn">FEATURED HEROES</button>
+              <button className="landing__featured-button">FEATURED HEROES</button>
             </Fade>
           </div>
         </div>
