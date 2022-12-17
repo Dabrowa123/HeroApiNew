@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav.js";
 import HeroesFeatured from "./Components/HeroesFeatured/HeroesFeatured.js";
+import LandingPage from "./Components/LandingPage/LandingPage.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SearchView from "./Components/SearchView/SearchView.js";
 import HeroDetails from "./Components/HeroDetails/HeroDetails.js";
@@ -10,14 +11,20 @@ function App() {
   return (
     <>
       <Router>
-        <Nav />
+        {/* <Nav /> */}
 
         <main>
           <div className="container">
             <Routes>
               <Route
                 path="/"
-                element={<HeroesFeatured className="featured__list" />}
+                element={
+                  <>
+                    <LandingPage />
+                    <br/>
+                    <HeroesFeatured className="featured__list" />
+                  </>
+                }
               />
               <Route path="/search/:name" element={<SearchView />} />
               <Route path="/hero/:id" element={<HeroDetails />} />
