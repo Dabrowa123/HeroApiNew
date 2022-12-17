@@ -12,18 +12,25 @@ function LandingPage() {
           <img className="landing__img-superman" src={superman} alt="Superman" />
         </Fade>
       </div>
-      <div>
-        <Fade right duration={1000} delay={800} distance="50px">
-          <h1 className="landing__heading">
-            SUPERHERO
-            <br />
-            DATABASE
-          </h1>
-        </Fade>
-        <div className="landing__searchform">
-          <Fade right duration={1000} delay={1200} distance="50px">
-            <Searchform />
+      <div className="landing__content-container">
+        <div className="landing__content">
+          <Fade right duration={1000} delay={800} distance="50px">
+            <h1 className="landing__heading">
+              SUPERHERO
+              <br />
+              DATABASE
+            </h1>
           </Fade>
+          <div className="landing__searchform">
+            <Fade right duration={1000} delay={1200} distance="50px">
+              <Searchform />
+            </Fade>
+          </div>
+          <div>
+            <Fade right duration={1000} delay={1200} distance="50px">
+              <button className="landing__featured-button cta-btn">FEATURED HEROES</button>
+            </Fade>
+          </div>
         </div>
       </div>
     </section>
