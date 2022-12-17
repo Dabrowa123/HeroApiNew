@@ -1,28 +1,29 @@
 .landing {
   min-height: 100vh;
-  min-width: 100vw;
-  /* position: absolute; */
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.landing__heading {
-  position: absolute;
-  right: 22%;
-  font-size: 75px;
-  text-align: right;
+.landing__superman-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .landing__img-superman {
-  width: 33%;
-  min-width: 500px;
+  max-width: 100%;
   height: auto;
-  position: absolute;
-  top: 100px;
-  left: 18%;
+  margin-left: -15%;
 }
 
+.landing__heading {
+  font-size: 70px;
+  text-align: right;
+}
+
+
 .landing__searchform {
-  position: absolute;
-  top: 45%;
-  right: 22%;
+  float: right;
 }
 
