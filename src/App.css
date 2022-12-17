@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;500&display=swap");
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+
 body {
   font-family: "MuseoModerno", cursive;
   font-weight: 300;
