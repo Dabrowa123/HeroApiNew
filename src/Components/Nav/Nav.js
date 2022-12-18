@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Fade from "react-reveal/Fade.js";
 import "./Nav.css";
 import logo from "../../assets/img/nav_logo.png";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,7 +21,7 @@ function Nav() {
   window.addEventListener("scroll", offsetReached);
   useEffect(() => {
     offsetReached();
-  }, [window.location.pathname])
+  }, [window.location.pathname]);
 
   // Adding search logic
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -31,31 +32,33 @@ function Nav() {
   };
 
   return (
-    <nav className={isvisible ? "nav" : "nav-display-none"}>
-      <div className="container">
-        <Link to="/">
-          <img className="nav__logo" src={logo} alt="Superhero Database" />
-        </Link>
-        <div className="nav__search">
-          <input
-            id="search-input"
-            onChange={(event) => setSearchInputValue(event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                setSearchInputValue(event.target.value);
-                navigate(`/search/${searchInputValue}`);
-                inputCleanup();
-              }
-            }}
-            type="text"
-            name="search"
-          />
-          <Link to={`/search/${searchInputValue}`}>
-            <button onClick={inputCleanup}>find hero!</button>
+    <Fade>
+      <nav className={isvisible ? "nav" : "nav-display-none"}>
+        <div className="container">
+          <Link to="/">
+            <img className="nav__logo" src={logo} alt="Superhero Database" />
           </Link>
+          <div className="nav__search">
+            <input
+              id="search-input"
+              onChange={(event) => setSearchInputValue(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  setSearchInputValue(event.target.value);
+                  navigate(`/search/${searchInputValue}`);
+                  inputCleanup();
+                }
+              }}
+              type="text"
+              name="search"
+            />
+            <Link to={`/search/${searchInputValue}`}>
+              <button onClick={inputCleanup}>find hero!</button>
+            </Link>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </Fade>
   );
 }
 
