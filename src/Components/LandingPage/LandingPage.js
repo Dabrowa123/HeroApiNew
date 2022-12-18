@@ -26,7 +26,7 @@ function LandingPage() {
               <Searchform />
             </Fade>
           </div>
-          <div>
+          <div className="landing__featured-button-container">
             <Fade right duration={1000} delay={1200} distance="50px">
               <button className="landing__featured-button">FEATURED HEROES</button>
             </Fade>
