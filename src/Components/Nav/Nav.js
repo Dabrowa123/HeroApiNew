@@ -4,13 +4,25 @@ import logo from "../../assets/img/nav_logo.png";
 import { Link, useNavigate } from "react-router-dom";
 
 function Nav() {
+  const [isvisible, setIsVisible] = useState(false);
+  const offsetReached = () => {
+    if (window.scrollY >= 600) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+  window.addEventListener("scroll", offsetReached);
+
   const [searchInputValue, setSearchInputValue] = useState("");
 
   const navigate = useNavigate();
-  const inputCleanup = () => {document.getElementById("search-input").value = ""};
+  const inputCleanup = () => {
+    document.getElementById("search-input").value = "";
+  };
 
   return (
-    <nav className="nav">
+    <nav className={isvisible ? "nav" : "nav-display-none"}>
       <div className="container">
         <Link to="/">
           <img className="nav__logo" src={logo} alt="Superhero Database" />
