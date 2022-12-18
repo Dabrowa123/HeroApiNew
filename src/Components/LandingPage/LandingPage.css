@@ -38,7 +38,15 @@
 
 @media (min-width: 768px) {
   .landing__img-superman {
-    max-width: 100%;
+    min-width: 110%;
+    height: auto;
+    /* margin-left: -15%; */
+  }
+}
+
+@media (min-width: 768px) {
+  .landing__img-superman {
+    min-width: 90%;
     height: auto;
     /* margin-left: -15%; */
   }
