@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Nav.css";
 import logo from "../../assets/img/nav_logo.png";
 import { Link, useNavigate } from "react-router-dom";
 
 function Nav() {
+  // Adding sticky nav logic
   const [isvisible, setIsVisible] = useState(false);
   const offsetReached = () => {
-    if (window.scrollY >= 600) {
+    if (window.location.pathname !== "/") {
       setIsVisible(true);
     } else {
-      setIsVisible(false);
+      if (window.scrollY >= 500) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
     }
   };
   window.addEventListener("scroll", offsetReached);
+  useEffect(() => {
+    offsetReached();
+  }, [window.location.pathname])
 
+  // Adding search logic
   const [searchInputValue, setSearchInputValue] = useState("");
 
   const navigate = useNavigate();
