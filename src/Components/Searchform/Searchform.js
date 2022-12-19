@@ -8,16 +8,12 @@ function Searchform() {
   const navigate = useNavigate();
 
   const input = document.getElementById("search-input-landing");
-  const inputCleanup = () => {
-    input.value = "";
-  };
 
   const handleSearch = () => {
     if (searchInputValue === "") {
       return;
     } else {
       navigate(`/search/${searchInputValue}`);
-      inputCleanup();
     }
   };
 

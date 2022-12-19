@@ -29,17 +29,13 @@ function Nav() {
   const navigate = useNavigate();
 
   const input = document.getElementById("search-input");
-  const inputCleanup = () => {
-    input.value = "";
-  };
 
-  const handleSearch = () => {
+  const handleSearch = (event) => {
     if (searchInputValue === "") {
       return;
     } else {
+      event.preventDefault()
       navigate(`/search/${searchInputValue}`);
-      inputCleanup();
-      setSearchInputValue("");
     }
   };
 
@@ -57,15 +53,15 @@ function Nav() {
                 onChange={(event) => setSearchInputValue(event.target.value)}
                 onKeyDown={(event) => {
                   if (event.key === "Enter") {
-                    handleSearch();
+                    handleSearch(event)};
                   }
-                }}
+                }
                 type="text"
-                name="search-landing"
+                // name="search-nav"
                 placeholder="type hero name"
                 required
               />
-              <button onClick={handleSearch}>find hero!</button>
+              <button onClick={(event) => handleSearch(event)}>find hero!</button>
             </form>
           </div>
         </div>
