@@ -1,34 +1,43 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Searchform.css";
 
 function Searchform() {
   const [searchInputValue, setSearchInputValue] = useState("");
 
   const navigate = useNavigate();
+
+  const input = document.getElementById("search-input-landing");
   const inputCleanup = () => {
-    document.getElementById("search-input").value = "";
+    input.value = "";
+  };
+
+  const handleSearch = () => {
+    if (searchInputValue === "") {
+      return;
+    } else {
+      navigate(`/search/${searchInputValue}`);
+      inputCleanup();
+    }
   };
 
   return (
     <form className="landing__searchform searchform cf">
       <input
-        id="search-input"
+        id="search-input-landing"
         onChange={(event) => setSearchInputValue(event.target.value)}
         onKeyDown={(event) => {
           if (event.key === "Enter") {
-            setSearchInputValue(event.target.value);
-            navigate(`/search/${searchInputValue}`);
-            inputCleanup();
+            handleSearch();
           }
         }}
         type="text"
-        name="search"
+        name="search-landing"
         placeholder="type hero name"
+        required
+        min="1"
       />
-      <Link to={`/search/${searchInputValue}`}>
-        <button onClick={inputCleanup}>Find Hero</button>
-      </Link>
+      <button onClick={handleSearch}>Find Hero</button>
     </form>
   );
 }

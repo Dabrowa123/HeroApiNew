@@ -27,8 +27,19 @@ function Nav() {
   const [searchInputValue, setSearchInputValue] = useState("");
 
   const navigate = useNavigate();
+
+  const input = document.getElementById("search-input");
   const inputCleanup = () => {
-    document.getElementById("search-input").value = "";
+    input.value = "";
+  };
+
+  const handleSearch = () => {
+    if (searchInputValue === "") {
+      return;
+    } else {
+      navigate(`/search/${searchInputValue}`);
+      inputCleanup();
+    }
   };
 
   return (
@@ -39,22 +50,23 @@ function Nav() {
             <img className="nav__logo" src={logo} alt="Superhero Database" />
           </Link>
           <div className="nav__search">
-            <input
-              id="search-input"
-              onChange={(event) => setSearchInputValue(event.target.value)}
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  setSearchInputValue(event.target.value);
-                  navigate(`/search/${searchInputValue}`);
-                  inputCleanup();
-                }
-              }}
-              type="text"
-              name="search"
-            />
-            <Link to={`/search/${searchInputValue}`}>
-              <button onClick={inputCleanup}>find hero!</button>
-            </Link>
+            <form>
+              <input
+                id="search-input"
+                onChange={(event) => setSearchInputValue(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    handleSearch();
+                  }
+                }}
+                type="text"
+                name="search-landing"
+                placeholder="type hero name"
+                required
+                min="1"
+              />
+              <button onClick={handleSearch}>find hero!</button>
+            </form>
           </div>
         </div>
       </nav>
