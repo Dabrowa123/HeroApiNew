@@ -34,8 +34,10 @@ function Nav() {
     if (searchInputValue === "") {
       return;
     } else {
-      event.preventDefault()
+      event.preventDefault();
       navigate(`/search/${searchInputValue}`);
+      setSearchInputValue("");
+      input.value = "";
     }
   };
 
@@ -53,15 +55,17 @@ function Nav() {
                 onChange={(event) => setSearchInputValue(event.target.value)}
                 onKeyDown={(event) => {
                   if (event.key === "Enter") {
-                    handleSearch(event)};
+                    handleSearch(event);
                   }
-                }
+                }}
                 type="text"
-                // name="search-nav"
+                name="search-nav"
                 placeholder="type hero name"
                 required
               />
-              <button onClick={(event) => handleSearch(event)}>find hero!</button>
+              <button onClick={(event) => handleSearch(event)}>
+                find hero!
+              </button>
             </form>
           </div>
         </div>
