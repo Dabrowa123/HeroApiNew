@@ -35,7 +35,6 @@ function Searchform() {
         name="search-landing"
         placeholder="type hero name"
         required
-        min="1"
       />
       <button onClick={handleSearch}>Find Hero</button>
     </form>

@@ -39,6 +39,7 @@ function Nav() {
     } else {
       navigate(`/search/${searchInputValue}`);
       inputCleanup();
+      setSearchInputValue("");
     }
   };
 
@@ -63,7 +64,6 @@ function Nav() {
                 name="search-landing"
                 placeholder="type hero name"
                 required
-                min="1"
               />
               <button onClick={handleSearch}>find hero!</button>
             </form>
