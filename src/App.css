@@ -36,7 +36,7 @@ h2 {
 }
 
 section {
-  padding: 10px 0;
+  /* padding: 10px 0; */
 }
 
 main {
@@ -44,12 +44,14 @@ main {
 }
 
 .container {
-  width: 96%;
-  margin: 0 auto;
+  /* width: 96%;
+  margin: 0 auto; */
+  /* padding: 0 2%; */
 }
 
 @media (min-width: 768px) {
   .container {
+    margin: 0 auto;
     width: 720px;
   }
 }

@@ -60,7 +60,7 @@ function Nav() {
                 }}
                 type="text"
                 name="search-nav"
-                placeholder="type hero name"
+                placeholder=" type hero name"
                 required
               />
               <button onClick={(event) => handleSearch(event)}>
