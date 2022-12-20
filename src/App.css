@@ -35,20 +35,8 @@ h2 {
   font-weight: bold;
 }
 
-/* @media (min-width: 768px) {
-  section {
-    margin: 90px 0;
-  }
-} */
-
 main {
   min-height: 620px;
-}
-
-.container {
-  /* width: 96%;
-  margin: 0 auto; */
-  /* padding: 0 2%; */
 }
 
 @media (min-width: 768px) {
@@ -56,10 +44,6 @@ main {
     margin: 0 auto;
     width: 720px;
   }
-  /* .container--landing {
-    margin: 0 auto;
-    width: 720px;
-  } */
 }
 
 @media (min-width: 1200px) {
