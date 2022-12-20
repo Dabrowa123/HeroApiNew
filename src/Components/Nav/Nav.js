@@ -21,7 +21,7 @@ function Nav() {
   window.addEventListener("scroll", offsetReached);
   useEffect(() => {
     offsetReached();
-    // eslint-disable-next-line no-use-before-define
+    // eslint-disable-next-line
   }, [window.location.pathname]);
 
   // Adding search logic
