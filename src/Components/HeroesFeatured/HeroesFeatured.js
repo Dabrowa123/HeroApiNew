@@ -1,7 +1,6 @@
 import { React } from "react";
 import HeroSimplified from "../HeroSimplified/HeroSimplified.js";
 import "./HeroesFeatured.css";
-import "../Loader/Loader.css";
 import batmanImg from "../../assets/img/batman.jpg";
 import freezeImg from "../../assets/img/freeze.jpg";
 import penguinImg from "../../assets/img/penguin.jpg";

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { searchHeroesByName } from "../../requests.js";
 import HeroSimplified from "../HeroSimplified/HeroSimplified.js";
-import Loader from "../Loader/Loader.js";
+import Loader from "../Assets/Loader/Loader.js";
 import "./SearchView.css";
 
 function SearchView() {
