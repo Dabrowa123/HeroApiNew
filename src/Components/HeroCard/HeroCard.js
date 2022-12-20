@@ -3,8 +3,8 @@ import Fade from "react-reveal/Fade.js";
 import * as icon from "../../assets/icons/index.js";
 import "./HeroCard.css";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 function HeroCard({ name, imgUrl, powerstats, id }) {
