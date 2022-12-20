@@ -1,4 +1,8 @@
 .details {
+  padding-top: 90px;
+}
+
+.details__card {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -8,7 +12,11 @@
   transition: transform 0.5s ease-in-out;
   background-color: white;
   padding: 30px 30px;
-  margin: 90px auto 0 auto;
+  margin: 0 auto;
+}
+
+.details__container {
+  margin-top: 90px;
 }
 
 .details__heading {
@@ -29,7 +37,7 @@
 }
 
 @media (min-width: 768px) {
-  .details {
+  .details__card {
     width: 700px;
     max-width: none;
     padding: 40px 40px 20px 40px;
@@ -37,13 +45,13 @@
 }
 
 @media (min-width: 1200px) {
-  .details {
+  .details__card {
     width: 1000px;
     cursor: pointer;
   }
 }
 
-.details h2 {
+.details__card h2 {
   margin: 10px 0;
   text-align: center;
 }

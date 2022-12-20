@@ -102,24 +102,24 @@
 
 @media (min-width: 768px) {
   .searchform {
-    width: 347px;
+    max-width: 300px;
     height: 40px;
   }
   .searchform button {
     font-size: 15px;
-    width: 100px;
+    width: 90px;
     line-height: 15px;
   }
   .searchform input {
     font-size: 15px;
-    width: 230px;
+    width: 193px;
     height: 35px;
   }
 }
 
 @media (min-width: 1200px) {
   .searchform {
-    width: 400px;
+    min-width: 380px;
   }
 
   .searchform input,
@@ -127,7 +127,7 @@
     font-size: 17px;
   }
   .searchform input {
-    width: 250px;
+    width: 230px;
   }
   .searchform button {
     width: 133px;
