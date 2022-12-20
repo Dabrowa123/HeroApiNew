@@ -36,8 +36,8 @@ function LandingPage() {
           <LazyLoadImage
               className="landing__img-superman"
               src={superman}
-              // width={300}
-              // height={400}
+              width={superman.width}
+              height={superman.height}
               alt="Superman"
               placeholderSrc={PlaceholderImage}
               effect="blur"
