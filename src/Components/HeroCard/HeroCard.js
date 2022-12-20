@@ -1,21 +1,21 @@
 import React from "react";
 import Fade from "react-reveal/Fade.js";
 import * as icon from "../../assets/icons/index.js";
-import "./HeroSimplified.css";
+import "./HeroCard.css";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-function HeroSimplified({ name, imgUrl, powerstats, id }) {
+function HeroCard({ name, imgUrl, powerstats, id }) {
   return (
     <Fade>
-      <div className="hero-simplified">
+      <div className="hero-card">
         <h2>{name}</h2>
-        <div className="hero-simplified__img-container">
+        <div className="hero-card__img-container">
           <Link to={`/hero/${id}`}>
             <LazyLoadImage
-              className="hero-simplified__img-component"
+              className="hero-card__img-component"
               src={imgUrl}
               width={300}
               height={400}
@@ -25,10 +25,10 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
             />
           </Link>
         </div>
-        <div className="hero-simplified__stats">
+        <div className="hero-card__stats">
           <div>
             <img
-              className="hero-simplified__stats__icon"
+              className="hero-card__stats-icon"
               src={icon.combat}
               alt="combat icon"
             />
@@ -36,7 +36,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
           </div>
           <div>
             <img
-              className="hero-simplified__stats__icon"
+              className="hero-card__stats-icon"
               src={icon.durability}
               alt="durability icon"
             />
@@ -44,7 +44,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
           </div>
           <div>
             <img
-              className="hero-simplified__stats__icon"
+              className="hero-card__stats-icon"
               src={icon.intelligence}
               alt="intelligence icon"
             />
@@ -52,7 +52,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
           </div>
           <div>
             <img
-              className="hero-simplified__stats__icon"
+              className="hero-card__stats-icon"
               src={icon.speed}
               alt="combat speed"
             />
@@ -60,7 +60,7 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
           </div>
           <div>
             <img
-              className="hero-simplified__stats__icon"
+              className="hero-card__stats-icon"
               src={icon.strength}
               alt="strength icon"
             />
@@ -72,4 +72,4 @@ function HeroSimplified({ name, imgUrl, powerstats, id }) {
   );
 }
 
-export default HeroSimplified;
+export default HeroCard;

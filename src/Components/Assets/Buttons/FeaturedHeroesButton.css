@@ -61,7 +61,7 @@
     margin: 60px 0;
     font-size: 15px;
     width: 180px;
-    margin: 50px 0;
+    margin: 45px 0;
     float: right;
     border-radius: 9px;
     -moz-border-radius: 9px;
@@ -73,7 +73,6 @@
     cursor: pointer;
     font-family: "MuseoModerno", cursive;
     padding: 10px;
-    margin: 15px 0 0 0;
     box-shadow: 0 0 9px #2692dd inset;
     -moz-box-shadow: 0 0 9px #2692dd inset;
     -webkit-box-shadow: 0 0 9px #2692dd inset;

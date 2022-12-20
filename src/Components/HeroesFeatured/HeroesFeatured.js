@@ -1,7 +1,6 @@
 import { React } from "react";
-import HeroSimplified from "../HeroSimplified/HeroSimplified.js";
+import HeroCard from "../HeroCard/HeroCard.js";
 import "./HeroesFeatured.css";
-import "../Loader/Loader.css";
 import batmanImg from "../../assets/img/batman.jpg";
 import freezeImg from "../../assets/img/freeze.jpg";
 import penguinImg from "../../assets/img/penguin.jpg";
@@ -63,7 +62,7 @@ function HeroesFeatured() {
       <h1>Featured Heroes</h1>
       <div className="featured__list">
         {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
-          <HeroSimplified
+          <HeroCard
             key={id}
             name={name}
             imgUrl={imgUrl}

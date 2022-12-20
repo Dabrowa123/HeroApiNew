@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { searchHeroesByName } from "../../requests.js";
-import HeroSimplified from "../HeroSimplified/HeroSimplified.js";
-import Loader from "../Loader/Loader.js";
+import HeroCard from "../HeroCard/HeroCard.js";
+import Loader from "../Assets/Loader/Loader.js";
 import "./SearchView.css";
 
 function SearchView() {
@@ -47,7 +47,7 @@ function SearchView() {
           <div className="search__list-wrapper">
             {searchList.map(({ powerstats, image, name, id }) => {
               return (
-                <HeroSimplified
+                <HeroCard
                   key={id}
                   powerstats={powerstats}
                   imgUrl={image.url}
