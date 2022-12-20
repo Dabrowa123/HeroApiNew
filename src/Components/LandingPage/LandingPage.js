@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import superman from "../../assets/img/Superman2.png";
+import superman from "../../assets/img/Superman.png";
 import Searchform from "../Searchform/Searchform.js";
 import Fade from "react-reveal/Fade.js";
 import FeaturedHeroesButton from "../Assets/Buttons/FeaturedHeroesButton.js";
