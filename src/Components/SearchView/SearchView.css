@@ -1,6 +1,7 @@
 .search {
   display: flex;
   flex-direction: column;
+  padding-top: 90px;
 }
 
 .search__list-wrapper {
