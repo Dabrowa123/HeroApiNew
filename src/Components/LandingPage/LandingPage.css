@@ -23,7 +23,7 @@
   align-items: center;
   flex-grow: 2;
   order: 2;
-  margin: 25px -10% 10px 0;
+  margin: 25px 0 10px 0;
 }
 
 @media (min-width: 768px) {
@@ -44,15 +44,14 @@
 
 @media (min-width: 768px) {
   .landing__img-superman {
-    min-width: 95%;
+    min-width: 115%;
     height: auto;
   }
 }
 
 @media (min-width: 1200px) {
   .landing__img-superman {
-    min-width: 120%;
-    /* min-width: 90%; */
+    min-width: 130%;
   }
 }
 
