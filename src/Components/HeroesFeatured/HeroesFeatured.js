@@ -59,7 +59,7 @@ function HeroesFeatured() {
   ];
 
   return (
-    <section className="featured">
+    <section className="featured" id="featured">
       <h1>Featured Heroes</h1>
       <div className="featured__list">
         {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (

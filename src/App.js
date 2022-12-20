@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-// import Nav from "./Components/Nav/Nav.js";
+import Nav from "./Components/Nav/Nav.js";
 import HeroesFeatured from "./Components/HeroesFeatured/HeroesFeatured.js";
 import LandingPage from "./Components/LandingPage/LandingPage.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Nav /> */}
+        <Nav />
 
         <main>
           <div className="container">

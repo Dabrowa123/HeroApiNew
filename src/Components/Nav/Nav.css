@@ -1,7 +1,14 @@
 .nav {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
   height: 80px;
   background-color: black;
   color: white;
+}
+
+.nav-display-none {
+  display: none;
 }
 
 .nav .container {

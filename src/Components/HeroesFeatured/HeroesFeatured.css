@@ -1,5 +1,12 @@
+.featured {
+  /* height: calc(100vh + 80px); */
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
 .featured h1 {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
@@ -13,6 +20,5 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  flex-shrink: 2;
 }
-
-
