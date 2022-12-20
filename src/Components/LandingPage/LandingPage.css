@@ -1,7 +1,6 @@
 .landing {
   /* min-height: calc(100vh - 80px); */
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: calc(100vh - calc(100vh - 100%));
   /* margin: 0; */
   min-width: 90%;
   display: flex;
