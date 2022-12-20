@@ -7,8 +7,6 @@ function Searchform() {
 
   const navigate = useNavigate();
 
-  const input = document.getElementById("search-input-landing");
-
   const handleSearch = () => {
     if (searchInputValue === "") {
       return;
