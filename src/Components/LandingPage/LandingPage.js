@@ -5,6 +5,9 @@ import Searchform from "../Searchform/Searchform.js";
 import Fade from "react-reveal/Fade.js";
 import FeaturedHeroesButton from "../Assets/Buttons/FeaturedHeroesButton.js";
 import "./LandingPage.css";
+import PlaceholderImage from "../../assets/img/superman-placeholder.png"
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function LandingPage() {
 
@@ -25,11 +28,20 @@ function LandingPage() {
     <section className="landing">
       <div className="landing__superman-container">
         <Fade left duration={1000} delay={600} distance="70px">
-          <img
+          {/* <img
             className="landing__img-superman"
             src={superman}
             alt="Superman"
-          />
+          /> */}
+          <LazyLoadImage
+              className="landing__img-superman"
+              src={superman}
+              // width={300}
+              // height={400}
+              alt="Superman"
+              placeholderSrc={PlaceholderImage}
+              effect="blur"
+            />
         </Fade>
       </div>
       <div className="landing__content-container">
