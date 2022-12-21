@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Searchform.css";
 
 function Searchform() {
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -16,8 +15,9 @@ function Searchform() {
   };
 
   return (
-    <form className="landing__searchform searchform cf">
+    <form className="searchform cf">
       <input
+        className="searchform__input"
         id="search-input-landing"
         onChange={(event) => setSearchInputValue(event.target.value)}
         onKeyDown={(event) => {
@@ -30,7 +30,9 @@ function Searchform() {
         placeholder="type hero name"
         required
       />
-      <button onClick={handleSearch}>Find Hero</button>
+      <button className="searchform__button" onClick={handleSearch}>
+        Find Hero
+      </button>
     </form>
   );
 }

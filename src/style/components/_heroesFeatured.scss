@@ -1,0 +1,21 @@
+.featured {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-shrink: 2;
+  }
+
+  &__heading {
+    margin-bottom: 15px;
+    text-align: center;
+
+    @include media(medium) {
+      text-align: initial;
+    }
+  }
+}

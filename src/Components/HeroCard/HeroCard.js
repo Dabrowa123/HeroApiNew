@@ -1,7 +1,6 @@
 import React from "react";
 import Fade from "react-reveal/Fade.js";
 import * as icon from "../../assets/icons/index.js";
-import "./HeroCard.css";
 import { Link } from "react-router-dom";
 import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -11,7 +10,7 @@ function HeroCard({ name, imgUrl, powerstats, id }) {
   return (
     <Fade>
       <div className="hero-card">
-        <h2>{name}</h2>
+        <h2 className="hero-card__heading">{name}</h2>
         <div className="hero-card__img-container">
           <Link to={`/hero/${id}`}>
             <LazyLoadImage

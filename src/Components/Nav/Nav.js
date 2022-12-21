@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade.js";
-import "./Nav.css";
 import logo from "../../assets/img/nav_logo.png";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -45,7 +44,7 @@ function Nav() {
   return (
     <Fade>
       <nav className={isvisible ? "nav" : "nav-display-none"}>
-        <div className="container">
+        <div className="container nav__container">
           <Link to="/">
             <img className="nav__logo" src={logo} alt="Superhero Database" />
           </Link>

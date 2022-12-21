@@ -1,0 +1,104 @@
+.details {
+  padding-top: 90px;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+    transition: transform 0.5s ease-in-out;
+    background-color: white;
+    padding: 30px 30px;
+    margin: 0 auto;
+
+    @include media(medium) {
+      width: 700px;
+      max-width: none;
+      padding: 40px 40px 20px 40px;
+    }
+
+    @include media(xlarge) {
+      width: 1000px;
+      cursor: pointer;
+    }
+  }
+
+  &__container {
+    margin-top: 90px;
+  }
+
+  &__heading {
+    font-size: 27px;
+    padding-bottom: 10px;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  &__info-position {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+    margin: 13px 0;
+  }
+
+  &__rendered-info {
+    font-size: 20px;
+    color: black;
+    margin-left: 8px;
+  }
+
+  &__info__img {
+    display: block;
+    margin: 5px auto 5px auto;
+    width: 95%;
+    height: auto;
+    border-radius: 20px;
+
+    @include media(medium) {
+      margin: 0;
+      width: 300px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @include media(medium) {
+      flex-direction: row;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__info__data {
+    padding-left: 20px;
+    flex-grow: 2;
+
+    @include media(medium) {
+      padding-left: 50px;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+    background-color: white;
+  }
+
+  &__stats-container {
+    padding: 20px;
+  }
+
+  &__stats-icon {
+    width: 25px;
+  }
+
+  &__stats-info {
+    margin: 0;
+  }
+}

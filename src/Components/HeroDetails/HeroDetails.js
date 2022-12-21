@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./HeroDetails.css";
 import { getAllHeroInfoById } from "../../requests.js";
 import { useParams } from "react-router";
 import Loader from "../Assets/Loader/Loader.js";
@@ -122,65 +121,65 @@ function HeroDetails() {
                 </div>
               </div>
               <div className="details__stats">
-                <div>
+                <div className="details__stats-container">
                   <img
-                    className="details__stats__icon"
+                    className="details__stats-icon"
                     src={icon.combat}
                     alt="combat icon"
                   />
-                  <p>
+                  <p className="details__stats-info">
                     Combat:{" "}
                     {heroData.powerstats?.combat === "null"
                       ? "unknown"
                       : heroData.powerstats?.combat}
                   </p>
                 </div>
-                <div>
+                <div className="details__stats-container">
                   <img
-                    className="details__stats__icon"
+                    className="details__stats-icon"
                     src={icon.durability}
                     alt="durability icon"
                   />
-                  <p>
+                  <p className="details__stats-info">
                     Durability:{" "}
                     {heroData.powerstats?.combat === "null"
                       ? "unknown"
                       : heroData.powerstats?.combat}
                   </p>
                 </div>
-                <div>
+                <div className="details__stats-container">
                   <img
-                    className="details__stats__icon"
+                    className="details__stats-icon"
                     src={icon.intelligence}
                     alt="intelligence icon"
                   />
-                  <p>
+                  <p className="details__stats-info">
                     Intelligence:{" "}
                     {heroData.powerstats?.intelligence === "null"
                       ? "unknown"
                       : heroData.powerstats?.intelligence}
                   </p>
                 </div>
-                <div>
+                <div className="details__stats-container">
                   <img
-                    className="details__stats__icon"
+                    className="details__stats-icon"
                     src={icon.speed}
                     alt="combat speed"
                   />
-                  <p>
+                  <p className="details__stats-info">
                     Speed:{" "}
                     {heroData.powerstats?.speed === "null"
                       ? "unknown"
                       : heroData.powerstats?.speed}
                   </p>
                 </div>
-                <div>
+                <div className="details__stats-container">
                   <img
-                    className="details__stats__icon"
+                    className="details__stats-icon"
                     src={icon.strength}
                     alt="strength icon"
                   />
-                  <p>
+                  <p className="details__stats-info">
                     Strength:{" "}
                     {heroData.powerstats?.strength === "null"
                       ? "unknown"

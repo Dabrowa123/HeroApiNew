@@ -3,7 +3,6 @@ import { useParams } from "react-router";
 import { searchHeroesByName } from "../../requests.js";
 import HeroCard from "../HeroCard/HeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
-import "./SearchView.css";
 
 function SearchView() {
   const [searchList, setSearchListContent] = useState([]);
@@ -60,14 +59,14 @@ function SearchView() {
         </section>
       )}{" "}
       {isLoading && (
-        <div className="loader-container">
+        <div className="search__loader-container">
           <Loader />
         </div>
       )}
       {characterNotFound && !isLoading && (
-        <div className="search_notfound">
+        <div className="search__notfound">
           <h3>Unfortunately, we did not find a character with name:</h3>
-          <span className="search_uppercase-name-span">{uppercaseName}</span>
+          <span className="search__uppercase-name-span">{uppercaseName}</span>
         </div>
       )}
     </>
