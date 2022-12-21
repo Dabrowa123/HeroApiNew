@@ -6,7 +6,13 @@ Superhero Database is created in **React**.
 
 The app uses **functional components & hooks**, which provide **dynamic rendering of the site views**. 
 
-CSS is maintained in **BEM metodology** and **RWD principles**.
+Styles are written in **SASS** and are maintained in **BEM metodology** and **RWD principles**.
+
+To speed up perforance application is using **Lazy Loading**.
+
+To achive excellent cumulative layout shift score sites uses **placeholders on preload of data**.
+
+Sites animation are provided by **React Reveal Library**.
 
 The site is **fully accessible**.
 
