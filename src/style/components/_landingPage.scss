@@ -83,9 +83,10 @@
 
     @include media(medium) {
       float: right;
-      display: initial;
+      display: flex;
       margin: initial;
       width: 347px;
+      justify-content: flex-end;
     }
 
     @include media(xlarge) {

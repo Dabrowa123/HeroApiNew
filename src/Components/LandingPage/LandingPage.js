@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import superman from "../../assets/img/Superman.png";
-import Searchform from "../Searchform/Searchform.js";
+import Searchform from ".././UI/Searchform/Searchform.js";
 import Fade from "react-reveal/Fade.js";
 import FeaturedHeroesButton from "../UI/Buttons/FeaturedHeroesButton.js";
 import PlaceholderImage from "../../assets/img/superman-placeholder.png"
@@ -27,11 +27,6 @@ function LandingPage() {
     <section className="landing">
       <div className="landing__superman-container">
         <Fade left duration={1000} delay={600} distance="70px">
-          {/* <img
-            className="landing__img-superman"
-            src={superman}
-            alt="Superman"
-          /> */}
           <LazyLoadImage
               className="landing__img-superman"
               src={superman}
