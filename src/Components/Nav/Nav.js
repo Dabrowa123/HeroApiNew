@@ -44,7 +44,7 @@ function Nav() {
   return (
     <Fade>
       <nav className={isvisible ? "nav" : "nav-display-none"}>
-        <div className="container">
+        <div className="nav__container">
           <Link to="/">
             <img className="nav__logo" src={logo} alt="Superhero Database" />
           </Link>
