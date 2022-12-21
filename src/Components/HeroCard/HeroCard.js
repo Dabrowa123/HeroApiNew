@@ -10,7 +10,7 @@ function HeroCard({ name, imgUrl, powerstats, id }) {
   return (
     <Fade>
       <div className="hero-card">
-        <h2>{name}</h2>
+        <h2 className="hero-card__heading">{name}</h2>
         <div className="hero-card__img-container">
           <Link to={`/hero/${id}`}>
             <LazyLoadImage
