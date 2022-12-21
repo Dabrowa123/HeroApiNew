@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import superman from "../../assets/img/Superman.png";
 import Searchform from "../Searchform/Searchform.js";
 import Fade from "react-reveal/Fade.js";
-import FeaturedHeroesButton from "../Assets/Buttons/FeaturedHeroesButton.js";
-import "./LandingPage.css";
+import FeaturedHeroesButton from "../UI/Buttons/FeaturedHeroesButton.js";
 import PlaceholderImage from "../../assets/img/superman-placeholder.png"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";

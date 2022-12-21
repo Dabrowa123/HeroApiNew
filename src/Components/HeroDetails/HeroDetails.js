@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./HeroDetails.css";
 import { getAllHeroInfoById } from "../../requests.js";
 import { useParams } from "react-router";
 import Loader from "../Assets/Loader/Loader.js";

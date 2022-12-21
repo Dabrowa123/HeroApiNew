@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-scroll';
-import "./FeaturedHeroesButton.css";
 
 function FeaturedHeroesButton() {
   return (

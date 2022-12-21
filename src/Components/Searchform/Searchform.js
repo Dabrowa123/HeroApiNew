@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Searchform.css";
 
 function Searchform() {
   const [searchInputValue, setSearchInputValue] = useState("");

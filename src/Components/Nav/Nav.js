@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade.js";
-import "./Nav.css";
 import logo from "../../assets/img/nav_logo.png";
 import { Link, useNavigate } from "react-router-dom";
 

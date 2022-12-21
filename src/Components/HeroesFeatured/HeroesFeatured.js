@@ -1,6 +1,5 @@
 import { React } from "react";
 import HeroCard from "../HeroCard/HeroCard.js";
-import "./HeroesFeatured.css";
 import batmanImg from "../../assets/img/batman.jpg";
 import freezeImg from "../../assets/img/freeze.jpg";
 import penguinImg from "../../assets/img/penguin.jpg";

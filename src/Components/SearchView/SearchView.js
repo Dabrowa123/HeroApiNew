@@ -3,7 +3,6 @@ import { useParams } from "react-router";
 import { searchHeroesByName } from "../../requests.js";
 import HeroCard from "../HeroCard/HeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
-import "./SearchView.css";
 
 function SearchView() {
   const [searchList, setSearchListContent] = useState([]);
