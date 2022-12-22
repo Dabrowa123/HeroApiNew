@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { reset } from "../actions";
+import { reset } from "../actions.js";
 
-const heroesSlice = createSlice({
-  name: "heroes",
+const heroesBattleSlice = createSlice({
+  name: "heroesBattle",
   initialState: [],
   reducers: {
-    addHero(state, action) {
+    addHeroBattle(state, action) {
       state.push(action.payload);
     },
-    removeHero(state, action) {
+    removeHeroBattle(state, action) {
       const index = state.indexOf(action.payload);
       state.splice(index, 1);
     },
@@ -20,5 +20,5 @@ const heroesSlice = createSlice({
   },
 });
 
-export const { addHero, removeHero } = heroesSlice.actions;
-export const heroesReducer = heroesSlice.reducer;
+export const { addHeroBattle, removeHeroBattle } = heroesBattleSlice.actions;
+export const heroesBattleReducer = heroesBattleSlice.reducer;

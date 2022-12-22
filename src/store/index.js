@@ -1,17 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { heroesReducer, addHero, removeHero } from "./slices/heroesSlice";
+import { heroesBattleReducer, addHeroBattle, removeHeroBattle } from "./slices/heroesBattleSlice.js";
 import {
-  villainsReducer,
-  addVillain,
-  removeVillain,
-} from "./slices/villainsSlice";
-import { reset } from "./actions";
+  villainsBattleReducer,
+  addVillainBattle,
+  removeVillainBattle,
+} from "./slices/villainsBattleSlice.js";
+import { reset } from "./actions.js";
 
 const store = configureStore({
   reducer: {
-    heroes: heroesReducer,
-    villains: villainsReducer,
+    heroesBattle: heroesBattleReducer,
+    villainsBattle: villainsBattleReducer,
   },
 });
 
-export { store, reset, addHero, removeHero, addVillain, removeVillain };
+export { store, reset, addHeroBattle, removeHeroBattle, addVillainBattle, removeVillainBattle };

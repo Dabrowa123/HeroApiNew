@@ -8,8 +8,22 @@ import React from "react";
 // import PlaceholderImage from "../../assets/img/superman-placeholder.png";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import "react-lazy-load-image-component/src/effects/blur.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addVillainBattle, removeVillainBattle } from "../store";
 
 function BattleVillains() {
+  const dispatch = useDispatch();
+  const villainsListBattle = useSelector((state) => {
+    return state.villains;
+  });
+
+  const handleVillainAddToBattle = (villain) => {
+    dispatch(addVillainBattle(villain));
+  };
+  const handleVillainRemoveFromBattle = (villain) => {
+    dispatch(removeVillainBattle(villain));
+  };
+
   return <section className="battle-villains"></section>;
 }
 
