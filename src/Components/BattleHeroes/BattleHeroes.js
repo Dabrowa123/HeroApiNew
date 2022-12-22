@@ -9,7 +9,7 @@ import React from "react";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addHeroBattle, removeHeroBattle } from "../store";
+import { addHeroBattle, removeHeroBattle } from "../../store/index.js";
 
 function BattleHeroes() {
   const dispatch = useDispatch();

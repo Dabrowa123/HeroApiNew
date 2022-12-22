@@ -1,4 +1,6 @@
 import React from "react";
+import BattleHeroes from "../BattleHeroes/BattleHeroes.js";
+import BattleVillains from "../BattleVillains/BattleVillains.js";
 // import { useState, useEffect } from "react";
 // import supermanDesktop from "../../assets/img/superman-desktop.png";
 // import supermanMobile from "../../assets/img/superman-mobile.png";
@@ -10,7 +12,13 @@ import React from "react";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Battle() {
-  return <section className="battle"></section>;
+  return (
+    <section className="battle">
+      <h2>Battle</h2>
+      <BattleHeroes />
+      <BattleVillains />
+    </section>
+  );
 }
 
 export default Battle;
