@@ -9,22 +9,34 @@ import React from "react";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addHeroBattle, removeHeroBattle } from "../../store/index.js";
+import { removeHeroBattle } from "../../store/index.js";
 
 function BattleHeroes() {
   const dispatch = useDispatch();
   const heroesListBattle = useSelector((state) => {
-    return state.heroes;
+    return state.heroesBattle;
   });
 
-  const handleHeroAddToBattle = (hero) => {
-    dispatch(addHeroBattle(hero));
-  };
-  const handleHeroRemoveFromBattle = (hero) => {
-    dispatch(removeHeroBattle(hero));
+
+  const handleHeroRemoveFromBattle = (id) => {
+    console.log(id);
+    dispatch(removeHeroBattle(id));
   };
 
-  return <section className="battle-heroes"></section>;
+  const renderedHeroes = heroesListBattle.map((id) => {
+    return (
+      <li key={id}>
+        {id}
+        <button onClick={() => handleHeroRemoveFromBattle(id)}>remove</button>
+      </li>
+    );
+  });
+
+  return (
+    <section className="battle-heroes">
+      <ul>{renderedHeroes}</ul>
+    </section>
+  );
 }
 
 export default BattleHeroes;

@@ -1,6 +1,8 @@
 import React from "react";
 import BattleHeroes from "../BattleHeroes/BattleHeroes.js";
 import BattleVillains from "../BattleVillains/BattleVillains.js";
+import SearchformBattle from "../UI/SearchformBattle/SearchformBattle.js";
+import SearchViewBattle from "../SearchViewBattle/SearchViewBattle.js";
 // import { useState, useEffect } from "react";
 // import supermanDesktop from "../../assets/img/superman-desktop.png";
 // import supermanMobile from "../../assets/img/superman-mobile.png";
@@ -15,8 +17,12 @@ function Battle() {
   return (
     <section className="battle">
       <h2>Battle</h2>
-      <BattleHeroes />
-      <BattleVillains />
+      <div className="battle__container">
+        <BattleHeroes />
+        <BattleVillains />
+      </div>
+      <SearchformBattle />
+      <SearchViewBattle />
     </section>
   );
 }

@@ -23,15 +23,14 @@ function App() {
                 element={
                   <>
                     <LandingPage />
-                    <br/>
+                    <br />
                     <HeroesFeatured className="featured__list" />
-                    <br/>
-                    <Battle />
                   </>
                 }
               />
               <Route path="/search/:name" element={<SearchView />} />
               <Route path="/hero/:id" element={<HeroDetails />} />
+              <Route path="/battle" element={<Battle />} />
             </Routes>
           </div>
         </main>

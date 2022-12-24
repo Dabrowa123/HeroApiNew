@@ -3,7 +3,7 @@ import { reset } from "../actions.js";
 
 const heroesBattleSlice = createSlice({
   name: "heroesBattle",
-  initialState: [],
+  initialState: ["batman"],
   reducers: {
     addHeroBattle(state, action) {
       state.push(action.payload);
