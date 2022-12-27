@@ -8,6 +8,8 @@ import React from "react";
 // import PlaceholderImage from "../../assets/img/superman-placeholder.png";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import "react-lazy-load-image-component/src/effects/blur.css";
+import * as icon from "../../assets/icons/index.js";
+import batman from "../../assets/img/batman.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { removeHeroBattle, store } from "../../store/index.js";
 import { getBasicHeroInfoById } from "../../requests.js";
@@ -24,9 +26,9 @@ function BattleHeroes() {
 
   const renderedHeroes = heroesListBattle.map((hero) => {
     return (
-      <li key={hero.id}>
+      <li className="battle-heroes__list-item" key={hero.id}>
         <img src={hero.imgUrl} width={"40px"} />
-        name: {hero.name}
+        {hero.name}
         {hero.powerstats.combat} {hero.powerstats.durability}
         {hero.powerstats.intelligence} {hero.powerstats.speed}
         {hero.powerstats.strength}
@@ -37,7 +39,60 @@ function BattleHeroes() {
 
   return (
     <section className="battle-heroes">
-      <ul>{renderedHeroes}</ul>
+      <ul>
+        <li className="battle-heroes__list-item">
+          <img src={batman} width={"55px"} />
+          <div className="battle-heroes__list-item-info">
+            <div className="battle-heroes__list-item-info-details">
+              Batman
+              <button className="battle-heroes__remove-button">Remove</button>
+            </div>
+            <div className="battle-heroes__list-item-info-details">
+              <div className="battle-heroes__list-item-stats">
+                <img
+                  className="battle-heroes__stats-icon"
+                  src={icon.combat}
+                  alt="combat icon"
+                />
+                50
+              </div>
+              <div className="battle-heroes__list-item-stats">
+                <img
+                  className="battle-heroes__stats-icon"
+                  src={icon.durability}
+                  alt="combat icon"
+                />
+                40{" "}
+              </div>
+              <div className="battle-heroes__list-item-stats">
+                <img
+                  className="battle-heroes__stats-icon"
+                  src={icon.intelligence}
+                  alt="combat icon"
+                />
+                30{" "}
+              </div>
+              <div className="battle-heroes__list-item-stats">
+                <img
+                  className="battle-heroes__stats-icon"
+                  src={icon.speed}
+                  alt="combat icon"
+                />
+                20{" "}
+              </div>
+              <div className="battle-heroes__list-item-stats">
+                <img
+                  className="battle-heroes__stats-icon"
+                  src={icon.strength}
+                  alt="combat icon"
+                />
+                60
+              </div>
+            </div>
+          </div>
+        </li>
+        {renderedHeroes}
+      </ul>
     </section>
   );
 }

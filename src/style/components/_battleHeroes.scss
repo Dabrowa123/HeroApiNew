@@ -3,9 +3,65 @@
   flex-wrap: wrap;
   min-width: 48.5%;
   min-height: 100px;
-  // border: 2px solid green;
   border-radius: 20px;
   -webkit-box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
   -moz-box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
   box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
+
+  &__list-item {
+    width: 390px;
+    max-width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  &__list-item-info {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__list-item-info-details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__remove-button {
+    display: block;
+    font-size: 12px;
+    // font-weight: bold;
+    background: white;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+    border: none;
+    // color: grey;
+    color: rgb(10, 10, 0);
+    // color: rgb(10, 173, 236);
+    cursor: pointer;
+    font-family: "MuseoModerno", cursive;
+    padding: 5px 15px;
+    // width: 100%;
+    box-shadow: 0 0 4px #2692dd inset;
+    -moz-box-shadow: 0 0 4px #2692dd inset;
+    -webkit-box-shadow: 0 0 4px #2692dd inset;
+    // box-shadow: 0 0 4px #2692dd inset;
+    // -moz-box-shadow: 0 0 4px #2692dd inset;
+    // -webkit-box-shadow: 0 0 4px #2692dd inset;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  }
+
+  &__stats-icon {
+    width: 20px;
+    margin: 0 8px 0 0;
+  }
+
+  &__list-item-stats {
+    margin: 10px 0 0 0;
+    display: flex;
+    align-items: center;
+  }
 }
