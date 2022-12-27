@@ -9,7 +9,14 @@
     gap: 3%;
   }
 
-  &__button-figth {
+  &__result-button {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button-fight {
     font-size: 20px;
     font-weight: bold;
     background: rgb(52, 173, 236);
@@ -19,7 +26,6 @@
     cursor: pointer;
     font-family: "MuseoModerno", cursive;
     padding: 10px;
-    margin: 15px 0 0 0;
     width: 100%;
     box-shadow: 0 0 9px #2692dd inset;
     -moz-box-shadow: 0 0 9px #2692dd inset;
@@ -27,5 +33,34 @@
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+  }
+
+  &__button-newfight {
+    display: block;
+    margin: 20px auto 0 auto;
+    font-size: 12px;
+    font-weight: bold;
+    background: white;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+    border: none;
+    // color: grey;
+    color: rgb(10, 173, 236);
+    cursor: pointer;
+    font-family: "MuseoModerno", cursive;
+    padding: 5px 15px;
+    // width: 100%;
+    box-shadow: 0 0 4px #2692dd inset;
+    -moz-box-shadow: 0 0 4px #2692dd inset;
+    -webkit-box-shadow: 0 0 4px #2692dd inset;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  }
+
+  &__result {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 30px;
   }
 }
