@@ -11,6 +11,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeVillainBattle, store } from "../../store/index.js";
 import { getBasicHeroInfoById } from "../../requests.js";
+import * as icon from "../../assets/icons/index.js";
 
 function BattleVillains() {
   const dispatch = useDispatch();
@@ -24,13 +25,61 @@ function BattleVillains() {
 
   const renderedVillains = villainsListBattle.map((hero) => {
     return (
-      <li key={hero.id}>
-        <img src={hero.imgUrl} width={"40px"} />
-        name: {hero.name}
-        {hero.powerstats.combat} {hero.powerstats.durability}
-        {hero.powerstats.intelligence} {hero.powerstats.speed}
-        {hero.powerstats.strength}
-        <button onClick={() => handleHeroRemoveFromBattle(hero)}>remove</button>
+      <li className="battle-heroes__list-item">
+        <img src={hero.imgUrl} width={"50px"} />
+        <div className="battle-heroes__list-item-info">
+          <div className="battle-heroes__list-item-info-details">
+            {hero.name}
+            <button
+              className="battle-heroes__remove-button"
+              onClick={() => handleHeroRemoveFromBattle(hero)}
+            >
+              Remove
+            </button>
+          </div>
+          <div className="battle-heroes__list-item-info-details">
+            <div className="battle-heroes__list-item-stats">
+              <img
+                className="battle-heroes__stats-icon"
+                src={icon.combat}
+                alt="combat icon"
+              />
+              {hero.powerstats.combat}
+            </div>
+            <div className="battle-heroes__list-item-stats">
+              <img
+                className="battle-heroes__stats-icon"
+                src={icon.durability}
+                alt="combat icon"
+              />
+              {hero.powerstats.durability}
+            </div>
+            <div className="battle-heroes__list-item-stats">
+              <img
+                className="battle-heroes__stats-icon"
+                src={icon.intelligence}
+                alt="combat icon"
+              />
+              {hero.powerstats.intelligence}
+            </div>
+            <div className="battle-heroes__list-item-stats">
+              <img
+                className="battle-heroes__stats-icon"
+                src={icon.speed}
+                alt="combat icon"
+              />
+              {hero.powerstats.speed}
+            </div>
+            <div className="battle-heroes__list-item-stats">
+              <img
+                className="battle-heroes__stats-icon"
+                src={icon.strength}
+                alt="combat icon"
+              />
+              {hero.powerstats.strength}
+            </div>
+          </div>
+        </div>
       </li>
     );
   });

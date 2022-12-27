@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
+    margin: 15px 0;
   }
 
   &__list-item-info {
@@ -27,28 +28,24 @@
   &__list-item-info-details {
     display: flex;
     justify-content: space-between;
+    font-size: 18px;
+    font-weight: bolder;
   }
 
   &__remove-button {
     display: block;
     font-size: 12px;
-    // font-weight: bold;
     background: white;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
     border: none;
-    // color: grey;
     color: rgb(10, 10, 0);
-    // color: rgb(10, 173, 236);
     cursor: pointer;
     font-family: "MuseoModerno", cursive;
     padding: 5px 15px;
-    // width: 100%;
+    margin: 0 -5px 0 0;
     box-shadow: 0 0 4px #2692dd inset;
     -moz-box-shadow: 0 0 4px #2692dd inset;
     -webkit-box-shadow: 0 0 4px #2692dd inset;
-    // box-shadow: 0 0 4px #2692dd inset;
-    // -moz-box-shadow: 0 0 4px #2692dd inset;
-    // -webkit-box-shadow: 0 0 4px #2692dd inset;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -60,8 +57,10 @@
   }
 
   &__list-item-stats {
-    margin: 10px 0 0 0;
+    margin: 5px 0 0 0;
     display: flex;
     align-items: center;
+    font-size: 14px;
+    font-weight: initial;
   }
 }
