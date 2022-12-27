@@ -1,8 +1,8 @@
 import React from "react";
-import BattleHeroes from "../BattleHeroes/BattleHeroes.js";
-import BattleVillains from "../BattleVillains/BattleVillains.js";
-import SearchformBattle from "../UI/SearchformBattle/SearchformBattle.js";
-import SearchViewBattle from "../SearchViewBattle/SearchViewBattle.js";
+import BattleHeroes from "./BattleHeroes.js";
+import BattleVillains from "./BattleVillains.js";
+import SearchformBattle from "./SearchformBattle.js";
+import SearchViewBattle from "./SearchViewBattle.js";
 import { useSelector } from "react-redux";
 // import { useState, useEffect } from "react";
 // import supermanDesktop from "../../assets/img/superman-desktop.png";

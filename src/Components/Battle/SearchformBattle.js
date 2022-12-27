@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { searchNameToBattle, store } from "../../../store/index.js";
+import { searchNameToBattle, store } from "../../store/index.js";
 import { useDispatch } from "react-redux";
 
 function SearchformBattle() {
