@@ -90,7 +90,8 @@ function BattleHeroes() {
 
   return (
     <section className="battle-heroes">
-      <ul>
+      <h2 className="battle-heroes__heading">Heroes Team</h2>
+      <ul className="battle-heroes__list">
         {/* <li className="battle-heroes__list-item">
           <img src={batman} width={"55px"} />
           <div className="battle-heroes__list-item-info">

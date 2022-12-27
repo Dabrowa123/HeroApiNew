@@ -41,6 +41,18 @@ function Nav() {
     }
   };
 
+  // Display searchform
+  const [enableSearch, setEnableSearch] = useState(true);
+
+  useEffect(() => {
+    if (window.location.pathname === "/battle") {
+      setEnableSearch(false);
+    } else {
+      setEnableSearch(true);
+    }
+    // eslint-disable-next-line
+  }, [window.location.pathname]);
+
   return (
     <Fade>
       <nav className={isvisible ? "nav" : "nav-display-none"}>
@@ -48,26 +60,33 @@ function Nav() {
           <Link to="/">
             <img className="nav__logo" src={logo} alt="Superhero Database" />
           </Link>
-          <div className="nav__search">
-            <form>
-              <input
-                id="search-input"
-                onChange={(event) => setSearchInputValue(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    handleSearch(event);
-                  }
-                }}
-                type="text"
-                name="search-nav"
-                placeholder=" type hero name"
-                required
-              />
-              <button onClick={(event) => handleSearch(event)}>
-                find hero!
-              </button>
-            </form>
-          </div>
+          {enableSearch && (
+            <div className="nav__search">
+              <form>
+                <input
+                  id="search-input"
+                  onChange={(event) => setSearchInputValue(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                      handleSearch(event);
+                    }
+                  }}
+                  type="text"
+                  name="search-nav"
+                  placeholder=" type hero name"
+                  required
+                />
+                <button onClick={(event) => handleSearch(event)}>
+                  find hero!
+                </button>
+              </form>
+            </div>
+          )}
+          {!enableSearch && (
+            <div className="nav__buttons">
+              <Link to="/"><button className="nav__button-home">HOME</button></Link>
+            </div>
+          )}
         </div>
       </nav>
     </Fade>

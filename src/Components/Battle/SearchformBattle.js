@@ -29,7 +29,7 @@ function SearchformBattle() {
         }}
         type="text"
         name="search-landing"
-        placeholder="type hero name"
+        placeholder="type hero to add"
         required
       />
       <button

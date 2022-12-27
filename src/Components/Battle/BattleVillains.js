@@ -86,7 +86,9 @@ function BattleVillains() {
 
   return (
     <section className="battle-heroes">
-      <ul>{renderedVillains}</ul>
+      <h2 className="battle-heroes__heading">Villains Team</h2>
+      <ul className="battle-heroes__list">
+      {renderedVillains}</ul>
     </section>
   );
 }
