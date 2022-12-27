@@ -9,7 +9,8 @@ import React from "react";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch, useSelector } from "react-redux";
-import { removeHeroBattle } from "../../store/index.js";
+import { removeHeroBattle, store } from "../../store/index.js";
+import { getBasicHeroInfoById } from "../../requests.js";
 
 function BattleHeroes() {
   const dispatch = useDispatch();
@@ -17,17 +18,19 @@ function BattleHeroes() {
     return state.heroesBattle;
   });
 
-
-  const handleHeroRemoveFromBattle = (id) => {
-    console.log(id);
-    dispatch(removeHeroBattle(id));
+  const handleHeroRemoveFromBattle = (hero) => {
+    dispatch(removeHeroBattle(hero));
   };
 
-  const renderedHeroes = heroesListBattle.map((id) => {
+  const renderedHeroes = heroesListBattle.map((hero) => {
     return (
-      <li key={id}>
-        {id}
-        <button onClick={() => handleHeroRemoveFromBattle(id)}>remove</button>
+      <li key={hero.id}>
+        <img src={hero.imgUrl} width={"40px"} />
+        name: {hero.name}
+        {hero.powerstats.combat} {hero.powerstats.durability}
+        {hero.powerstats.intelligence} {hero.powerstats.speed}
+        {hero.powerstats.strength}
+        <button onClick={() => handleHeroRemoveFromBattle(hero)}>remove</button>
       </li>
     );
   });

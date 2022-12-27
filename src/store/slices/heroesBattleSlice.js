@@ -3,13 +3,13 @@ import { reset } from "../actions.js";
 
 const heroesBattleSlice = createSlice({
   name: "heroesBattle",
-  initialState: ["batman"],
+  initialState: [],
   reducers: {
     addHeroBattle(state, action) {
       state.push(action.payload);
     },
     removeHeroBattle(state, action) {
-      const index = state.indexOf(action.payload);
+      const index = state.findIndex((hero) => hero.id === action.payload.id);
       state.splice(index, 1);
     },
   },

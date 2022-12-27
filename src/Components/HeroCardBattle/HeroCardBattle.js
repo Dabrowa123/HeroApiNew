@@ -11,14 +11,15 @@ import { addHeroBattle, store } from "../../store/index.js";
 function HeroCardBattle({ name, imgUrl, powerstats, id }) {
   const dispatch = useDispatch();
   const handleAddToHeroes = () => {
-    dispatch(addHeroBattle(id));
+    const hero = { name, imgUrl, powerstats, id };
+    dispatch(addHeroBattle(hero));
     console.log(store.getState());
   };
 
   return (
     <Fade>
       <div className="hero-card">
-        <button onClick={handleAddToHeroes}>Add to Heroes</button>
+        <span onClick={handleAddToHeroes}>Add to Heroes</span>
         <button>Add to Villains</button>
         <h2 className="hero-card__heading">{name}</h2>
         <div className="hero-card__img-container">
