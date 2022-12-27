@@ -1,0 +1,113 @@
+.battle-button {
+  background: rgb(52, 173, 236);
+  background: -moz-linear-gradient(
+    top,
+    rgba(52, 173, 236, 1) 0%,
+    rgba(38, 145, 220, 1) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(52, 173, 236, 1)),
+    color-stop(100%, rgba(38, 145, 220, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(52, 173, 236, 1) 0%,
+    rgba(38, 145, 220, 1) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(52, 173, 236, 1) 0%,
+    rgba(38, 145, 220, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(52, 173, 236, 1) 0%,
+    rgba(38, 145, 220, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(52, 173, 236, 1) 0%,
+    rgba(38, 145, 220, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: "MuseoModerno", cursive;
+  padding: 10px;
+  width: 106px;
+  box-shadow: 0 0 2px #2692dd inset;
+  -moz-box-shadow: 0 0 2px #2692dd inset;
+  -webkit-box-shadow: 0 0 2px #2692dd inset;
+  border-radius: 9px;
+  -moz-border-radius: 9px;
+  -webkit-border-radius: 9px;
+
+  &:hover {
+    // opacity: 0.9;
+    background: #fff;
+    -webkit-text-fill-color: rgb(211, 54, 60);
+    box-shadow: 0 0 15px rgb(153, 74, 65) inset;
+    -moz-box-shadow: 0 0 15px rgb(153, 74, 65) inset;
+    -webkit-box-shadow: 0 0 15px rgb(153, 74, 65) inset;
+  }
+
+  @include media(medium) {
+    font-size: 22px;
+    background: rgb(211, 54, 60);
+    background: -moz-linear-gradient(
+      top,
+      rgba(211, 54, 60, 1) 0%,
+      rgba(211, 54, 60, 1) 100%
+    );
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0%, rgba(211, 54, 60, 1)),
+      color-stop(100%, rgba(211, 54, 60, 1))
+    );
+    background: -webkit-linear-gradient(
+      top,
+      rgba(211, 54, 60, 1) 0%,
+      rgba(211, 54, 60, 1) 100%
+    );
+    background: -o-linear-gradient(
+      top,
+      rgba(211, 54, 60, 1) 0%,
+      rgba(211, 54, 60, 1) 100%
+    );
+    background: -ms-linear-gradient(
+      top,
+      rgba(211, 54, 60, 1) 0%,
+      rgba(211, 54, 60, 1) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      rgba(211, 54, 60, 1) 0%,
+      rgba(211, 54, 60, 1) 100%
+    );
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: "MuseoModerno", cursive;
+    padding: 7px;
+    width: 106px;
+    box-shadow: 0 0 15px rgb(153, 74, 65) inset;
+    -moz-box-shadow: 0 0 15px rgb(153, 74, 65) inset;
+    -webkit-box-shadow: 0 0 15px rgb(153, 74, 65) inset;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+  }
+
+  @include media(xlarge) {
+    margin: 110px 0 0 0;
+    font-size: 23px;
+    width: 200px;
+  }
+}

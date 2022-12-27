@@ -4,7 +4,7 @@ import battle from "../../assets/img/battle2.png";
 import supermanMobile from "../../assets/img/superman-mobile.png";
 import Searchform from ".././UI/Searchform/Searchform.js";
 import Fade from "react-reveal/Fade.js";
-import FeaturedHeroesButton from "../UI/Buttons/FeaturedHeroesButton.js";
+import BattleButton from "../UI/Buttons/BattleButton.js";
 import PlaceholderImage from "../../assets/img/superman-placeholder.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -26,15 +26,18 @@ function BattleMainPage() {
   return (
     <section className="battle-mainpage">
       <div className="battle-mainpage__info">
-        <h2 className="battle-mainpage__heading">Play Game</h2>
-        <h2 className="battle-mainpage__heading">CREATE SUPERHERO BATTLE</h2>
+        <h2 className="battle-mainpage__heading">SUPERHERO BATTLE</h2>
+        <h2 className="battle-mainpage__description">
+          Create champonship of your<br/> favourite characters
+        </h2>
+        <BattleButton />
       </div>
       <div className="battle-mainpage__image">
         <Fade left duration={1000} delay={600} distance="70px">
           <LazyLoadImage
             className=""
             src={battle}
-            width={"400px"}
+            width={"450px"}
             height={"auto"}
             alt="Superman"
             placeholderSrc={PlaceholderImage}

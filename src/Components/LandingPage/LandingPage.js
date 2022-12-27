@@ -26,8 +26,9 @@ function LandingPage() {
   return (
     <section className="landing">
       <div className="landing__superman-container">
-        {isMobile && (<Fade left duration={1000} delay={600} distance="70px">
-          <LazyLoadImage
+        {isMobile && (
+          <Fade left duration={1000} delay={600} distance="70px">
+            <LazyLoadImage
               className="landing__img-superman"
               src={supermanDesktop}
               width={supermanDesktop.width}
@@ -36,10 +37,12 @@ function LandingPage() {
               placeholderSrc={PlaceholderImage}
               effect="blur"
             />
-        </Fade>)}
+          </Fade>
+        )}
 
-        {isDesktop && (<Fade left duration={1000} delay={600} distance="70px">
-          <LazyLoadImage
+        {isDesktop && (
+          <Fade left duration={1000} delay={600} distance="70px">
+            <LazyLoadImage
               className="landing__img-superman"
               src={supermanMobile}
               width={supermanMobile.width}
@@ -48,7 +51,8 @@ function LandingPage() {
               placeholderSrc={PlaceholderImage}
               effect="blur"
             />
-        </Fade>)}
+          </Fade>
+        )}
       </div>
       <div className="landing__content-container">
         <div className="landing__content">
