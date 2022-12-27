@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { searchHeroesByName } from "../../requests.js";
 import { useDispatch, useSelector } from "react-redux";
-import HeroCardBattle from "./HeroCardBattle.js";
+import BattleHeroCard from "./BattleHeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
 
-function SearchViewBattle() {
+function BattleSearchView() {
   const [searchList, setSearchListContent] = useState([]);
   const [characterNotFound, setcharacterNotFound] = useState(false);
   const [isLoading, setLoadingState] = useState(true);
@@ -38,9 +38,9 @@ function SearchViewBattle() {
   return (
     <>
       {!isLoading && (
-        <section className="search">
+        <section className="battle-search">
           {!characterNotFound && (
-            <h2 className="search__heading">
+            <h2 className="battle-search__heading">
               We found below heroes matching name:{" "}
               <span className="search_uppercase-name-span">
                 &nbsp;{uppercaseName}
@@ -50,7 +50,7 @@ function SearchViewBattle() {
           <div className="search__list-wrapper">
             {searchList.map(({ powerstats, image, name, id }) => {
               return (
-                <HeroCardBattle
+                <BattleHeroCard
                   key={id}
                   powerstats={powerstats}
                   imgUrl={image.url}
@@ -77,4 +77,4 @@ function SearchViewBattle() {
   );
 }
 
-export default SearchViewBattle;
+export default BattleSearchView;

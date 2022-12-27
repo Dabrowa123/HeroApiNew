@@ -2,7 +2,7 @@ import React from "react";
 import BattleHeroes from "./BattleHeroes.js";
 import BattleVillains from "./BattleVillains.js";
 import SearchformBattle from "./SearchformBattle.js";
-import SearchViewBattle from "./SearchViewBattle.js";
+import BattleSearchView from "./BattleSearchView.js";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 // import { useState, useEffect } from "react";
@@ -85,7 +85,7 @@ function Battle() {
       </div>
       <br></br>
       <SearchformBattle />
-      <SearchViewBattle />
+      <BattleSearchView />
     </section>
   );
 }
