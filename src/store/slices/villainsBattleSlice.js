@@ -9,7 +9,7 @@ const villainsBattleSlice = createSlice({
       state.push(action.payload);
     },
     removeVillainBattle(state, action) {
-      const index = state.indexOf(action.payload);
+      const index = state.findIndex((hero) => hero.id === action.payload.id);
       state.splice(index, 1);
     },
   },
@@ -20,5 +20,6 @@ const villainsBattleSlice = createSlice({
   },
 });
 
-export const { addVillainBattle, removeVillainBattle } = villainsBattleSlice.actions;
+export const { addVillainBattle, removeVillainBattle } =
+  villainsBattleSlice.actions;
 export const villainsBattleReducer = villainsBattleSlice.reducer;

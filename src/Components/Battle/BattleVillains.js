@@ -9,22 +9,37 @@ import React from "react";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addVillainBattle, removeVillainBattle } from "../../store/index.js";
+import { removeVillainBattle, store } from "../../store/index.js";
+import { getBasicHeroInfoById } from "../../requests.js";
 
 function BattleVillains() {
   const dispatch = useDispatch();
   const villainsListBattle = useSelector((state) => {
-    return state.villains;
+    return state.villainsBattle;
   });
 
-  const handleVillainAddToBattle = (villain) => {
-    dispatch(addVillainBattle(villain));
-  };
-  const handleVillainRemoveFromBattle = (villain) => {
-    dispatch(removeVillainBattle(villain));
+  const handleHeroRemoveFromBattle = (hero) => {
+    dispatch(removeVillainBattle(hero));
   };
 
-  return <section className="battle-villains"></section>;
+  const renderedVillains = villainsListBattle.map((hero) => {
+    return (
+      <li key={hero.id}>
+        <img src={hero.imgUrl} width={"40px"} />
+        name: {hero.name}
+        {hero.powerstats.combat} {hero.powerstats.durability}
+        {hero.powerstats.intelligence} {hero.powerstats.speed}
+        {hero.powerstats.strength}
+        <button onClick={() => handleHeroRemoveFromBattle(hero)}>remove</button>
+      </li>
+    );
+  });
+
+  return (
+    <section className="battle-heroes">
+      <ul>{renderedVillains}</ul>
+    </section>
+  );
 }
 
 export default BattleVillains;

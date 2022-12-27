@@ -6,7 +6,7 @@ import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch } from "react-redux";
-import { addHeroBattle, store } from "../../store/index.js";
+import { addHeroBattle, addVillainBattle, store } from "../../store/index.js";
 
 function HeroCardBattle({ name, imgUrl, powerstats, id }) {
   const dispatch = useDispatch();
@@ -15,12 +15,17 @@ function HeroCardBattle({ name, imgUrl, powerstats, id }) {
     dispatch(addHeroBattle(hero));
     console.log(store.getState());
   };
+  const handleAddToVillains = () => {
+    const hero = { name, imgUrl, powerstats, id };
+    dispatch(addVillainBattle(hero));
+    console.log(store.getState());
+  };
 
   return (
     <Fade>
       <div className="hero-card">
         <span onClick={handleAddToHeroes}>Add to Heroes</span>
-        <button>Add to Villains</button>
+        <span onClick={handleAddToVillains}>Add to Villains</span>
         <h2 className="hero-card__heading">{name}</h2>
         <div className="hero-card__img-container">
           <Link to={`/hero/${id}`}>
