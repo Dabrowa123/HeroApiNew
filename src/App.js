@@ -7,6 +7,7 @@ import LandingPage from "./Components/LandingPage/LandingPage.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SearchView from "./Components/SearchView/SearchView.js";
 import HeroDetails from "./Components/HeroDetails/HeroDetails.js";
+import BattleMainPage from "./Components/Battle/BattleMainPage.js";
 import Footer from "./Components/Footer/Footer.js";
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
                     <LandingPage />
                     <br />
                     <HeroesFeatured className="featured__list" />
+                    <br />
+                    <BattleMainPage />
                   </>
                 }
               />
