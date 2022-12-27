@@ -22,7 +22,7 @@
       }
     }
   }
-  
+
   &:after {
     content: "";
     border-radius: 20px;
@@ -62,11 +62,11 @@
     justify-content: space-around;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 15px 0 5px 0;
+    padding: 0 0 5px 0;
     text-align: center;
     background-color: white;
   }
-  
+
   &__stats-icon {
     width: 25px;
     margin-top: 10px;

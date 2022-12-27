@@ -24,11 +24,26 @@ function BattleHeroCard({ name, imgUrl, powerstats, id }) {
   return (
     <Fade>
       <div className="hero-card">
-        <div className="battle-hero-card__heading-container">
+        <div className="battle-hero-card__buttons-container">
+          <span
+            className="battle-hero-card__btn battle-hero-card__btn--add"
+            onClick={handleAddToHeroes}
+          >
+            Add to Heroes
+          </span>
+          <span
+            className="battle-hero-card__btn battle-hero-card__btn--remove"
+            onClick={handleAddToVillains}
+          >
+            Add to Villains
+          </span>
+        </div>
+        <h2 className="hero-card__heading">{name}</h2>
+        {/* <div className="battle-hero-card__heading-container">
           <button className="battle-hero-card__button" onClick={handleAddToHeroes}>Add to<br />Heroes</button>
           <h2 className="hero-card__heading">{name}</h2>
           <button className="battle-hero-card__button" onClick={handleAddToVillains}>Add to<br />Villains</button>
-        </div>
+        </div> */}
         <div className="hero-card__img-container">
           <Link to={`/hero/${id}`}>
             <LazyLoadImage
