@@ -50,7 +50,7 @@ function Battle() {
         <BattleHeroes />
         <BattleVillains />
       </div>
-      <button onClick={handleFigth}>Figth!</button>
+      <button className="battle__button-figth" onClick={handleFigth}>Figth!</button>
       <div>Result of Battle: {battleResult}</div>
       <br></br>
       {/* <div>Sum of heroes stats: {heroesStatsSum}</div>

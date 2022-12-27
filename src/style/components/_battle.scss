@@ -4,7 +4,28 @@
   flex-direction: column;
 
   &__container {
+    margin: 50px 0 30px 0;
     display: flex;
+    gap: 3%;
+  }
+
+  &__button-figth {
+    font-size: 20px;
+    font-weight: bold;
+    background: rgb(52, 173, 236);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: "MuseoModerno", cursive;
+    padding: 10px;
+    margin: 15px 0 0 0;
+    width: 100%;
+    box-shadow: 0 0 9px #2692dd inset;
+    -moz-box-shadow: 0 0 9px #2692dd inset;
+    -webkit-box-shadow: 0 0 9px #2692dd inset;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
   }
 }
-
