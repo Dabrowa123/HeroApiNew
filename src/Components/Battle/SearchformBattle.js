@@ -7,12 +7,16 @@ function SearchformBattle() {
 
   const [searchInputValue, setSearchInputValue] = useState("");
 
+  const input = document.getElementById("search-input-battle");
+
   const handleSearch = (event) => {
     if (searchInputValue === "") {
       return;
     } else {
       event.preventDefault();
       dispatch(searchNameToBattle(searchInputValue));
+      setSearchInputValue("");
+      input.value = "";
     }
   };
 
@@ -20,7 +24,7 @@ function SearchformBattle() {
     <form className="searchform cf">
       <input
         className="searchform__input"
-        id="search-input-landing"
+        id="search-input-battle"
         onChange={(event) => setSearchInputValue(event.target.value)}
         onKeyDown={(event) => {
           if (event.key === "Enter") {

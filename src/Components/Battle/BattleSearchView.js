@@ -6,8 +6,9 @@ import Loader from "../Assets/Loader/Loader.js";
 
 function BattleSearchView() {
   const [searchList, setSearchListContent] = useState([]);
-  const [characterNotFound, setcharacterNotFound] = useState(false);
-  const [isLoading, setLoadingState] = useState(true);
+  const [characterNotFound, setCharacterNotFound] = useState(false);
+  const [isLoading, setLoadingState] = useState(false);
+  const [pageInitState, setPageInitState] = useState(true);
 
   // const dispatch = useDispatch();
   const name = useSelector((state) => {
@@ -16,20 +17,25 @@ function BattleSearchView() {
   const uppercaseName = name.charAt(0).toUpperCase() + name.slice(1);
 
   useEffect(() => {
+    if (name === "") {
+      return;
+    }
+    setPageInitState(false);
     setLoadingState(true);
     searchHeroesByName(name).then((searchResults) => {
       const { data } = searchResults;
 
       if (data.error) {
         setSearchListContent([]);
-        setcharacterNotFound(true);
+        setCharacterNotFound(true);
         setLoadingState(false);
         return;
       }
 
       const { results } = data;
 
-      setcharacterNotFound(false);
+      setPageInitState(false);
+      setCharacterNotFound(false);
       setSearchListContent(results);
       setLoadingState(false);
     });
@@ -37,9 +43,15 @@ function BattleSearchView() {
 
   return (
     <>
+      {pageInitState && (
+        <div className="battle-search__heading">
+          <h3>Find characters and add them to battle</h3>
+          <span className="search__uppercase-name-span">{uppercaseName}</span>
+        </div>
+      )}
       {!isLoading && (
         <section className="battle-search">
-          {!characterNotFound && (
+          {!pageInitState && !characterNotFound && (
             <h2 className="battle-search__heading">
               We found below heroes matching name:{" "}
               <span className="search_uppercase-name-span">
@@ -67,10 +79,12 @@ function BattleSearchView() {
           <Loader />
         </div>
       )}
-      {characterNotFound && !isLoading && (
-        <div className="search__notfound">
-          <h3>Unfortunately, we did not find a character with name:</h3>
-          <span className="search__uppercase-name-span">{uppercaseName}</span>
+      {!pageInitState && characterNotFound && !isLoading && (
+        <div>
+          <h3 className="battle-search__heading">
+            Unfortunately, we did not find a character with name:&nbsp;&nbsp;
+            <span className="search__uppercase-name-span">{uppercaseName}</span>
+          </h3>
         </div>
       )}
     </>
