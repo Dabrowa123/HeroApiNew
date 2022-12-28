@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade.js";
-import logo from "../../assets/img/nav_logo.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { searchNameToBattle, store } from "../../store/index.js";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { searchNameToBattle } from "../../store/index.js";
+import { Link } from "react-scroll";
+import { HashLink } from "react-router-hash-link";
 
 function Nav() {
   // Adding sticky nav logic
@@ -61,98 +61,104 @@ function Nav() {
   }, [window.location.pathname]);
 
   const dispatch = useDispatch();
-  const handleHome = () => {
-    dispatch(searchNameToBattle(""));
-    navigate("/#landing");
-  };
-  const handleFeatured = () => {
-    dispatch(searchNameToBattle(""));
-    navigate("/#featured");
-  };
 
   return (
     <Fade>
       <nav className={isvisible ? "nav" : "nav-display-none"}>
         <div className="container nav__container">
-          {/* <img
-            className="nav__logo"
-            onClick={handleHome}
-            src={logo}
-            alt="Superhero Database"
-          /> */}
-          <div className="nav__buttons">
-            <Link
-              activeClass="active"
-              to="landing"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={1000}
-            >
-              HOME
-            </Link>
-            <Link
-              activeClass="active"
-              to="featured"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={1000}
-            >
-              FEATURED
-            </Link>
-            <Link
-              activeClass="active"
-              to="battle"
-              spy={true}
-              smooth={true}
-              offset={20}
-              duration={1000}
-            >
-              BATTLE
-            </Link>
-          </div>
-          {/* <div className="nav__buttons">
-            <a href="#landing" className="nav__button-home">
-              HOME
-            </a>
-            <a href="#featured" className="nav__button-home">
-              FEATURED
-            </a>
-            <a href="#battle" className="nav__button-home">
-              BATTLE
-            </a>
-          </div> */}
           {enableSearch && (
-            <div className="nav__search">
-              <form>
-                <input
-                  id="search-input"
-                  onChange={(event) => setSearchInputValue(event.target.value)}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter") {
-                      handleSearch(event);
+            <>
+              <div className="nav__buttons">
+                <div className="nav__buttons">
+                  <Link
+                    activeClass="active"
+                    to="landing"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={1000}
+                  >
+                    <HashLink
+                      className="nav__button-home"
+                      spy
+                      smooth
+                      to="/#landing"
+                    >
+                      HOME
+                    </HashLink>
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="featured"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={1000}
+                  >
+                    <HashLink
+                      className="nav__button-home"
+                      spy
+                      smooth
+                      to="/#featured"
+                    >
+                      FEATURED
+                    </HashLink>
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="battle"
+                    spy={true}
+                    smooth={true}
+                    offset={20}
+                    duration={1000}
+                  >
+                    <HashLink
+                      className="nav__button-home"
+                      spy
+                      smooth
+                      to="/#battle"
+                    >
+                      BATTLE
+                    </HashLink>
+                  </Link>
+                </div>
+              </div>
+              <div className="nav__search">
+                <form>
+                  <input
+                    id="search-input"
+                    onChange={(event) =>
+                      setSearchInputValue(event.target.value)
                     }
-                  }}
-                  type="text"
-                  name="search-nav"
-                  placeholder=" Type hero name"
-                  required
-                />
-                <button onClick={(event) => handleSearch(event)}>
-                  find hero!
-                </button>
-              </form>
-            </div>
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") {
+                        handleSearch(event);
+                      }
+                    }}
+                    type="text"
+                    name="search-nav"
+                    placeholder=" Type hero name"
+                    required
+                  />
+                  <button onClick={(event) => handleSearch(event)}>
+                    find hero!
+                  </button>
+                </form>
+              </div>
+            </>
           )}
           {!enableSearch && (
             <div className="nav__buttons">
-              <button onClick={handleHome} className="nav__button-home">
-                HOME
-              </button>
-              <button onClick={handleFeatured} className="nav__button-home">
-                FEATURED
-              </button>
+              <HashLink className="nav__button-home" spy smooth to="/#landing">
+                <span onClick={() => dispatch(searchNameToBattle(""))}>
+                  HOME
+                </span>
+              </HashLink>
+              <HashLink className="nav__button-home" spy smooth to="/#featured">
+                <span onClick={() => dispatch(searchNameToBattle(""))}>
+                  FEATURED
+                </span>
+              </HashLink>
             </div>
           )}
         </div>
