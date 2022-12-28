@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { searchHeroesByName } from "../../requests.js";
 import { useDispatch, useSelector } from "react-redux";
+import { searchNameToBattle } from "../../store/index.js";
 import BattleHeroCard from "./BattleHeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
 
@@ -10,7 +11,6 @@ function BattleSearchView() {
   const [isLoading, setLoadingState] = useState(false);
   const [pageInitState, setPageInitState] = useState(true);
 
-  // const dispatch = useDispatch();
   const name = useSelector((state) => {
     return state.searchedNameToBattle[0];
   });
@@ -40,6 +40,13 @@ function BattleSearchView() {
       setLoadingState(false);
     });
   }, [name]);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (window.location.pathname !== "/") {
+      dispatch(searchNameToBattle(""));
+    }
+  });
 
   return (
     <>
