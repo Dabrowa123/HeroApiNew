@@ -38,9 +38,9 @@ function BattleMainPage() {
           <LazyLoadImage
             className=""
             src={battle}
-            width={"450px"}
+            width={"490px"}
             height={"auto"}
-            alt="Superman"
+            alt="Wonder Woman"
             placeholderSrc={PlaceholderImage}
             effect="blur"
           />

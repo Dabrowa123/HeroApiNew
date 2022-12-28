@@ -15,7 +15,7 @@
 
   &__heading {
     font-size: 52px;
-    margin: 0 0 10px 0;
+    margin: 15px 0 10px 0;
   }
 
   &__description {
@@ -27,8 +27,8 @@
   }
 
   &__image {
-    flex-grow: 2;
     display: flex;
     justify-content: center;
+    margin-right: -40px;
   }
 }
