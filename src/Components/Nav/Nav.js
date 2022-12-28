@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade.js";
 import logo from "../../assets/img/nav_logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { searchNameToBattle, store } from "../../store/index.js";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Nav() {
   // Adding sticky nav logic
@@ -62,16 +63,66 @@ function Nav() {
   const dispatch = useDispatch();
   const handleHome = () => {
     dispatch(searchNameToBattle(""));
-    navigate("/");
+    navigate("/#landing");
+  };
+  const handleFeatured = () => {
+    dispatch(searchNameToBattle(""));
+    navigate("/#featured");
   };
 
   return (
     <Fade>
       <nav className={isvisible ? "nav" : "nav-display-none"}>
         <div className="container nav__container">
-          <Link to="/">
-            <img className="nav__logo" src={logo} alt="Superhero Database" />
-          </Link>
+          {/* <img
+            className="nav__logo"
+            onClick={handleHome}
+            src={logo}
+            alt="Superhero Database"
+          /> */}
+          <div className="nav__buttons">
+            <Link
+              activeClass="active"
+              to="landing"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={1000}
+            >
+              HOME
+            </Link>
+            <Link
+              activeClass="active"
+              to="featured"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={1000}
+            >
+              FEATURED
+            </Link>
+            <Link
+              activeClass="active"
+              to="battle"
+              spy={true}
+              smooth={true}
+              offset={20}
+              duration={1000}
+            >
+              BATTLE
+            </Link>
+          </div>
+          {/* <div className="nav__buttons">
+            <a href="#landing" className="nav__button-home">
+              HOME
+            </a>
+            <a href="#featured" className="nav__button-home">
+              FEATURED
+            </a>
+            <a href="#battle" className="nav__button-home">
+              BATTLE
+            </a>
+          </div> */}
           {enableSearch && (
             <div className="nav__search">
               <form>
@@ -98,6 +149,9 @@ function Nav() {
             <div className="nav__buttons">
               <button onClick={handleHome} className="nav__button-home">
                 HOME
+              </button>
+              <button onClick={handleFeatured} className="nav__button-home">
+                FEATURED
               </button>
             </div>
           )}

@@ -34,7 +34,7 @@ function LandingPage() {
   });
 
   return (
-    <section className="landing">
+    <section className="landing" id="landing">
       <div className="landing__superman-container">
         {isMobile && (
           <Fade left duration={1000} delay={600} distance="70px">

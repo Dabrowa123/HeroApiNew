@@ -24,11 +24,12 @@ function BattleMainPage() {
   // }, []);
 
   return (
-    <section className="battle-mainpage">
+    <section className="battle-mainpage" id="battle">
       <div className="battle-mainpage__info">
         <h2 className="battle-mainpage__heading">SUPERHERO BATTLE</h2>
         <h2 className="battle-mainpage__description">
-          Create champonship of your<br/> favourite characters
+          Create championship of your
+          <br /> favourite characters
         </h2>
         <BattleButton />
       </div>
