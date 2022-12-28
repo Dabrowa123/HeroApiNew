@@ -12,6 +12,7 @@
 
   &__buttons {
     margin: 0 20px 0 0;
+    cursor: pointer;
   }
 
   &__button-home {
@@ -21,6 +22,14 @@
     color: white;
     font-family: "MuseoModerno", cursive;
     font-weight: 400;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      font-weight: bold;
+      transform: scale(1.01);
+      text-shadow: 0px 0px 10px white;
+    }
   }
 
   &__search input {
