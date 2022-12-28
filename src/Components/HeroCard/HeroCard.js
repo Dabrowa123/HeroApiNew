@@ -7,10 +7,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 function HeroCard({ name, imgUrl, powerstats, id }) {
+  
   return (
     <Fade>
       <div className="hero-card">
-        <h2 className="hero-card__heading">{name}</h2>
+        <h2 className="hero-card__heading">
+          {name}
+        </h2>
         <div className="hero-card__img-container">
           <Link to={`/hero/${id}`}>
             <LazyLoadImage
@@ -31,7 +34,7 @@ function HeroCard({ name, imgUrl, powerstats, id }) {
               src={icon.combat}
               alt="combat icon"
             />
-            <p>{(powerstats.combat === "null")? "?" : powerstats.combat }</p>
+            <p>{powerstats.combat === "null" ? "?" : powerstats.combat}</p>
           </div>
           <div>
             <img
@@ -39,7 +42,9 @@ function HeroCard({ name, imgUrl, powerstats, id }) {
               src={icon.durability}
               alt="durability icon"
             />
-            <p>{(powerstats.durability === "null")? "?" : powerstats.durability }</p>
+            <p>
+              {powerstats.durability === "null" ? "?" : powerstats.durability}
+            </p>
           </div>
           <div>
             <img
@@ -47,7 +52,11 @@ function HeroCard({ name, imgUrl, powerstats, id }) {
               src={icon.intelligence}
               alt="intelligence icon"
             />
-            <p>{(powerstats.intelligence === "null")? "?" : powerstats.intelligence }</p>
+            <p>
+              {powerstats.intelligence === "null"
+                ? "?"
+                : powerstats.intelligence}
+            </p>
           </div>
           <div>
             <img
@@ -55,7 +64,7 @@ function HeroCard({ name, imgUrl, powerstats, id }) {
               src={icon.speed}
               alt="combat speed"
             />
-            <p>{(powerstats.speed === "null")? "?" : powerstats.speed }</p>
+            <p>{powerstats.speed === "null" ? "?" : powerstats.speed}</p>
           </div>
           <div>
             <img
@@ -63,7 +72,7 @@ function HeroCard({ name, imgUrl, powerstats, id }) {
               src={icon.strength}
               alt="strength icon"
             />
-            <p>{(powerstats.strength === "null")? "?" : powerstats.strength }</p>
+            <p>{powerstats.strength === "null" ? "?" : powerstats.strength}</p>
           </div>
         </div>
       </div>

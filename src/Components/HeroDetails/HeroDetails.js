@@ -8,6 +8,7 @@ import * as icon from "../../assets/icons/index.js";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useNavigate } from "react-router-dom";
 
 function HeroDetails() {
   const { id } = useParams();
@@ -24,6 +25,8 @@ function HeroDetails() {
     fetchAndRenderHeroData(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -48,6 +51,7 @@ function HeroDetails() {
                   <Roll cascade>
                     <h2 className="details__heading">{heroData.name}</h2>
                   </Roll>
+                  <button onClick={() => navigate(-1)}>Back to search</button>
                   <h4 className="details__info-position">
                     Full name:{" "}
                     <Roll top cascade>
