@@ -63,6 +63,7 @@ function Battle() {
 
   const handleNewFight = () => {
     setIsFight(false);
+    dispatch(setWinners(""));
   };
 
   return (

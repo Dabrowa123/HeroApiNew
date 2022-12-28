@@ -23,6 +23,10 @@ function BattleVillains() {
     dispatch(removeVillainBattle(hero));
   };
 
+  const winners = useSelector((state) => {
+    return state.winners[0];
+  });
+
   const renderedVillains = villainsListBattle.map((hero) => {
     return (
       <li className="battle-heroes__list-item">
@@ -87,8 +91,15 @@ function BattleVillains() {
   return (
     <section className="battle-heroes">
       <h2 className="battle-heroes__heading">Villains Team</h2>
-      <ul className="battle-heroes__list">
-      {renderedVillains}</ul>
+      <ul
+        className={
+          winners === "villains"
+            ? "battle-heroes__list battle-heroes__list--shining"
+            : "battle-heroes__list"
+        }
+      >
+        {renderedVillains}
+      </ul>
     </section>
   );
 }

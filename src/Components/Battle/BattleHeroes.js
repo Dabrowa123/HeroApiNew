@@ -24,6 +24,10 @@ function BattleHeroes() {
     dispatch(removeHeroBattle(hero));
   };
 
+  const winners = useSelector((state) => {
+    return state.winners[0];
+  });
+
   const renderedHeroes = heroesListBattle.map((hero) => {
     return (
       <li className="battle-heroes__list-item">
@@ -31,7 +35,12 @@ function BattleHeroes() {
         <div className="battle-heroes__list-item-info">
           <div className="battle-heroes__list-item-info-details">
             {hero.name}
-            <button className="battle-heroes__remove-button" onClick={() => handleHeroRemoveFromBattle(hero)}>Remove</button>
+            <button
+              className="battle-heroes__remove-button"
+              onClick={() => handleHeroRemoveFromBattle(hero)}
+            >
+              Remove
+            </button>
           </div>
           <div className="battle-heroes__list-item-info-details">
             <div className="battle-heroes__list-item-stats">
@@ -91,7 +100,13 @@ function BattleHeroes() {
   return (
     <section className="battle-heroes">
       <h2 className="battle-heroes__heading">Heroes Team</h2>
-      <ul className="battle-heroes__list">
+      <ul
+        className={
+          winners === "heroes"
+            ? "battle-heroes__list battle-heroes__list--shining"
+            : "battle-heroes__list"
+        }
+      >
         {/* <li className="battle-heroes__list-item">
           <img src={batman} width={"55px"} />
           <div className="battle-heroes__list-item-info">
