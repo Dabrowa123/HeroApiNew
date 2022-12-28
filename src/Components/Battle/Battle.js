@@ -3,7 +3,8 @@ import BattleHeroes from "./BattleHeroes.js";
 import BattleVillains from "./BattleVillains.js";
 import SearchformBattle from "./SearchformBattle.js";
 import BattleSearchView from "./BattleSearchView.js";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setWinners, store } from "../../store/index.js";
 import { useState } from "react";
 // import { useState, useEffect } from "react";
 // import supermanDesktop from "../../assets/img/superman-desktop.png";
@@ -37,6 +38,7 @@ function Battle() {
     .reduce((a, b) => a + +b, 0);
 
   const [battleResult, setBattleResult] = useState("");
+  const dispatch = useDispatch();
 
   const handleFight = () => {
     if (heroesStatsSum + villainsStatsSum === 0) {
@@ -44,14 +46,17 @@ function Battle() {
     } else if (heroesStatsSum - villainsStatsSum > 0) {
       setNoCharacterChoosen(false);
       setBattleResult("Heroes won");
+      dispatch(setWinners("heroes"));
       setIsFight(true);
     } else if (heroesStatsSum - villainsStatsSum < 0) {
       setNoCharacterChoosen(false);
       setBattleResult("Villains won");
+      dispatch(setWinners("villains"));
       setIsFight(true);
     } else {
       setNoCharacterChoosen(false);
       setBattleResult("No heroes, no villains won - a draw");
+      dispatch(setWinners(""));
       setIsFight(true);
     }
   };
@@ -68,16 +73,16 @@ function Battle() {
         <BattleVillains />
       </div>
       <div className="battle__result-button">
-        <Fade>
-          {!isFight && (
+        {!isFight && (
+          <Fade>
             <button className="battle__button-fight" onClick={handleFight}>
               Fight!
             </button>
-          )}
-        </Fade>
-        <Fade>
-          {isFight && (
-            <div className="battle__result">
+          </Fade>
+        )}
+        {isFight && (
+          <div className="battle__result">
+            <Fade>
               {battleResult}
               <button
                 className="battle__button-newfight"
@@ -85,16 +90,16 @@ function Battle() {
               >
                 New Fight
               </button>
-            </div>
-          )}
-        </Fade>
-        <Fade>
-          {noCharacterChoosen && (
+            </Fade>
+          </div>
+        )}
+        {noCharacterChoosen && (
+          <Fade>
             <div className="battle__choose-character">
               Please, find and choose characters first
             </div>
-          )}
-        </Fade>
+          </Fade>
+        )}
       </div>
       <br></br>
       <SearchformBattle />

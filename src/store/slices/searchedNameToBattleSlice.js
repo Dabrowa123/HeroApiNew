@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const searchedNameToBattle = createSlice({
+const searchedNameToBattleSlice = createSlice({
   name: "searchedNameToBattle",
   initialState: [""],
   reducers: {
@@ -10,5 +10,5 @@ const searchedNameToBattle = createSlice({
   },
 });
 
-export const { searchNameToBattle } = searchedNameToBattle.actions;
-export const searchedNameToBattleReducer = searchedNameToBattle.reducer;
+export const { searchNameToBattle } = searchedNameToBattleSlice.actions;
+export const searchedNameToBattleReducer = searchedNameToBattleSlice.reducer;

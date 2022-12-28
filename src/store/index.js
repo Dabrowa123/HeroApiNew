@@ -12,7 +12,8 @@ import {
 import {
   searchNameToBattle,
   searchedNameToBattleReducer,
-} from "./slices/searchedNameToBattle.js";
+} from "./slices/searchedNameToBattleSlice.js";
+import { setWinners, winnersReducer } from "./slices/winnersSlice.js";
 import { reset } from "./actions.js";
 
 const store = configureStore({
@@ -20,6 +21,7 @@ const store = configureStore({
     heroesBattle: heroesBattleReducer,
     villainsBattle: villainsBattleReducer,
     searchedNameToBattle: searchedNameToBattleReducer,
+    winners: winnersReducer,
   },
 });
 
@@ -31,4 +33,5 @@ export {
   addVillainBattle,
   removeVillainBattle,
   searchNameToBattle,
+  setWinners,
 };
