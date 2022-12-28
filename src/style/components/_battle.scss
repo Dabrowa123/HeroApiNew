@@ -10,13 +10,14 @@
   }
 
   &__result-button {
-    min-height: 120px;
+    min-height: 110px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 
   &__button-fight {
+    margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
     background: rgb(52, 173, 236);
@@ -37,7 +38,7 @@
 
   &__button-newfight {
     display: block;
-    margin: 20px auto 0 auto;
+    margin: 10px auto 0 auto;
     font-size: 12px;
     font-weight: bold;
     background: white;
@@ -62,5 +63,11 @@
     font-size: 20px;
     font-weight: bolder;
     margin-top: 30px;
+  }
+
+  &__choose-character {
+    text-align: center;
+    color: firebrick;
+    font-weight: 400;
   }
 }

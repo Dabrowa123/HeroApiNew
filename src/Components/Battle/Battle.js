@@ -19,6 +19,7 @@ import Fade from "react-reveal/Fade.js";
 
 function Battle() {
   const [isFight, setIsFight] = useState(false);
+  const [noCharacterChoosen, setNoCharacterChoosen] = useState(false);
 
   const heroesList = useSelector((state) => {
     return state.heroesBattle;
@@ -38,13 +39,18 @@ function Battle() {
   const [battleResult, setBattleResult] = useState("");
 
   const handleFight = () => {
-    if (heroesStatsSum - villainsStatsSum > 0) {
+    if (heroesStatsSum + villainsStatsSum === 0) {
+      setNoCharacterChoosen(true);
+    } else if (heroesStatsSum - villainsStatsSum > 0) {
+      setNoCharacterChoosen(false);
       setBattleResult("Heroes won");
       setIsFight(true);
     } else if (heroesStatsSum - villainsStatsSum < 0) {
+      setNoCharacterChoosen(false);
       setBattleResult("Villains won");
       setIsFight(true);
     } else {
+      setNoCharacterChoosen(false);
       setBattleResult("No heroes, no villains won - a draw");
       setIsFight(true);
     }
@@ -79,6 +85,13 @@ function Battle() {
               >
                 New Fight
               </button>
+            </div>
+          )}
+        </Fade>
+        <Fade>
+          {noCharacterChoosen && (
+            <div className="battle__choose-character">
+              Please, find and choose characters first
             </div>
           )}
         </Fade>
