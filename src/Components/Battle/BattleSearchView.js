@@ -34,9 +34,9 @@ function BattleSearchView() {
 
       const { results } = data;
 
+      setSearchListContent(results);
       setPageInitState(false);
       setCharacterNotFound(false);
-      setSearchListContent(results);
       setLoadingState(false);
     });
   }, [name]);
