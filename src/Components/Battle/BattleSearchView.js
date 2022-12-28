@@ -75,7 +75,7 @@ function BattleSearchView() {
         </section>
       )}{" "}
       {isLoading && (
-        <div className="search__loader-container">
+        <div className="battle-search__loader-container">
           <Loader />
         </div>
       )}
