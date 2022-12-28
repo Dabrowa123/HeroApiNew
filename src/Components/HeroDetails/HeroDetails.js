@@ -39,6 +39,7 @@ function HeroDetails() {
         {!isLoading && (
           <Fade>
             <div className="details__card">
+              <button className="details__goback-button" onClick={() => navigate(-1)}>Back to search</button>
               <div className="details__info">
                 <LazyLoadImage
                   className="details__info__img"
@@ -51,7 +52,6 @@ function HeroDetails() {
                   <Roll cascade>
                     <h2 className="details__heading">{heroData.name}</h2>
                   </Roll>
-                  <button onClick={() => navigate(-1)}>Back to search</button>
                   <h4 className="details__info-position">
                     Full name:{" "}
                     <Roll top cascade>
