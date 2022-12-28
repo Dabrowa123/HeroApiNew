@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade.js";
 import logo from "../../assets/img/nav_logo.png";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { searchNameToBattle, store } from "../../store/index.js";
 
 function Nav() {
   // Adding sticky nav logic
@@ -44,14 +46,24 @@ function Nav() {
   // Display searchform
   const [enableSearch, setEnableSearch] = useState(true);
 
+  const searchedNameToBattle = useSelector((state) => {
+    return state.searchedNameToBattle[0];
+  });
+
   useEffect(() => {
-    if (window.location.pathname === "/battle") {
+    if (window.location.pathname === "/battle" || searchedNameToBattle !== "") {
       setEnableSearch(false);
     } else {
       setEnableSearch(true);
     }
     // eslint-disable-next-line
   }, [window.location.pathname]);
+
+  const dispatch = useDispatch();
+  const handleHome = () => {
+    dispatch(searchNameToBattle(""));
+    navigate("/");
+  };
 
   return (
     <Fade>
@@ -84,7 +96,9 @@ function Nav() {
           )}
           {!enableSearch && (
             <div className="nav__buttons">
-              <Link to="/"><button className="nav__button-home">HOME</button></Link>
+              <button onClick={handleHome} className="nav__button-home">
+                HOME
+              </button>
             </div>
           )}
         </div>
