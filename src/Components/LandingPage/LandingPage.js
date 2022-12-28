@@ -8,6 +8,8 @@ import FeaturedHeroesButton from "../UI/Buttons/FeaturedHeroesButton.js";
 import PlaceholderImage from "../../assets/img/superman-placeholder.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useDispatch, useSelector } from "react-redux";
+import { searchNameToBattle } from "../../store/index.js";
 
 function LandingPage() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -22,6 +24,14 @@ function LandingPage() {
       setIsDesktop(false);
     }
   }, []);
+
+  // Clearing search after navigating to homepage
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      dispatch(searchNameToBattle(""));
+    }
+  });
 
   return (
     <section className="landing">

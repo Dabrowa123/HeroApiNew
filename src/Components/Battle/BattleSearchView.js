@@ -41,14 +41,6 @@ function BattleSearchView() {
     });
   }, [name]);
 
-  // Clearing search after navigating to homepage
-  const dispatch = useDispatch();
-  useEffect(() => {
-    if (window.location.pathname === "/") {
-      dispatch(searchNameToBattle(""));
-    }
-  });
-
   return (
     <>
       {pageInitState && (
