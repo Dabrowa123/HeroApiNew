@@ -1,7 +1,7 @@
 import React from "react";
 import * as icon from "../../assets/icons/index.js";
 import { useDispatch, useSelector } from "react-redux";
-import { removeHeroBattle, store } from "../../store/index.js";
+import { removeHeroBattle } from "../../store/index.js";
 
 function BattleHeroes() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function BattleHeroes() {
   const renderedHeroes = heroesListBattle.map((hero) => {
     return (
       <li className="battle-heroes__list-item">
-        <img src={hero.imgUrl} width={"50px"} />
+        <img src={hero.imgUrl} width={"50px"} alt={hero.name}/>
         <div className="battle-heroes__list-item-info">
           <div className="battle-heroes__list-item-info-details">
             {hero.name}

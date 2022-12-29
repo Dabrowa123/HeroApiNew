@@ -32,7 +32,7 @@ function HeroesFeatured() {
           className="swiper-mybutton swiper-mybutton--prev"
           onClick={() => swiperRef.current?.slidePrev()}
         >
-          <img src={chevronLeft} />
+          <img src={chevronLeft} alt="arrow left"/>
         </button>
 
         <Swiper
@@ -61,7 +61,7 @@ function HeroesFeatured() {
           className="swiper-mybutton swiper-mybutton--next"
           onClick={() => swiperRef.current?.slideNext()}
         >
-          <img src={chevronRight} />
+          <img src={chevronRight} alt="arrow right"/>
         </button>
       </div>
     </section>
