@@ -2,7 +2,6 @@ import batmanImg from "../../../assets/img/batman.jpg";
 import freezeImg from "../../../assets/img/freeze.jpg";
 import penguinImg from "../../../assets/img/penguin.jpg";
 import hulkImg from "../../../assets/img/hulk.jpg";
-import jokerImg from "../../../assets/img/joker.jpg";
 import supermanImg from "../../../assets/img/superman.jpg";
 import wonderwomanImg from "../../../assets/img/wonderwoman.jpg";
 import spidermanImg from "../../../assets/img/spiderman.jpg";
