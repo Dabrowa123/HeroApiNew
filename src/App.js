@@ -25,7 +25,7 @@ function App() {
                   <>
                     <LandingPage />
                     <br />
-                    {/* <HeroesFeatured className="featured__list" /> */}
+                    <HeroesFeatured className="featured__list" />
                     <br />
                     <BattleMainPage />
                   </>

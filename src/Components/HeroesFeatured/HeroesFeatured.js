@@ -10,7 +10,7 @@ function HeroesFeatured() {
   const swiperRef = useRef();
 
   const sliderSettings = {
-    440: {
+    0: {
       slidesPerView: 1,
       spaceBetween: 5,
     },
