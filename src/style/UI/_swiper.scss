@@ -18,6 +18,8 @@
     &:hover {
       scale: 1.15;
       filter: opacity(0.8);
+      filter: brightness(0.8);
+      filter: drop-shadow(0.5);
     }
   }
 
