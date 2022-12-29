@@ -1,4 +1,4 @@
-import { React } from "react";
+import React, { useRef } from "react";
 import HeroCard from "../HeroCard/HeroCard.js";
 import batmanImg from "../../assets/img/batman.jpg";
 import freezeImg from "../../assets/img/freeze.jpg";
@@ -95,19 +95,45 @@ function HeroesFeatured() {
     },
   ];
 
+  const swiperRef = useRef();
+
+  // For Typescript!
+  // const swiperRef = useRef<SwiperCore>();
+
+  const sliderSettings = {
+    440: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+    },
+    680: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  };
+
   return (
     <section className="featured" id="featured">
       <h1 className="featured__heading">Featured Heroes</h1>
       <div className="featured__list">
+        <button onClick={() => swiperRef.current?.slidePrev()}>Prev</button>
         <Swiper
           slidesPerView={3}
-          spaceBetween={20}
-          navigation={true}
-          // pagination={{
-          //   clickable: true,
-          // }}
-          modules={[Navigation]}
-          className="mySwiper"
+          breakpoints={sliderSettings}
+          onBeforeInit={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          // slidesPerView={3}
+          // spaceBetween={20}
+          // navigation={true}
+          // // pagination={{
+          // //   clickable: true,
+          // // }}
+          // modules={[Navigation]}
+          // className="mySwiper"
         >
           {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
             <SwiperSlide>
@@ -121,6 +147,7 @@ function HeroesFeatured() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <button onClick={() => swiperRef.current?.slideNext()}>Next</button>
       </div>
     </section>
     // <section className="featured" id="featured">

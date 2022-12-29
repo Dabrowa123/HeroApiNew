@@ -1,7 +1,6 @@
 .hero-card {
   position: relative;
-  margin: 10px 0;
-  // margin: 10px auto;
+  margin: 10px auto;
   width: 100%;
   max-width: 320px;
   border-radius: 20px;
@@ -12,7 +11,8 @@
     width: 43%;
   }
   @include media(xlarge) {
-    width: 100%;
+    width: 95%;
+    // width: 100%;
     // width: 32%;
     cursor: pointer;
 
