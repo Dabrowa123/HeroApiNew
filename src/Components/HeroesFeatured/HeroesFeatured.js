@@ -10,8 +10,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import { Pagination } from "swiper";
-import { Navigation } from "swiper";
 
 function HeroesFeatured() {
   const featuredHeroes = [
@@ -99,9 +97,6 @@ function HeroesFeatured() {
 
   const swiperRef = useRef();
 
-  // For Typescript!
-  // const swiperRef = useRef<SwiperCore>();
-
   const sliderSettings = {
     440: {
       slidesPerView: 1,
@@ -134,13 +129,6 @@ function HeroesFeatured() {
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
-          // slidesPerView={3}
-          // spaceBetween={20}
-          // navigation={true}
-          // // pagination={{
-          // //   clickable: true,
-          // // }}
-          // modules={[Navigation]}
           className="mySwiper"
         >
           {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
