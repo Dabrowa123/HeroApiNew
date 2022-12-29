@@ -39,7 +39,7 @@ function HeroDetails() {
         {!isLoading && (
           <Fade>
             <div className="details__card">
-              <button className="details__goback-button" onClick={() => navigate(-1)}>Back to search</button>
+              <button className="details__goback-button" onClick={() => navigate(-1)}>GO BACK</button>
               <div className="details__info">
                 <LazyLoadImage
                   className="details__info__img"
