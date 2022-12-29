@@ -1,9 +1,11 @@
 import batmanImg from "../../../assets/img/batman.jpg";
 import freezeImg from "../../../assets/img/freeze.jpg";
 import penguinImg from "../../../assets/img/penguin.jpg";
-import robinImg from "../../../assets/img/robin.jpg";
+import hulkImg from "../../../assets/img/hulk.jpg";
 import jokerImg from "../../../assets/img/joker.jpg";
-import catwomanImg from "../../../assets/img/catwoman.jpg";
+import supermanImg from "../../../assets/img/superman.jpg";
+import wonderwomanImg from "../../../assets/img/wonderwoman.jpg";
+import spidermanImg from "../../../assets/img/spiderman.jpg";
 
 const featuredHeroesArray = [
   {
@@ -71,35 +73,67 @@ const featuredHeroesArray = [
     },
   },
   {
-    id: 165,
-    name: "Catwoman",
-    imgUrl: catwomanImg,
+    id: 620,
+    name: "Spider-Man",
+    imgUrl: spidermanImg,
     powerstats: {
       combat: "85",
       durability: "85",
-      id: "165",
-      intelligence: "69",
-      name: "Catwoman",
+      id: "620",
+      intelligence: "90",
+      name: "Spider-Man",
       power: "30",
       response: "success",
-      speed: "33",
-      strength: "11",
+      speed: "67",
+      strength: "55",
     },
   },
   {
-    id: 561,
-    name: "Robin",
-    imgUrl: robinImg,
+    id: 332,
+    name: "Hulk",
+    imgUrl: hulkImg,
     powerstats: {
       combat: "85",
       durability: "85",
-      id: "561",
+      id: "332",
       intelligence: "88",
-      name: "Robin",
+      name: "Hulk",
       power: "30",
       response: "success",
-      speed: "27",
-      strength: "11",
+      speed: "63",
+      strength: "100",
+    },
+  },
+  {
+    id: 720,
+    name: "Wonder Woman",
+    imgUrl: wonderwomanImg,
+    powerstats: {
+      combat: "100",
+      durability: "100",
+      id: "720",
+      intelligence: "88",
+      name: "Wonder Woman",
+      power: "30",
+      response: "success",
+      speed: "79",
+      strength: "100",
+    },
+  },
+  {
+    id: 644,
+    name: "Superman",
+    imgUrl: supermanImg,
+    powerstats: {
+      combat: "85",
+      durability: "85",
+      id: "644",
+      intelligence: "94",
+      name: "Superman",
+      power: "30",
+      response: "success",
+      speed: "100",
+      strength: "100",
     },
   },
 ];
