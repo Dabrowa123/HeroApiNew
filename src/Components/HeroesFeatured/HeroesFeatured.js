@@ -5,9 +5,6 @@ import chevronRight from "../../assets/icons/chevron-right.png";
 import featuredHeroesArray from "../Assets/PreloadedData/FeaturedHeroData.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-fade";
-
-import { EffectFade } from "swiper";
 
 function HeroesFeatured() {
   const swiperRef = useRef();
@@ -45,8 +42,6 @@ function HeroesFeatured() {
             swiperRef.current = swiper;
           }}
           loop={true}
-          // effect={"fade"}
-          // modules={[EffectFade]}
           className="mySwiper"
         >
           {featuredHeroesArray.map(({ name, imgUrl, powerstats, id }) => (

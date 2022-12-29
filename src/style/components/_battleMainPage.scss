@@ -2,7 +2,15 @@
   min-height: 100vh;
   padding-top: 120px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+
+  @include media(medium) {
+    min-height: 100vh;
+    padding-top: 120px;
+    flex-direction: row;
+    align-items: center;
+  }
 
   &__info {
     flex-grow: 2;
@@ -14,8 +22,22 @@
   }
 
   &__heading {
-    font-size: 52px;
-    margin: 15px 0 10px 0;
+    background-color: rgba(211, 54, 60, 1);
+    box-shadow: 0 0 15px rgb(153, 74, 65) inset;
+    color: white;
+    width: 100vw;
+    font-size: 42px;
+    text-align: center;
+
+    @include media(medium) {
+      color: initial;
+      background-color: initial;
+      box-shadow: none;
+      font-size: 52px;
+      width: initial;
+      margin: 15px 0 10px 0;
+      text-align: initial;
+    }
   }
 
   &__description {
