@@ -68,7 +68,6 @@ function Battle() {
 
   return (
     <section className="battle">
-      <h2>Battle</h2>
       <div className="battle__container">
         <BattleHeroes />
         <BattleVillains />

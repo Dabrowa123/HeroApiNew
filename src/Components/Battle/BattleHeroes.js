@@ -108,7 +108,7 @@ function BattleHeroes() {
         }
       >
         {/* <li className="battle-heroes__list-item">
-          <img src={batman} width={"55px"} />
+          <img src={batman} width={"55px"} height={"75px"}/>
           <div className="battle-heroes__list-item-info">
             <div className="battle-heroes__list-item-info-details">
               Batman

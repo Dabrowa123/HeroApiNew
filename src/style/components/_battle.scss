@@ -1,13 +1,24 @@
 .battle {
   min-height: 100vh;
-  width: 100%;
+  width: 340px;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  padding: 45px 0;
+
+  @include media(medium) {
+    width: 100%;
+  }
 
   &__container {
     margin: 50px 0 0 0;
     display: flex;
+    flex-direction: column;
     gap: 3%;
+
+    @include media(medium) {
+      flex-direction: row;
+    }
   }
 
   &__result-button {

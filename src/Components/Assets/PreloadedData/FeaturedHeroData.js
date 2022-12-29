@@ -57,22 +57,6 @@ const featuredHeroesArray = [
     },
   },
   {
-    id: 370,
-    name: "Joker",
-    imgUrl: jokerImg,
-    powerstats: {
-      combat: "70",
-      durability: "70",
-      id: "370",
-      intelligence: "100",
-      name: "Joker",
-      power: "30",
-      response: "success",
-      speed: "12",
-      strength: "10",
-    },
-  },
-  {
     id: 620,
     name: "Spider-Man",
     imgUrl: spidermanImg,

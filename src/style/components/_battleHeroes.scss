@@ -9,11 +9,20 @@
   }
 
   &__list {
+    padding: 20px 20px;
     min-height: 100px;
     border-radius: 20px;
     -webkit-box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
     -moz-box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
     box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
+
+    @include media(medium) {
+      padding: 0 0 0 20px;
+    }
+
+    @include media(xlarge) {
+      padding: 0 0 0 40px;
+    }
 
     &--shining {
       -webkit-box-shadow: inset 0px 3px 50px -6px rgba(242, 200, 59, 1);
@@ -23,13 +32,23 @@
   }
 
   &__list-item {
-    width: 390px;
-    max-width: 100%;
+    width: 300px;
+    // max-width: 100%;
     list-style: none;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 15px;
-    margin: 15px 0;
+
+    @include media(medium) {
+      margin: 15px 0;
+      width: 300px;
+    }
+
+    @include media(xlarge) {
+      width: 380px;
+      margin: 15px 0;
+    }
   }
 
   &__list-item-info {
@@ -37,6 +56,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 65px;
+
+    @include media(xlarge) {
+      min-height: 65px;
+    }
   }
 
   &__list-item-info-details {
@@ -44,6 +68,34 @@
     justify-content: space-between;
     font-size: 18px;
     font-weight: bolder;
+  }
+
+  &__list-item-stats {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: initial;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+
+    @include media(medium) {
+      flex-direction: column;
+      margin: 15px 0 0 0;
+    }
+
+    @include media(xlarge) {
+      margin: 5px 0 0 0;
+      flex-direction: row;
+    }
+  }
+
+  &__stats-icon {
+    width: 20px;
+    height: auto;
+
+    @include media(xlarge) {
+      margin: 0 8px 0 0;
+    }
   }
 
   &__remove-button {
@@ -63,18 +115,5 @@
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-  }
-
-  &__stats-icon {
-    width: 20px;
-    margin: 0 8px 0 0;
-  }
-
-  &__list-item-stats {
-    margin: 5px 0 0 0;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    font-weight: initial;
   }
 }
