@@ -8,6 +8,7 @@ import * as icon from "../../assets/icons/index.js";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useNavigate } from "react-router-dom";
 
 function HeroDetails() {
   const { id } = useParams();
@@ -25,6 +26,8 @@ function HeroDetails() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="details">
@@ -36,6 +39,7 @@ function HeroDetails() {
         {!isLoading && (
           <Fade>
             <div className="details__card">
+              <button className="details__goback-button" onClick={() => navigate(-1)}>GO BACK</button>
               <div className="details__info">
                 <LazyLoadImage
                   className="details__info__img"

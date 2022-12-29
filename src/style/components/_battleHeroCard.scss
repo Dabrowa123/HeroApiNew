@@ -1,0 +1,65 @@
+.battle-hero-card {
+  &__heading-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+
+  &__buttons-container {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 1px;
+    border-radius: 150px 150px 0px 0px;
+  }
+
+  &__btn {
+    padding: 3px 0;
+    display: inline-block;
+    background-color: #2692dd;
+    color: white;
+    flex-grow: 2;
+    text-align: center;
+    border-radius: 150px 150px 0px 0px;
+
+    &:hover {
+      color: #2692dd;
+      background-color: white;
+      transition: background-color 0.2s ease-in-out;
+    }
+  }
+
+  &__btn--add {
+    border-radius: 20px 0px 0px 0px;
+    padding-left: 5px;
+  }
+
+  &__btn--remove {
+    border-radius: 0px 20px 0px 0px;
+    padding-right: 5px;
+  }
+
+  &__button {
+    font-size: 12px;
+    line-height: 95%;
+    background: white;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+    border: none;
+    color: rgb(10, 10, 0);
+    cursor: pointer;
+    font-family: "MuseoModerno", cursive;
+    margin: 10px;
+    box-shadow: 0 0 4px #2692dd;
+    -moz-box-shadow: 0 0 4px #2692dd;
+    -webkit-box-shadow: 0 0 4px #2692dd;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+    &:hover {
+      color: white;
+      background-color: #2692dd;
+      transition: background-color 0.2s ease-in-out;
+    }
+  }
+}
