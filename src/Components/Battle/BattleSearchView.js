@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { searchHeroesByName } from "../../requests.js";
-import { useDispatch, useSelector } from "react-redux";
-import { searchNameToBattle } from "../../store/index.js";
+import { useSelector } from "react-redux";
 import BattleHeroCard from "./BattleHeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
 

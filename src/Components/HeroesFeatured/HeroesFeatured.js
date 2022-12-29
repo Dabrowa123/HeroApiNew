@@ -65,20 +65,6 @@ function HeroesFeatured() {
         </button>
       </div>
     </section>
-    // <section className="featured" id="featured">
-    //   <h1 className="featured__heading">Featured Heroes</h1>
-    //   <div className="featured__list">
-    //     {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
-    //       <HeroCard
-    //         key={id}
-    //         name={name}
-    //         imgUrl={imgUrl}
-    //         powerstats={powerstats}
-    //         id={id}
-    //       />
-    //     ))}
-    //   </div>
-    // </section>
   );
 }
 
