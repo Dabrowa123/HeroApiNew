@@ -7,18 +7,17 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch } from "react-redux";
 import { addHeroBattle, addVillainBattle, store } from "../../store/index.js";
+import { useEffect } from "react";
 
 function BattleHeroCard({ name, imgUrl, powerstats, id }) {
   const dispatch = useDispatch();
   const handleAddToHeroes = () => {
     const hero = { name, imgUrl, powerstats, id };
     dispatch(addHeroBattle(hero));
-    console.log(store.getState());
   };
   const handleAddToVillains = () => {
     const hero = { name, imgUrl, powerstats, id };
     dispatch(addVillainBattle(hero));
-    console.log(store.getState());
   };
 
   return (
@@ -49,8 +48,8 @@ function BattleHeroCard({ name, imgUrl, powerstats, id }) {
             <LazyLoadImage
               className="hero-card__img-component"
               src={imgUrl}
-              width={300}
-              height={400}
+              width={260}
+              height={320}
               alt={`${name}`}
               placeholderSrc={PlaceholderImage}
               effect="blur"

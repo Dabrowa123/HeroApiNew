@@ -34,7 +34,12 @@ function BattleSearchView() {
 
       const { results } = data;
 
-      setSearchListContent(results);
+      // Do not render heroes with empty powerstats
+      const validatedResults = results.flatMap((hero) =>
+        Object.values(hero.powerstats).includes("null", 0) ? [] : hero
+      );
+
+      setSearchListContent(validatedResults);
       setPageInitState(false);
       setCharacterNotFound(false);
       setLoadingState(false);
