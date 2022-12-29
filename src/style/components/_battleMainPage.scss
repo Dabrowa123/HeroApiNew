@@ -1,5 +1,5 @@
 .battle-mainpage {
-  min-height: 100vh;
+  height: fit-content;
   padding-top: 120px;
   display: flex;
   flex-direction: column;
@@ -13,12 +13,15 @@
   }
 
   &__info {
-    flex-grow: 2;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    height: 450px;
+
+    @include media(medium) {
+      height: 450px;
+      flex-grow: 2;
+    }
   }
 
   &__heading {
@@ -28,6 +31,7 @@
     width: 100vw;
     font-size: 42px;
     text-align: center;
+    padding: 5px;
 
     @include media(medium) {
       color: initial;
@@ -36,21 +40,42 @@
       font-size: 52px;
       width: initial;
       margin: 15px 0 10px 0;
+      padding: initial;
       text-align: initial;
     }
   }
 
   &__description {
     font-size: 30px;
+    text-align: center;
+    margin: 0 10px;
+
+    @include media(medium) {
+      text-align: initial;
+      margin: initial;
+    }
   }
 
   &__button {
-    font-size: 40px;
+    // margin: 10px 10px;
+    // position: absolute;
+    // bottom: 300px;
+
+    @include media(medium) {
+      margin: initial;
+    }
   }
 
   &__image {
     display: flex;
     justify-content: center;
-    margin-right: -40px;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw;
+    margin-right: -8px;
+
+    @include media(medium) {
+      margin-right: -40px;
+    }
   }
 }

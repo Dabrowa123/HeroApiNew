@@ -10,41 +10,64 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 function BattleMainPage() {
-  // const [isDesktop, setIsDesktop] = useState(false);
-  // const [isMobile, setIsMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // useEffect(() => {
-  //   if (window.innerWidth > 769) {
-  //     setIsDesktop(true);
-  //     setIsMobile(false);
-  //   } else {
-  //     setIsMobile(true);
-  //     setIsDesktop(false);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (window.innerWidth > 769) {
+      setIsDesktop(true);
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+      setIsDesktop(false);
+    }
+  }, []);
 
   return (
     <section className="battle-mainpage" id="battle">
       <div className="battle-mainpage__info">
         <h2 className="battle-mainpage__heading">SUPERHERO BATTLE</h2>
         <h2 className="battle-mainpage__description">
-          Create championship of your
-          <br /> favourite characters
+          Create championship of your favourite characters
         </h2>
-        <BattleButton />
+        {isDesktop && (
+          <div className="battle-mainpage__button">
+            <BattleButton />
+          </div>
+        )}
       </div>
       <div className="battle-mainpage__image">
-        <Fade left duration={1000} delay={600} distance="70px">
-          <LazyLoadImage
-            className=""
-            src={battle}
-            width={"490px"}
-            height={"auto"}
-            alt="Wonder Woman"
-            placeholderSrc={PlaceholderImage}
-            effect="blur"
-          />
-        </Fade>
+        {isMobile && (
+          <>
+            <Fade left duration={1000} delay={600} distance="70px">
+              <LazyLoadImage
+                className=""
+                src={battle}
+                width={"320px"}
+                height={"auto"}
+                alt="Wonder Woman"
+                placeholderSrc={PlaceholderImage}
+                effect="blur"
+              />
+            </Fade>
+            <div className="battle-mainpage__button">
+              <BattleButton />
+            </div>
+          </>
+        )}
+        {isDesktop && (
+          <Fade left duration={1000} delay={600} distance="70px">
+            <LazyLoadImage
+              className=""
+              src={battle}
+              width={"490px"}
+              height={"auto"}
+              alt="Wonder Woman"
+              placeholderSrc={PlaceholderImage}
+              effect="blur"
+            />
+          </Fade>
+        )}
       </div>
 
       {/* <div className="landing__superman-container">
