@@ -103,15 +103,15 @@ function HeroesFeatured() {
   const sliderSettings = {
     440: {
       slidesPerView: 1,
-      spaceBetween: 30,
+      spaceBetween: 5,
     },
-    680: {
+    768: {
       slidesPerView: 2,
-      spaceBetween: 30,
+      spaceBetween: 5,
     },
     1024: {
       slidesPerView: 3,
-      spaceBetween: 30,
+      spaceBetween: 5,
     },
   };
 
@@ -120,6 +120,7 @@ function HeroesFeatured() {
       <h1 className="featured__heading">Featured Heroes</h1>
       <div className="featured__list">
         <button onClick={() => swiperRef.current?.slidePrev()}>Prev</button>
+
         <Swiper
           slidesPerView={3}
           breakpoints={sliderSettings}
@@ -133,7 +134,7 @@ function HeroesFeatured() {
           // //   clickable: true,
           // // }}
           // modules={[Navigation]}
-          // className="mySwiper"
+          className="mySwiper"
         >
           {featuredHeroes.map(({ name, imgUrl, powerstats, id }) => (
             <SwiperSlide>
@@ -147,6 +148,7 @@ function HeroesFeatured() {
             </SwiperSlide>
           ))}
         </Swiper>
+
         <button onClick={() => swiperRef.current?.slideNext()}>Next</button>
       </div>
     </section>
