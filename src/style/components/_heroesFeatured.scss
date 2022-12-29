@@ -1,11 +1,15 @@
 .featured {
-  padding-top: 80px;
+  padding-top: 25px;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  justify-content: center;
 
   &__list {
     // display: grid;
     display: flex;
+    // flex-grow: 2;
+    align-items: center;
     // justify-content: space-between;
     // flex-wrap: wrap;
     // flex-shrink: 2;
