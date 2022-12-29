@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Nav /> */}
+        <Nav />
 
         <main>
           <div className="container">
