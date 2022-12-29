@@ -43,6 +43,10 @@
       padding: initial;
       text-align: initial;
     }
+    
+    @include media(xlarge) {
+      margin: 20px 0 30px 0;
+    }
   }
 
   &__description {
@@ -62,7 +66,7 @@
     // bottom: 300px;
 
     @include media(medium) {
-      margin: initial;
+      // margin: initial;
     }
   }
 
@@ -71,7 +75,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90vw;
+    // width: 90vw;
     margin-right: -8px;
 
     @include media(medium) {
