@@ -3,6 +3,8 @@ import HeroCard from "../HeroCard/HeroCard.js";
 import batmanImg from "../../assets/img/batman.jpg";
 import freezeImg from "../../assets/img/freeze.jpg";
 import penguinImg from "../../assets/img/penguin.jpg";
+import chevronLeft from "../../assets/icons/chevron-left.png";
+import chevronRight from "../../assets/icons/chevron-right.png";
 import "react-multi-carousel/lib/styles.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -119,7 +121,12 @@ function HeroesFeatured() {
     <section className="featured" id="featured">
       <h1 className="featured__heading">Featured Heroes</h1>
       <div className="featured__list">
-        <button onClick={() => swiperRef.current?.slidePrev()}>Prev</button>
+        <button
+          className="swiper-mybutton swiper-mybutton--prev"
+          onClick={() => swiperRef.current?.slidePrev()}
+        >
+          <img src={chevronLeft} />
+        </button>
 
         <Swiper
           slidesPerView={3}
@@ -149,7 +156,12 @@ function HeroesFeatured() {
           ))}
         </Swiper>
 
-        <button onClick={() => swiperRef.current?.slideNext()}>Next</button>
+        <button
+          className="swiper-mybutton swiper-mybutton--next"
+          onClick={() => swiperRef.current?.slideNext()}
+        >
+          <img src={chevronRight} />
+        </button>
       </div>
     </section>
     // <section className="featured" id="featured">

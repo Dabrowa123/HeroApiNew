@@ -2,17 +2,17 @@
   position: relative;
   margin: 10px auto;
   width: 100%;
-  max-width: 270px;
+  max-width: 280px;
   border-radius: 20px;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
   transition: transform 0.5s ease-in-out;
   background-color: white;
   @include media(medium) {
-    width: 270px;
+    width: 280px;
     // width: 43%;
   }
   @include media(xlarge) {
-    width: 270px;
+    width: 280px;
     // width: 100%;
     // width: 32%;
     cursor: pointer;

@@ -25,6 +25,37 @@
   }
 }
 
+.swiper-mybutton {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+
+  img {
+    filter: opacity(0.3);
+    min-height: 50px;
+    max-width: 40px;
+    transition: scale 1s;
+
+    &:hover {
+      scale: 1.15;
+      filter: opacity(0.8);
+    }
+  }
+
+  &--prev {
+    &:hover {
+      transform: translate(-5px, 0);
+    }
+  }
+
+  &--next {
+    margin-left: 3px;
+    &:hover {
+      transform: translate(5px, 0);
+    }
+  }
+}
+
 .mySwiper {
   display: inline-block;
 }
