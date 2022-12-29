@@ -9,11 +9,13 @@ import SearchView from "./Components/SearchView/SearchView.js";
 import HeroDetails from "./Components/HeroDetails/HeroDetails.js";
 import BattleMainPage from "./Components/Battle/BattleMainPage.js";
 import Footer from "./Components/Footer/Footer.js";
+import ScrollToTop from "./../src/Components/Assets/scrollToTop.js";
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Nav />
 
         <main>
