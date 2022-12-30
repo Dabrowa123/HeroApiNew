@@ -61,7 +61,8 @@
   }
 
   &__button {
-    background: lighten($main-color, 30%);
+    background: lighten($main-color, 40%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
     background: -moz-linear-gradient(
       top,
       $main-color 0%,
