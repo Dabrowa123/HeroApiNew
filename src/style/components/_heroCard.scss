@@ -4,7 +4,7 @@
   width: 280px;
   max-width: 280px;
   border-radius: 20px;
-  box-shadow: 0 3px 7px $main-color4;
+  box-shadow: 0 3px 7px lighten($main-color4, 20%);
   transition: transform 0.5s ease-in-out;
   background-color: $main-color3;
 

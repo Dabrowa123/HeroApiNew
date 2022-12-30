@@ -108,7 +108,7 @@ function Nav() {
                   to="battle"
                   spy={true}
                   smooth={true}
-                  offset={20}
+                  offset={0}
                   duration={1000}
                 >
                   <HashLink
