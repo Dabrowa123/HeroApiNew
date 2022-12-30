@@ -3,8 +3,8 @@
   z-index: 10;
   width: 100vw;
   min-height: 80px;
-  background-color: black;
-  color: white;
+  background-color: $main-color4;
+  color: $main-color3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,6 @@
   }
 
   &__buttons {
-    // margin: 0 20px 0 0px;
     cursor: pointer;
     height: 45px;
     display: flex;
@@ -38,8 +37,9 @@
     }
 
     .active {
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid $main-color3;
     }
+    
     a {
       text-decoration: none;
       margin: 0 15px;
@@ -47,26 +47,22 @@
       &:hover {
         font-weight: bold;
         transform: scale(1.01);
-        text-shadow: 0px 0px 50px white;
+        text-shadow: 0px 0px 50px $main-color$main-color3;
       }
     }
   }
 
   &__button-home {
     font-size: 16px;
-    // font-size: 25px;
-    // font-weight: bold;
-    background-color: black;
-    color: white;
-    // font-family: "MuseoModerno", cursive;
-    // font-weight: 400;
+    background-color: $main-color4;
+    color: $main-color3;
     cursor: pointer;
     transition: transform 0.5s ease-in-out;
 
     &:hover {
       font-weight: bold;
       transform: scale(1.01);
-      text-shadow: 0px 0px 50px white;
+      text-shadow: 0px 0px 50px $main-color3;
     }
   }
 

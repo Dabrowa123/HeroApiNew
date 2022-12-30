@@ -16,15 +16,15 @@
   &__btn {
     padding: 3px 0;
     display: inline-block;
-    background-color: #2692dd;
-    color: white;
+    background-color: $main-color;
+    color: $main-color3;
     flex-grow: 2;
     text-align: center;
     border-radius: 150px 150px 0px 0px;
 
     &:hover {
-      color: #2692dd;
-      background-color: white;
+      color: $main-color;
+      background-color: $main-color3;
       transition: background-color 0.2s ease-in-out;
     }
   }
@@ -42,23 +42,22 @@
   &__button {
     font-size: 12px;
     line-height: 95%;
-    background: white;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+    background: $main-color3;
     border: none;
-    color: rgb(10, 10, 0);
+    color: $main-color4;
     cursor: pointer;
     font-family: "MuseoModerno", cursive;
     margin: 10px;
-    box-shadow: 0 0 4px #2692dd;
-    -moz-box-shadow: 0 0 4px #2692dd;
-    -webkit-box-shadow: 0 0 4px #2692dd;
+    box-shadow: 0 0 4px $main-color;
+    -moz-box-shadow: 0 0 4px $main-color;
+    -webkit-box-shadow: 0 0 4px $main-color;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 
     &:hover {
-      color: white;
-      background-color: #2692dd;
+      color: $main-color3;
+      background-color: $main-color;
       transition: background-color 0.2s ease-in-out;
     }
   }

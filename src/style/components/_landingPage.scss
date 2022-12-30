@@ -59,15 +59,15 @@
     margin: 0 0 10px 0;
     font-size: 40px;
     text-align: center;
-    background-color: #2692dd;
-    color: #fff;
+    background-color: $main-color;
+    color: $main-color3;
 
     @include media(medium) {
       margin: 0 0 25px 0;
       font-size: 50px;
       text-align: right;
-      background-color: #fff;
-      color: black;
+      background-color: $main-color3;
+      color: $main-color4;
     }
 
     @include media(xlarge) {

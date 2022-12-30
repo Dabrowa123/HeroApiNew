@@ -14,51 +14,36 @@
     border-radius: 9px;
     -moz-border-radius: 9px;
     -webkit-border-radius: 9px;
-    background: #fff;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+    background: $main-color3;
     border: none;
-    color: rgba(10, 10, 20, 0.8);
+    color: $main-color4;
     font-family: "MuseoModerno", cursive;
     padding: 10px;
-    box-shadow: 0 0 9px grey inset;
-    -moz-box-shadow: 0 0 9px grey inset;
-    -webkit-box-shadow: 0 0 9px grey inset;
+    @include shadow2();
 
     &:hover {
       opacity: 0.9;
-      -webkit-text-fill-color: white;
-      background: rgb(52, 173, 236);
-      background: -moz-linear-gradient(
-        top,
-        rgba(52, 173, 236, 1) 0%,
-        rgba(38, 145, 220, 1) 100%
-      );
+      -webkit-text-fill-color: $main-color3;
+      background: lighten($main-color, 10%);
+      background: -moz-linear-gradient(top, $main-color 0%, $main-color 100%);
       background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0%, rgba(52, 173, 236, 1)),
-        color-stop(100%, rgba(38, 145, 220, 1))
+        color-stop(0%, $main-color),
+        color-stop(100%, $main-color)
       );
       background: -webkit-linear-gradient(
         top,
-        rgba(52, 173, 236, 1) 0%,
-        rgba(38, 145, 220, 1) 100%
+        $main-color 0%,
+        $main-color 100%
       );
-      background: -o-linear-gradient(
-        top,
-        rgba(52, 173, 236, 1) 0%,
-        rgba(38, 145, 220, 1) 100%
-      );
-      background: -ms-linear-gradient(
-        top,
-        rgba(52, 173, 236, 1) 0%,
-        rgba(38, 145, 220, 1) 100%
-      );
+      background: -o-linear-gradient(top, $main-color 0%, $main-color 100%);
+      background: -ms-linear-gradient(top, $main-color 0%, $main-color 100%);
       background: linear-gradient(
         to bottom,
-        rgba(52, 173, 236, 1) 0%,
-        rgba(38, 145, 220, 1) 100%
+        $main-color 0%,
+        $main-color$main-color3
       );
     }
 
@@ -71,18 +56,7 @@
       min-height: 60px;
       margin: 45px 0;
       float: right;
-      border-radius: 9px;
-      -moz-border-radius: 9px;
-      -webkit-border-radius: 9px;
-      background: #fff;
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
-      border: none;
-      color: rgba(10, 10, 20, 0.8);
-      font-family: "MuseoModerno", cursive;
       padding: 10px;
-      box-shadow: 0 0 9px grey inset;
-      -moz-box-shadow: 0 0 9px grey inset;
-      -webkit-box-shadow: 0 0 9px grey inset;
     }
 
     @include media(xlarge) {
@@ -100,9 +74,9 @@
     width: 90%;
     max-width: 420px;
     border-radius: 20px;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 7px $main-color4;
     transition: transform 0.5s ease-in-out;
-    background-color: white;
+    background-color: $main-color3;
     padding: 30px 30px;
     margin: 20px auto;
 
@@ -150,14 +124,14 @@
   }
 
   &__info-position {
-    color: rgba(0, 0, 0, 0.9);
+    color: $main-color4;
     font-size: 14px;
     margin: 13px 0;
   }
 
   &__rendered-info {
     font-size: 20px;
-    color: black;
+    color: $main-color4;
     margin-left: 8px;
   }
 
@@ -190,7 +164,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     text-align: center;
-    background-color: white;
+    background-color: $main-color3;
   }
 
   &__stats-container {
