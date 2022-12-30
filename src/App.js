@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Nav from "./Components/Nav/Nav.js";
 import HeroesFeatured from "./Components/HeroesFeatured/HeroesFeatured.js";
 import Battle from "./Components/Battle/Battle.js";
