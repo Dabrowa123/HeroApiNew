@@ -1,10 +1,10 @@
 .featured-button {
   font-size: 22px;
   font-weight: bold;
-  background: lighten($main-color, 10%);
+  background: lighten($main-color3, 3%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
   border: none;
-  color: $main-color3;
+  color: $main-color;
   cursor: pointer;
   font-family: "MuseoModerno", cursive;
   padding: 10px;
@@ -13,9 +13,9 @@
   box-shadow: 0 0 9px $main-color inset;
   -moz-box-shadow: 0 0 9px $main-color inset;
   -webkit-box-shadow: 0 0 9px $main-color inset;
-  border-radius: 0;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 
   &:hover {
     opacity: 0.9;

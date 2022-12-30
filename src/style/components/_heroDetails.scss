@@ -19,7 +19,7 @@
     color: $main-color4;
     font-family: "MuseoModerno", cursive;
     padding: 10px;
-    @include shadow2();
+    box-shadow: 0 3px 7px lighten($main-color4, 10%) inset;
 
     &:hover {
       opacity: 0.9;
