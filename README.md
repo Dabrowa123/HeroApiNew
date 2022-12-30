@@ -6,7 +6,7 @@ Superhero Database is created in **React**.
 
 The app uses **functional components & hooks**, which provide **dynamic rendering of the site views**. 
 
-The site implements **Redux Toolkit** to mantain and manage state.
+The site implements **Redux Toolkit** to manage application's state.
 
 Styles are written in **SASS** and are maintained in **BEM metodology** and **RWD principles**.
 
