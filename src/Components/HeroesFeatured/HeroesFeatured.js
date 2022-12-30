@@ -29,10 +29,10 @@ function HeroesFeatured() {
       <h1 className="featured__heading">Featured Heroes</h1>
       <div className="featured__list">
         <button
-          className="swiper-mybutton swiper-mybutton--prev"
+          className="swiper-mybutton swiper-mybutton--prev noSelect"
           onClick={() => swiperRef.current?.slidePrev()}
         >
-          <img src={chevronLeft} alt="arrow left"/>
+          <img src={chevronLeft} alt="arrow left" />
         </button>
 
         <Swiper
@@ -58,10 +58,10 @@ function HeroesFeatured() {
         </Swiper>
 
         <button
-          className="swiper-mybutton swiper-mybutton--next"
+          className="swiper-mybutton swiper-mybutton--next noSelect"
           onClick={() => swiperRef.current?.slideNext()}
         >
-          <img src={chevronRight} alt="arrow right"/>
+          <img src={chevronRight} alt="arrow right" />
         </button>
       </div>
     </section>
