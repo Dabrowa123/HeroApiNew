@@ -25,9 +25,9 @@
   }
 
   &__heading {
-    background-color: rgba(211, 54, 60, 1);
-    box-shadow: 0 0 15px rgb(153, 74, 65) inset;
-    color: white;
+    background-color: $main-color2;
+    box-shadow: 0 0 15px darken($main-color2, 20%) inset;
+    color: $main-color3;
     width: 100vw;
     font-size: 42px;
     text-align: center;
@@ -43,7 +43,7 @@
       padding: initial;
       text-align: initial;
     }
-    
+
     @include media(xlarge) {
       margin: 20px 0 30px 0;
     }
@@ -60,22 +60,11 @@
     }
   }
 
-  &__button {
-    // margin: 10px 10px;
-    // position: absolute;
-    // bottom: 300px;
-
-    @include media(medium) {
-      // margin: initial;
-    }
-  }
-
   &__image {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    // width: 90vw;
     margin-right: -8px;
 
     @include media(medium) {

@@ -17,3 +17,15 @@ $breakpoints: (
     @error '"#{$breakpoint}" - nie rozpoznaje tej wielkosci';
   }
 }
+
+@mixin shadow1() {
+  -webkit-box-shadow: inset 0px 3px 50px -6px rgba(242, 200, 59, 1);
+  -moz-box-shadow: inset 0px 3px 50px -6px rgba(242, 200, 59, 1);
+  box-shadow: inset 0px 3px 50px -6px rgba(242, 200, 59, 1);
+
+}
+@mixin shadow2() {
+  -webkit-box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
+  -moz-box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
+  box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
+}

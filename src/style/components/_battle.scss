@@ -32,39 +32,36 @@
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    background: rgb(52, 173, 236);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+    background: lighten($main-color, 8%);
     border: none;
-    color: #fff;
+    color: $main-color3;
     cursor: pointer;
     font-family: "MuseoModerno", cursive;
     padding: 10px;
     width: 100%;
-    box-shadow: 0 0 9px #2692dd inset;
-    -moz-box-shadow: 0 0 9px #2692dd inset;
-    -webkit-box-shadow: 0 0 9px #2692dd inset;
+    box-shadow: 0 0 9px $main-color inset;
+    -moz-box-shadow: 0 0 9px $main-color inset;
+    -webkit-box-shadow: 0 0 9px $main-color inset;
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
   }
 
   &__button-newfight {
-    display: block;
+    display: $main-color4;
     margin: 10px auto 0 auto;
     font-size: 12px;
     font-weight: bold;
-    background: white;
+    background: $main-color3;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
     border: none;
-    // color: grey;
-    color: rgb(10, 173, 236);
+    color: lighten($main-color, 8%);
     cursor: pointer;
     font-family: "MuseoModerno", cursive;
     padding: 5px 15px;
-    // width: 100%;
-    box-shadow: 0 0 4px #2692dd inset;
-    -moz-box-shadow: 0 0 4px #2692dd inset;
-    -webkit-box-shadow: 0 0 4px #2692dd inset;
+    box-shadow: 0 0 4px $main-color inset;
+    -moz-box-shadow: 0 0 4px $main-color inset;
+    -webkit-box-shadow: 0 0 4px $main-color inset;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -79,7 +76,7 @@
 
   &__choose-character {
     text-align: center;
-    color: firebrick;
+    color: darken($main-color3, 20%);
     font-weight: 400;
   }
 }
