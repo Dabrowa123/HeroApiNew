@@ -4,12 +4,10 @@
   border: 1px solid #d3d3d3;
   padding: 2px 5px;
   width: 343px;
-  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
-  -moz-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
-  -webkit-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  @include shadow2;
 
   &__input,
   &__button {
@@ -22,7 +20,7 @@
   }
 
   &__input {
-    background: #fefefe;
+    background: $main-color3;
     border: none;
     font-family: "MuseoModerno", cursive;
     margin-right: 5px;
@@ -40,9 +38,7 @@
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 4px #0d76be inset;
-      -moz-box-shadow: 0 0 4px #0d76be inset;
-      -webkit-box-shadow: 0 0 4px #0d76be inset;
+      @include shadow3();
     }
 
     &::-webkit-input-placeholder {
@@ -65,48 +61,48 @@
   }
 
   &__button {
-    background: rgb(52, 173, 236);
+    background: lighten($main-color, 30%);
     background: -moz-linear-gradient(
       top,
-      rgba(52, 173, 236, 1) 0%,
-      rgba(38, 145, 220, 1) 100%
+      $main-color 0%,
+      $main-color 100%
     );
     background: -webkit-gradient(
       linear,
       left top,
       left bottom,
-      color-stop(0%, rgba(52, 173, 236, 1)),
-      color-stop(100%, rgba(38, 145, 220, 1))
+      color-stop(0%, $main-color),
+      color-stop(100%, $main-color)
     );
     background: -webkit-linear-gradient(
       top,
-      rgba(52, 173, 236, 1) 0%,
-      rgba(38, 145, 220, 1) 100%
+      $main-color 0%,
+      $main-color 100%
     );
     background: -o-linear-gradient(
       top,
-      rgba(52, 173, 236, 1) 0%,
-      rgba(38, 145, 220, 1) 100%
+      $main-color 0%,
+      $main-color 100%
     );
     background: -ms-linear-gradient(
       top,
-      rgba(52, 173, 236, 1) 0%,
-      rgba(38, 145, 220, 1) 100%
+      $main-color 0%,
+      $main-color 100%
     );
     background: linear-gradient(
       to bottom,
-      rgba(52, 173, 236, 1) 0%,
-      rgba(38, 145, 220, 1) 100%
+      $main-color 0%,
+      $main-color 100%
     );
     border: none;
-    color: #fff;
+    color: $main-color3;
     cursor: pointer;
     font-family: "MuseoModerno", cursive;
     padding: 10px;
     width: 106px;
-    box-shadow: 0 0 2px #2692dd inset;
-    -moz-box-shadow: 0 0 2px #2692dd inset;
-    -webkit-box-shadow: 0 0 2px #2692dd inset;
+    box-shadow: 0 0 2px $main-color inset;
+    -moz-box-shadow: 0 0 2px $main-color inset;
+    -webkit-box-shadow: 0 0 2px $main-color inset;
     border-radius: 9px;
     -moz-border-radius: 9px;
     -webkit-border-radius: 9px;

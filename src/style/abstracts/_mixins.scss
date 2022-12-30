@@ -24,8 +24,15 @@ $breakpoints: (
   box-shadow: inset 0px 3px 50px -6px rgba(242, 200, 59, 1);
 
 }
+
 @mixin shadow2() {
   -webkit-box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
   -moz-box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
   box-shadow: inset 0px 3px 24px -6px rgba(66, 68, 90, 1);
+}
+
+@mixin shadow3() {
+  box-shadow: 0 0 4px #0d76be inset;
+  -moz-box-shadow: 0 0 4px #0d76be inset;
+  -webkit-box-shadow: 0 0 4px #0d76be inset;
 }

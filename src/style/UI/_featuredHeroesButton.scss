@@ -20,7 +20,7 @@
   &:hover {
     opacity: 0.9;
     -webkit-text-fill-color: $main-color3;
-    background: lighten($main-color, 10%);
+    background: $main-color;
     background: -moz-linear-gradient(
       top,
       rgbalighten($main-color, 10%) 0%,
