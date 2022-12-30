@@ -7,9 +7,11 @@
   box-shadow: 0 3px 7px $main-color4;
   transition: transform 0.5s ease-in-out;
   background-color: $main-color3;
+
   @include media(medium) {
     width: 280px;
   }
+  
   @include media(xlarge) {
     width: 280px;
     cursor: pointer;

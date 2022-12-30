@@ -56,17 +56,7 @@
       min-height: 60px;
       margin: 45px 0;
       float: right;
-      border-radius: 9px;
-      -moz-border-radius: 9px;
-      -webkit-border-radius: 9px;
-      background: $main-color3;
-      border: none;
-      color: $main-color4;
-      font-family: "MuseoModerno", cursive;
       padding: 10px;
-      box-shadow: 0 0 9px grey inset;
-      -moz-box-shadow: 0 0 9px grey inset;
-      -webkit-box-shadow: 0 0 9px grey inset;
     }
 
     @include media(xlarge) {
