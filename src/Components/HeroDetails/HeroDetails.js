@@ -39,12 +39,19 @@ function HeroDetails() {
         {!isLoading && (
           <Fade>
             <div className="details__card">
-              <button className="details__goback-button" onClick={() => navigate(-1)}>GO BACK</button>
+              <button
+                className="details__goback-button"
+                onClick={() => navigate(-1)}
+              >
+                GO BACK
+              </button>
               <div className="details__info">
                 <LazyLoadImage
                   className="details__info__img"
                   src={`${heroData.image?.url}`}
                   alt={`${heroData.name}`}
+                  width={heroData.image?.width}
+                  height={heroData.image?.height}
                   placeholderSrc={PlaceholderImage}
                   effect="blur"
                 />
