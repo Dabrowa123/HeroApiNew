@@ -3,7 +3,7 @@ import * as icon from "../../assets/icons/index.js";
 import { useDispatch } from "react-redux";
 import { removeHeroBattle, removeVillainBattle } from "../../store/index.js";
 
-function BattleHeroListItem({ name, imgUrl, powerstats, id, team }) {
+function BattleTeamListItem({ name, imgUrl, powerstats, id, team }) {
   const dispatch = useDispatch();
 
   const handleHeroRemoveFromBattle = (id) => {
@@ -74,4 +74,4 @@ function BattleHeroListItem({ name, imgUrl, powerstats, id, team }) {
   );
 }
 
-export default BattleHeroListItem;
+export default BattleTeamListItem;

@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import BattleHeroListItem from "./BattleHeroListItem.js";
+import BattleHeroListItem from "./BattleTeamListItem.js";
 
 function BattleTeamList({ team }) {
-  const heroesListBattle = useSelector((state) => {
+  const teamList = useSelector((state) => {
     if (team == "heroes") {
       return state.heroesBattle;
     } else if (team == "villains") {
@@ -15,18 +15,16 @@ function BattleTeamList({ team }) {
     return state.winners[0];
   });
 
-  const renderedHeroes = heroesListBattle.map(
-    ({ name, imgUrl, powerstats, id }) => (
-      <BattleHeroListItem
-        key={id}
-        name={name}
-        imgUrl={imgUrl}
-        powerstats={powerstats}
-        id={id}
-        team={team}
-      />
-    )
-  );
+  const renderedTeamList = teamList.map(({ name, imgUrl, powerstats, id }) => (
+    <BattleHeroListItem
+      key={id}
+      name={name}
+      imgUrl={imgUrl}
+      powerstats={powerstats}
+      id={id}
+      team={team}
+    />
+  ));
 
   return (
     <section className="battle-heroes">
@@ -38,7 +36,7 @@ function BattleTeamList({ team }) {
             : "battle-heroes__list"
         }
       >
-        {renderedHeroes}
+        {renderedTeamList}
       </ul>
     </section>
   );
