@@ -12,7 +12,7 @@ function Searchform({ formId, classBlockName }) {
         onChange={handleChange}
         type="text"
         name="search"
-        placeholder="type hero name"
+        placeholder="&nbsp;type hero name"
         required
       />
 

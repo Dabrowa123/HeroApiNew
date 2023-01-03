@@ -1,10 +1,11 @@
 import { Link } from "react-scroll";
 import { HashLink } from "react-router-hash-link";
 import { useDispatch } from "react-redux";
-import { turnOffBattleMode } from "../../../src/store/index.js";
+import { turnOffBattleMode } from "../../../store/index.js";
 
 function NavButton({ buttonText, goToId }) {
   const dispatch = useDispatch();
+
   return (
     <Link
       activeClass="active"

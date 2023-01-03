@@ -1,13 +1,15 @@
 import React from "react";
 import Fade from "react-reveal/Fade.js";
 import useShowUpOnOffsetInPath from "../../hooks/useShowUpOnOffsetInPath.js";
-import useBattleMode from "../../hooks/useBattleMode.js";
-import NavButton from "./NavButton.js";
+import NavButton from "../UI/Buttons/NavButton.js";
 import Searchform from "../UI/Searchform/Searchform.js";
+import { useSelector } from "react-redux";
 
 function Nav() {
   const isvisible = useShowUpOnOffsetInPath(500, "/");
-  const [battleMode, disableBattleMode] = useBattleMode();
+  const battleMode = useSelector((state) => {
+    return state.battleMode[0];
+  });
 
   return (
     <Fade>
@@ -27,16 +29,8 @@ function Nav() {
           )}
           {battleMode && (
             <div className="nav__buttons">
-              <NavButton
-                buttonText={"HOME"}
-                goToId={"landing"}
-                onClick={disableBattleMode}
-              />
-              <NavButton
-                buttonText={"FEATURED"}
-                goToId={"featured"}
-                onClick={disableBattleMode}
-              />
+              <NavButton buttonText={"HOME"} goToId={"landing"} />
+              <NavButton buttonText={"FEATURED"} goToId={"featured"} />
             </div>
           )}
         </div>

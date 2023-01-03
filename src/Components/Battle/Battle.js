@@ -100,7 +100,7 @@ function Battle() {
         )}
       </div>
       <br></br>
-      <Searchform formId="search-input-battle" blockClassName="searchform" />
+      <Searchform formId="search-input-battle" classBlockName="searchform" />
       <BattleSearchView />
     </section>
   );
