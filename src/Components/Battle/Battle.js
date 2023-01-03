@@ -1,7 +1,6 @@
 import React from "react";
-import BattleHeroes from "./BattleHeroes.js";
-import BattleVillains from "./BattleVillains.js";
-import SearchformBattle from "./SearchformBattle.js";
+import BattleTeamList from "./BattleTeamList.js";
+import Searchform from "../UI/Searchform/Searchform.js";
 import BattleSearchView from "./BattleSearchView.js";
 import { useDispatch, useSelector } from "react-redux";
 import { setWinners } from "../../store/index.js";
@@ -56,11 +55,19 @@ function Battle() {
     dispatch(setWinners(""));
   };
 
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   if (window.location.pathname === "/") {
+  //     dispatch(searchNameToBattle(""));
+  //   }
+  // });
+
   return (
     <section className="battle">
       <div className="battle__container">
-        <BattleHeroes />
-        <BattleVillains />
+        <BattleTeamList team="heroes" />
+        <BattleTeamList team="villains" />
       </div>
       <div className="battle__result-button">
         {!isFight && (
@@ -92,7 +99,7 @@ function Battle() {
         )}
       </div>
       <br></br>
-      <SearchformBattle />
+      <Searchform formId="search-input-battle" classBlockName="searchform" />
       <BattleSearchView />
     </section>
   );

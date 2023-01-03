@@ -1,25 +1,14 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import battle from "../../assets/img/battle2.png";
 import Fade from "react-reveal/Fade.js";
 import BattleButton from "../UI/Buttons/BattleButton.js";
 import PlaceholderImage from "../../assets/img/superman-placeholder.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import useScreenSizeCheck from "../../hooks/useScreenSizeCheck.js";
 
 function BattleMainPage() {
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth > 769) {
-      setIsDesktop(true);
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-      setIsDesktop(false);
-    }
-  }, []);
+  const [isMobile, isDesktop] = useScreenSizeCheck();
 
   return (
     <section className="battle-mainpage" id="battle">

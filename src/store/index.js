@@ -1,5 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
+  battleModeReducer,
+  turnOnBattleMode,
+  turnOffBattleMode,
+} from "./slices/battleModeSlice.js";
+import {
   heroesBattleReducer,
   addHeroBattle,
   removeHeroBattle,
@@ -18,6 +23,7 @@ import { reset } from "./actions.js";
 
 const store = configureStore({
   reducer: {
+    battleMode: battleModeReducer,
     heroesBattle: heroesBattleReducer,
     villainsBattle: villainsBattleReducer,
     searchedNameToBattle: searchedNameToBattleReducer,
@@ -28,6 +34,8 @@ const store = configureStore({
 export {
   store,
   reset,
+  turnOnBattleMode,
+  turnOffBattleMode,
   addHeroBattle,
   removeHeroBattle,
   addVillainBattle,

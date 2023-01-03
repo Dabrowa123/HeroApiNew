@@ -4,6 +4,7 @@
   border: 1px solid #d3d3d3;
   padding: 2px 5px;
   width: 343px;
+  height: 41px;
   box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
   -moz-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
   -webkit-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.37);
@@ -14,7 +15,7 @@
   &__input,
   &__button {
     float: left;
-    font-size: 17px;
+    font-size: 15px;
 
     @include media(xlarge) {
       font-size: 17px;
@@ -28,6 +29,7 @@
     margin-right: 5px;
     padding: 10px;
     width: 220px;
+    height: 35px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4) inset,
       1px 1px 1px rgba(255, 255, 255, 0.75);
     -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4) inset,
@@ -103,8 +105,11 @@
     color: #fff;
     cursor: pointer;
     font-family: "MuseoModerno", cursive;
+    font-size: 15px;
+    line-height: 15px;
     padding: 10px;
     width: 106px;
+    height: 35px;
     box-shadow: 0 0 2px #2692dd inset;
     -moz-box-shadow: 0 0 2px #2692dd inset;
     -webkit-box-shadow: 0 0 2px #2692dd inset;
@@ -113,9 +118,7 @@
     -webkit-border-radius: 9px;
 
     @include media(medium) {
-      font-size: 15px;
       width: 90px;
-      line-height: 15px;
     }
 
     @include media(xlarge) {

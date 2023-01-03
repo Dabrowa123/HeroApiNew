@@ -1,38 +1,22 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import useSearch from "../../../hooks/useSearch.js";
 
-function Searchform() {
-  const [searchInputValue, setSearchInputValue] = useState("");
-
-  const navigate = useNavigate();
-
-  const handleSearch = () => {
-    if (searchInputValue === "") {
-      return;
-    } else {
-      navigate(`/search/${searchInputValue}`);
-    }
-  };
+function Searchform({ formId, classBlockName }) {
+  const [handleChange, handleSubmit] = useSearch("search-input-landing");
 
   return (
-    <form className="searchform cf">
+    <form className={`${classBlockName}`} onSubmit={handleSubmit}>
       <input
-        className="searchform__input"
-        id="search-input-landing"
-        onChange={(event) => setSearchInputValue(event.target.value)}
-        onKeyDown={(event) => {
-          if (event.key === "Enter") {
-            handleSearch();
-          }
-        }}
+        className={`${classBlockName}__input`}
+        id={formId}
+        onChange={handleChange}
         type="text"
-        name="search-landing"
-        placeholder="type hero name"
+        name="search"
+        placeholder="&nbsp;type hero name"
         required
       />
-      <button className="searchform__button" onClick={handleSearch}>
-        Find Hero
-      </button>
+
+      <button className={`${classBlockName}__button`}>Find Hero</button>
     </form>
   );
 }

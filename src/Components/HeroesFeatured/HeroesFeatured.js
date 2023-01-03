@@ -3,26 +3,12 @@ import HeroCard from "../HeroCard/HeroCard.js";
 import chevronLeft from "../../assets/icons/chevron-left.png";
 import chevronRight from "../../assets/icons/chevron-right.png";
 import featuredHeroesArray from "../Assets/PreloadedData/FeaturedHeroData.js";
+import swiperCustomSettings from "../../helpers/swiperCustomSettings.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 function HeroesFeatured() {
   const swiperRef = useRef();
-
-  const sliderSettings = {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 5,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 5,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 5,
-    },
-  };
 
   return (
     <section className="featured" id="featured">
@@ -37,7 +23,7 @@ function HeroesFeatured() {
 
         <Swiper
           slidesPerView={3}
-          breakpoints={sliderSettings}
+          breakpoints={swiperCustomSettings}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
