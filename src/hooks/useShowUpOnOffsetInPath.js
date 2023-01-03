@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 
 const useShowUpOnOffsetInPath = (offset, location) => {
   const [isvisible, setIsVisible] = useState(false);
+  const currentLocation = useLocation();
+
   const offsetReached = () => {
-    if (window.location.pathname !== location) {
+    if (currentLocation.pathname !== location) {
       setIsVisible(true);
     } else {
       if (window.scrollY >= offset) {
@@ -19,7 +22,7 @@ const useShowUpOnOffsetInPath = (offset, location) => {
   useEffect(() => {
     offsetReached();
     // eslint-disable-next-line
-  }, [window.location.pathname]);
+  }, [currentLocation.pathname]);
 
   return isvisible;
 };

@@ -27,8 +27,6 @@ function Nav() {
     // eslint-disable-next-line
   }, [window.location.pathname]);
 
-  const dispatch = useDispatch();
-
   return (
     <Fade>
       <nav className={isvisible ? "nav" : "nav-display-none"}>
@@ -49,16 +47,6 @@ function Nav() {
             <div className="nav__buttons">
               <NavButton buttonText={"HOME"} toId={"landing"} />
               <NavButton buttonText={"FEATURED"} toId={"featured"} />
-              {/* <HashLink className="nav__button-home" spy smooth to="/#landing">
-                <span onClick={() => dispatch(searchNameToBattle(""))}>
-                  HOME
-                </span>
-              </HashLink>
-              <HashLink className="nav__button-home" spy smooth to="/#featured">
-                <span onClick={() => dispatch(searchNameToBattle(""))}>
-                  FEATURED
-                </span>
-              </HashLink> */}
             </div>
           )}
         </div>
