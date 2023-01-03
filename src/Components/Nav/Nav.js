@@ -47,7 +47,9 @@ function Nav() {
           )}
           {!enableSearch && (
             <div className="nav__buttons">
-              <HashLink className="nav__button-home" spy smooth to="/#landing">
+              <NavButton buttonText={"HOME"} toId={"landing"} />
+              <NavButton buttonText={"FEATURED"} toId={"featured"} />
+              {/* <HashLink className="nav__button-home" spy smooth to="/#landing">
                 <span onClick={() => dispatch(searchNameToBattle(""))}>
                   HOME
                 </span>
@@ -56,7 +58,7 @@ function Nav() {
                 <span onClick={() => dispatch(searchNameToBattle(""))}>
                   FEATURED
                 </span>
-              </HashLink>
+              </HashLink> */}
             </div>
           )}
         </div>

@@ -8,7 +8,7 @@ function NavButton({ buttonText, toId }) {
       to={toId}
       spy={true}
       smooth={true}
-      offset={-70}
+      offset={0}
       duration={1000}
     >
       <HashLink className="nav__button-home" spy smooth to={`/#${toId}`}>
