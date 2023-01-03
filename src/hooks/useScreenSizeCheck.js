@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useScreenSizeCheck = () => {
+function useScreenSizeCheck() {
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   let screenSize = window.innerWidth;
@@ -16,6 +16,6 @@ const useScreenSizeCheck = () => {
   }, [screenSize]);
 
   return [isMobile, isDesktop];
-};
+}
 
 export default useScreenSizeCheck;

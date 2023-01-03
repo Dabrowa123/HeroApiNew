@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 
-const useShowUpOnOffsetInPath = (offset, location) => {
+function useShowUpOnOffsetInPath(offset, location) {
   const [isvisible, setIsVisible] = useState(false);
   const currentLocation = useLocation();
 
