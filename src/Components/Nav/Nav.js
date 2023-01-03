@@ -7,7 +7,7 @@ import NavSearchform from "./NavSearchForm.js";
 
 function Nav() {
   const isvisible = useShowUpOnOffsetInPath(500, "/");
-  const battleMode = useBattleMode();
+  const [battleMode, disableBattleMode] = useBattleMode();
 
   return (
     <Fade>
@@ -16,9 +16,9 @@ function Nav() {
           {!battleMode && (
             <>
               <div className="nav__buttons">
-                <NavButton buttonText={"HOME"} toId={"landing"} />
-                <NavButton buttonText={"FEATURED"} toId={"featured"} />
-                <NavButton buttonText={"BATTLE"} toId={"battle"} />
+                <NavButton buttonText={"HOME"} goToId={"landing"} />
+                <NavButton buttonText={"FEATURED"} goToId={"featured"} />
+                <NavButton buttonText={"BATTLE"} goToId={"battle"} />
               </div>
               <div className="nav__search">
                 <NavSearchform />
@@ -27,8 +27,16 @@ function Nav() {
           )}
           {battleMode && (
             <div className="nav__buttons">
-              <NavButton buttonText={"HOME"} toId={"landing"} />
-              <NavButton buttonText={"FEATURED"} toId={"featured"} />
+              <NavButton
+                buttonText={"HOME"}
+                goToId={"landing"}
+                onClick={disableBattleMode}
+              />
+              <NavButton
+                buttonText={"FEATURED"}
+                goToId={"featured"}
+                onClick={disableBattleMode}
+              />
             </div>
           )}
         </div>

@@ -1,24 +1,29 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router";
 
 function useBattleMode() {
-  // Display searchform
   const [battleMode, setbattleMode] = useState(false);
+  const currentLocation = useLocation();
 
   const searchedNameToBattle = useSelector((state) => {
     return state.searchedNameToBattle[0];
   });
 
   useEffect(() => {
-    if (window.location.pathname === "/battle" || searchedNameToBattle !== "") {
+    if (currentLocation.pathname === "/battle" || searchedNameToBattle !== "") {
       setbattleMode(true);
     } else {
       setbattleMode(false);
     }
     // eslint-disable-next-line
-  }, [window.location.pathname]);
+  }, [currentLocation.pathname]);
 
-  return battleMode;
+  const disableBattleMode = () => {
+    setbattleMode(false);
+  };
+
+  return [battleMode, disableBattleMode];
 }
 
 export default useBattleMode;
