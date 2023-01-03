@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import useSearch from "../../../hooks/useSearch.js";
 
 function Searchform() {
@@ -16,7 +15,7 @@ function Searchform() {
         placeholder="type hero name"
         required
       />
-      
+
       <button className="searchform__button">Find Hero</button>
     </form>
   );

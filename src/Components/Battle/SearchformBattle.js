@@ -21,11 +21,11 @@ function SearchformBattle() {
   };
 
   // Clearing search after navigating to homepage
-  // useEffect(() => {
-  //   if (window.location.pathname === "/") {
-  //     dispatch(searchNameToBattle(""));
-  //   }
-  // });
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      dispatch(searchNameToBattle(""));
+    }
+  });
 
   return (
     <form className="searchform cf">
