@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { searchNameToBattle } from "../../store/index.js";
 import { useDispatch } from "react-redux";
 
@@ -19,6 +19,13 @@ function SearchformBattle() {
       input.value = "";
     }
   };
+
+  // Clearing search after navigating to homepage
+  // useEffect(() => {
+  //   if (window.location.pathname === "/") {
+  //     dispatch(searchNameToBattle(""));
+  //   }
+  // });
 
   return (
     <form className="searchform cf">

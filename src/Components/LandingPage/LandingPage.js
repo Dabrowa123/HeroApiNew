@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import supermanDesktop from "../../assets/img/superman-desktop.png";
 import supermanMobile from "../../assets/img/superman-mobile.png";
 import Searchform from ".././UI/Searchform/Searchform.js";
@@ -8,30 +7,10 @@ import FeaturedHeroesButton from "../UI/Buttons/FeaturedHeroesButton.js";
 import PlaceholderImage from "../../assets/img/superman-placeholder.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { useDispatch } from "react-redux";
-import { searchNameToBattle } from "../../store/index.js";
+import useScreenSizeCheck from "../../hooks/useScreenSizeCheck.js";
 
 function LandingPage() {
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth > 769) {
-      setIsDesktop(true);
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-      setIsDesktop(false);
-    }
-  }, []);
-
-  // Clearing search after navigating to homepage
-  const dispatch = useDispatch();
-  useEffect(() => {
-    if (window.location.pathname === "/") {
-      dispatch(searchNameToBattle(""));
-    }
-  });
+  const [isMobile, isDesktop] = useScreenSizeCheck();
 
   return (
     <section className="landing" id="landing">
