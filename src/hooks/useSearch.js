@@ -1,12 +1,21 @@
 import { useNavigate } from "react-router";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { searchNameToBattle } from "../../src/store/index.js";
 
 function useSearch(searchFormId) {
   const [searchInputValue, setSearchInputValue] = useState("");
 
+  const input = document.getElementById(searchFormId);
+
+  // navigate to site on normal mode
   const navigate = useNavigate();
 
-  const input = document.getElementById(searchFormId);
+  // dispatch for battle mode
+  const battleMode = useSelector((state) => {
+    return state.battleMode[0];
+  });
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     setSearchInputValue(event.target.value);
@@ -14,7 +23,11 @@ function useSearch(searchFormId) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate(`/search/${searchInputValue}`);
+    if (battleMode) {
+      dispatch(searchNameToBattle(searchInputValue));
+    } else {
+      navigate(`/search/${searchInputValue}`);
+    }
     setSearchInputValue("");
     input.value = "";
   };

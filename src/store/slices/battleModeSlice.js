@@ -4,11 +4,11 @@ const battleModeSlice = createSlice({
   name: "battleMode",
   initialState: [false],
   reducers: {
-    turnOnBattleMode(state, action) {
-      state[0] = action.payload;
+    turnOnBattleMode(state) {
+      state[0] = true;
     },
-    turnOffBattleMode(state, action) {
-      state[0] = action.payload;
+    turnOffBattleMode(state) {
+      state[0] = false;
     },
   },
 });
