@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useComponentShowUpOnOffsetAndStick = (offset, location) => {
+const useShowUpOnOffsetInPath = (offset, location) => {
   const [isvisible, setIsVisible] = useState(false);
   const offsetReached = () => {
     if (window.location.pathname !== location) {
@@ -22,4 +22,4 @@ const useComponentShowUpOnOffsetAndStick = (offset, location) => {
   return isvisible;
 };
 
-export default useComponentShowUpOnOffsetAndStick;
+export default useShowUpOnOffsetInPath;
