@@ -1,40 +1,21 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import useSearch from "../../hooks/useSearch.js";
 
 function NavSearchform() {
-  // Adding search logic
-  const [searchInputValue, setSearchInputValue] = useState("");
+  const [handleChange, handleSubmit] = useSearch("search-input");
 
-  const navigate = useNavigate();
-
-  const input = document.getElementById("search-input");
-
-  const handleSearch = (event) => {
-    if (searchInputValue === "") {
-      return;
-    } else {
-      event.preventDefault();
-      navigate(`/search/${searchInputValue}`);
-      setSearchInputValue("");
-      input.value = "";
-    }
-  };
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         id="search-input"
-        onChange={(event) => setSearchInputValue(event.target.value)}
-        onKeyDown={(event) => {
-          if (event.key === "Enter") {
-            handleSearch(event);
-          }
-        }}
+        onChange={handleChange}
         type="text"
         name="search-nav"
         placeholder=" Type hero name"
         required
       />
-      <button onClick={(event) => handleSearch(event)}>find hero!</button>
+
+      <button>find hero!</button>
     </form>
   );
 }

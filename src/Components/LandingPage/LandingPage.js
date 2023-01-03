@@ -43,6 +43,7 @@ function LandingPage() {
           </Fade>
         )}
       </div>
+
       <div className="landing__content-container">
         <div className="landing__content">
           <Fade
@@ -58,6 +59,7 @@ function LandingPage() {
               DATABASE
             </h1>
           </Fade>
+
           <div className="landing__searchform">
             <Fade
               right={isDesktop}
@@ -69,6 +71,7 @@ function LandingPage() {
               <Searchform />
             </Fade>
           </div>
+
           <div className="landing__featured-button-desktop">
             <Fade right duration={1000} delay={1200} distance="50px">
               <FeaturedHeroesButton />
