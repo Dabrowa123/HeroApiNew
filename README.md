@@ -28,6 +28,8 @@ To navigate on the site, application uses **React Router** liblary and **sticky 
 
 A section of featured heroes operates on **Swiper.js carousel** with custom arrows outside the container.
 
+Components logic is separated in **helpers functions** and **custom hooks**.
+
 <br /><br />
 
 ![alt text](https://github.com/Dabrowa123/HeroApiNew/blob/main/src/assets/img/superhero-database.png?raw=true)
