@@ -1,82 +1,27 @@
 import React from "react";
-import * as icon from "../../assets/icons/index.js";
-import { useDispatch, useSelector } from "react-redux";
-import { removeHeroBattle } from "../../store/index.js";
+import { useSelector } from "react-redux";
+import BattleHeroListItem from "./BattleHeroListItem.js";
 
 function BattleHeroes() {
-  const dispatch = useDispatch();
   const heroesListBattle = useSelector((state) => {
     return state.heroesBattle;
   });
-
-  const handleHeroRemoveFromBattle = (hero) => {
-    dispatch(removeHeroBattle(hero));
-  };
 
   const winners = useSelector((state) => {
     return state.winners[0];
   });
 
-  const renderedHeroes = heroesListBattle.map((hero) => {
-    return (
-      <li className="battle-heroes__list-item">
-        <img src={hero.imgUrl} width={"50px"} alt={hero.name}/>
-        <div className="battle-heroes__list-item-info">
-          <div className="battle-heroes__list-item-info-details">
-            {hero.name}
-            <button
-              className="battle-heroes__remove-button"
-              onClick={() => handleHeroRemoveFromBattle(hero)}
-            >
-              Remove
-            </button>
-          </div>
-          <div className="battle-heroes__list-item-info-details">
-            <div className="battle-heroes__list-item-stats">
-              <img
-                className="battle-heroes__stats-icon"
-                src={icon.combat}
-                alt="combat icon"
-              />
-              {hero.powerstats.combat}
-            </div>
-            <div className="battle-heroes__list-item-stats">
-              <img
-                className="battle-heroes__stats-icon"
-                src={icon.durability}
-                alt="combat icon"
-              />
-              {hero.powerstats.durability}
-            </div>
-            <div className="battle-heroes__list-item-stats">
-              <img
-                className="battle-heroes__stats-icon"
-                src={icon.intelligence}
-                alt="combat icon"
-              />
-              {hero.powerstats.intelligence}
-            </div>
-            <div className="battle-heroes__list-item-stats">
-              <img
-                className="battle-heroes__stats-icon"
-                src={icon.speed}
-                alt="combat icon"
-              />
-              {hero.powerstats.speed}
-            </div>
-            <div className="battle-heroes__list-item-stats">
-              <img
-                className="battle-heroes__stats-icon"
-                src={icon.strength}
-                alt="combat icon"
-              />
-              {hero.powerstats.strength}
-            </div>
-          </div>
-        </div>
-      </li>
-    );
-  });
+  const renderedHeroes = heroesListBattle.map(
+    ({ name, imgUrl, powerstats, id }) => (
+      <BattleHeroListItem
+        key={id}
+        name={name}
+        imgUrl={imgUrl}
+        powerstats={powerstats}
+        id={id}
+      />
+    )
+  );
 
   return (
     <section className="battle-heroes">

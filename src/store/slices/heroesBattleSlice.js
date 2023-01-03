@@ -9,7 +9,7 @@ const heroesBattleSlice = createSlice({
       state.push(action.payload);
     },
     removeHeroBattle(state, action) {
-      const index = state.findIndex((hero) => hero.id === action.payload.id);
+      const index = state.findIndex((hero) => hero.id === action.payload);
       state.splice(index, 1);
     },
   },
