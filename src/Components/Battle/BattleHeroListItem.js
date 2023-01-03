@@ -1,13 +1,17 @@
 import React from "react";
 import * as icon from "../../assets/icons/index.js";
 import { useDispatch } from "react-redux";
-import { removeHeroBattle } from "../../store/index.js";
+import { removeHeroBattle, removeVillainBattle } from "../../store/index.js";
 
-function BattleHeroListItem({ name, imgUrl, powerstats, id }) {
+function BattleHeroListItem({ name, imgUrl, powerstats, id, team }) {
   const dispatch = useDispatch();
 
   const handleHeroRemoveFromBattle = (id) => {
-    dispatch(removeHeroBattle(id));
+    if (team === "heroes") {
+      dispatch(removeHeroBattle(id));
+    } else if (team === "villains") {
+      dispatch(removeVillainBattle(id));
+    }
   };
 
   return (

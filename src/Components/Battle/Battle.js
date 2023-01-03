@@ -1,6 +1,5 @@
 import React from "react";
-import BattleHeroes from "./BattleHeroes.js";
-import BattleVillains from "./BattleVillains.js";
+import BattleTeamList from "./BattleTeamList.js";
 import Searchform from "../UI/Searchform/Searchform.js";
 import BattleSearchView from "./BattleSearchView.js";
 import { useDispatch, useSelector } from "react-redux";
@@ -67,8 +66,8 @@ function Battle() {
   return (
     <section className="battle">
       <div className="battle__container">
-        <BattleHeroes />
-        <BattleVillains />
+        <BattleTeamList team="heroes" />
+        <BattleTeamList team="villains" />
       </div>
       <div className="battle__result-button">
         {!isFight && (
