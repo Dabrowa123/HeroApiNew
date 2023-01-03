@@ -4,9 +4,9 @@ import BattleHeroListItem from "./BattleTeamListItem.js";
 
 function BattleTeamList({ team }) {
   const teamList = useSelector((state) => {
-    if (team == "heroes") {
+    if (team === "heroes") {
       return state.heroesBattle;
-    } else if (team == "villains") {
+    } else if (team === "villains") {
       return state.villainsBattle;
     }
   });
