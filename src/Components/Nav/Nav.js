@@ -8,7 +8,7 @@ import { HashLink } from "react-router-hash-link";
 import useComponentShowUpOnOffsetAndStick from "../../hooks/useComponentShowUpOnOffsetAndStick.js";
 
 function Nav() {
-  const [isvisible] = useComponentShowUpOnOffsetAndStick(500, "/");
+  const isvisible = useComponentShowUpOnOffsetAndStick(500, "/");
 
   // Adding search logic
   const [searchInputValue, setSearchInputValue] = useState("");

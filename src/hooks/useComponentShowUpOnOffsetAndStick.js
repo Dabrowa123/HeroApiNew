@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const useComponentShowUpOnOffsetAndStick = (offset, location) => {
   const [isvisible, setIsVisible] = useState(false);
@@ -19,7 +19,7 @@ const useComponentShowUpOnOffsetAndStick = (offset, location) => {
     // eslint-disable-next-line
   }, [window.location.pathname]);
 
-  return [isvisible];
+  return isvisible;
 };
 
 export default useComponentShowUpOnOffsetAndStick;
