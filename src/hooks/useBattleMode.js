@@ -1,27 +1,13 @@
-import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router";
+import { turnOffBattleMode } from "../store/index.js";
 
 function useBattleMode() {
-  const [battleMode, setbattleMode] = useState(false);
-  const currentLocation = useLocation();
-
-  const searchedNameToBattle = useSelector((state) => {
-    return state.searchedNameToBattle[0];
+  const battleMode = useSelector((state) => {
+    return state.battleMode[0];
   });
-
-  useEffect(() => {
-    if (currentLocation.pathname === "/battle" || searchedNameToBattle !== "") {
-      setbattleMode(true);
-    } else {
-      setbattleMode(false);
-    }
-    // eslint-disable-next-line
-  }, [currentLocation.pathname]);
-
-  const disableBattleMode = () => {
-    setbattleMode(false);
-  };
+  const dispatch = useDispatch();
+  const disableBattleMode = () => dispatch(turnOffBattleMode());
 
   return [battleMode, disableBattleMode];
 }
