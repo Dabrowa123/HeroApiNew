@@ -5,26 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { searchNameToBattle } from "../../store/index.js";
 import { Link } from "react-scroll";
 import { HashLink } from "react-router-hash-link";
+import useComponentShowUpOnOffsetAndStick from "../../hooks/useComponentShowUpOnOffsetAndStick.js";
 
 function Nav() {
-  // Adding sticky nav logic
-  const [isvisible, setIsVisible] = useState(false);
-  const offsetReached = () => {
-    if (window.location.pathname !== "/") {
-      setIsVisible(true);
-    } else {
-      if (window.scrollY >= 500) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    }
-  };
-  window.addEventListener("scroll", offsetReached);
-  useEffect(() => {
-    offsetReached();
-    // eslint-disable-next-line
-  }, [window.location.pathname]);
+  const [isvisible] = useComponentShowUpOnOffsetAndStick(500, "/");
 
   // Adding search logic
   const [searchInputValue, setSearchInputValue] = useState("");
