@@ -3,13 +3,11 @@ import Fade from "react-reveal/Fade.js";
 import useShowUpOnOffsetInPath from "../../hooks/useShowUpOnOffsetInPath.js";
 import NavButton from "../UI/Buttons/NavButton.js";
 import Searchform from "../UI/Searchform/Searchform.js";
-import { useSelector } from "react-redux";
+import useBattleMode from "../../hooks/useBattleMode.js";
 
 function Nav() {
   const isvisible = useShowUpOnOffsetInPath(500, "/");
-  const battleMode = useSelector((state) => {
-    return state.battleMode[0];
-  });
+  const [battleMode] = useBattleMode();
 
   return (
     <Fade>

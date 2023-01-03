@@ -9,6 +9,7 @@ import HeroDetails from "./Components/HeroDetails/HeroDetails.js";
 import BattleMainPage from "./Components/Battle/BattleMainPage.js";
 import Footer from "./Components/Footer/Footer.js";
 import ScrollToTop from "./../src/Components/Assets/scrollToTop.js";
+// import CheckBattleMode from "./helpers/CheckBattleMode.js";
 
 function App() {
   return (
