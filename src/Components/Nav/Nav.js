@@ -6,27 +6,10 @@ import { searchNameToBattle } from "../../store/index.js";
 import { Link } from "react-scroll";
 import { HashLink } from "react-router-hash-link";
 import useShowUpOnOffsetInPath from "../../hooks/useShowUpOnOffsetInPath.js";
+import NavSearchform from "../NavSearchForm/NavSearchForm.js";
 
 function Nav() {
   const isvisible = useShowUpOnOffsetInPath(500, "/");
-
-  // Adding search logic
-  const [searchInputValue, setSearchInputValue] = useState("");
-
-  const navigate = useNavigate();
-
-  const input = document.getElementById("search-input");
-
-  const handleSearch = (event) => {
-    if (searchInputValue === "") {
-      return;
-    } else {
-      event.preventDefault();
-      navigate(`/search/${searchInputValue}`);
-      setSearchInputValue("");
-      input.value = "";
-    }
-  };
 
   // Display searchform
   const [enableSearch, setEnableSearch] = useState(true);
@@ -106,26 +89,7 @@ function Nav() {
                 </Link>
               </div>
               <div className="nav__search">
-                <form>
-                  <input
-                    id="search-input"
-                    onChange={(event) =>
-                      setSearchInputValue(event.target.value)
-                    }
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter") {
-                        handleSearch(event);
-                      }
-                    }}
-                    type="text"
-                    name="search-nav"
-                    placeholder=" Type hero name"
-                    required
-                  />
-                  <button onClick={(event) => handleSearch(event)}>
-                    find hero!
-                  </button>
-                </form>
+                <NavSearchform />
               </div>
             </>
           )}

@@ -14,6 +14,8 @@ const useShowUpOnOffsetInPath = (offset, location) => {
     }
   };
   window.addEventListener("scroll", offsetReached);
+
+  // prevent showing up after navigating above offset from different location
   useEffect(() => {
     offsetReached();
     // eslint-disable-next-line
