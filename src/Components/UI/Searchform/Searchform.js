@@ -1,22 +1,22 @@
 import React from "react";
 import useSearch from "../../../hooks/useSearch.js";
 
-function Searchform() {
+function Searchform({ formId, classBlockName }) {
   const [handleChange, handleSubmit] = useSearch("search-input-landing");
 
   return (
-    <form className="searchform cf" onSubmit={handleSubmit}>
+    <form className={`${classBlockName}`} onSubmit={handleSubmit}>
       <input
-        className="searchform__input"
-        id="search-input-landing"
+        className={`${classBlockName}__input`}
+        id={formId}
         onChange={handleChange}
         type="text"
-        name="search-landing"
+        name="search"
         placeholder="type hero name"
         required
       />
 
-      <button className="searchform__button">Find Hero</button>
+      <button className={`${classBlockName}__button`}>Find Hero</button>
     </form>
   );
 }

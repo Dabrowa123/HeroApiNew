@@ -68,7 +68,10 @@ function LandingPage() {
               delay={1200}
               distance="50px"
             >
-              <Searchform />
+              <Searchform
+                formId="search-input-nav"
+                classBlockName="searchform"
+              />
             </Fade>
           </div>
 

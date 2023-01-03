@@ -3,7 +3,7 @@ import Fade from "react-reveal/Fade.js";
 import useShowUpOnOffsetInPath from "../../hooks/useShowUpOnOffsetInPath.js";
 import useBattleMode from "../../hooks/useBattleMode.js";
 import NavButton from "./NavButton.js";
-import NavSearchform from "./NavSearchForm.js";
+import Searchform from "../UI/Searchform/Searchform.js";
 
 function Nav() {
   const isvisible = useShowUpOnOffsetInPath(500, "/");
@@ -21,7 +21,7 @@ function Nav() {
                 <NavButton buttonText={"BATTLE"} goToId={"battle"} />
               </div>
               <div className="nav__search">
-                <NavSearchform />
+                <Searchform formId="search-input-landing" classBlockName="" />
               </div>
             </>
           )}
