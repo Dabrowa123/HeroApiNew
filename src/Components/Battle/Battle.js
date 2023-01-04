@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setWinners } from "../../store/index.js";
-import useTeamsStatistics from "../../hooks/useTeamsStatistics.js";
+import usePerformFigth from "../../hooks/usePerformFigth.js";
 import useBattleMessage from "../../hooks/useBattleMessage.js";
 import BattleTeamList from "./BattleTeamList.js";
 import Searchform from "../UI/Searchform/Searchform.js";
@@ -10,30 +10,28 @@ import Fade from "react-reveal/Fade.js";
 
 function Battle() {
   const dispatch = useDispatch();
-  const [isFight, setIsFight] = useState(false);
+  const [FightFinished, setFightFinished] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [resultMessage] = useBattleMessage();
-  const [heroesTeamStatistics, villainsTeamStatistics, noCharacterChoosen] =
-    useTeamsStatistics();
+  const [heroesAreStronger, villainsAreStronger, noCharacterChoosen] = usePerformFigth();
 
   const handleFight = () => {
-    setErrorMessage(false);
     if (noCharacterChoosen) {
       setErrorMessage(true);
-    } else if (heroesTeamStatistics - villainsTeamStatistics > 0) {
+      return;
+    } else if (heroesAreStronger) {
       dispatch(setWinners("heroes"));
-      setIsFight(true);
-    } else if (heroesTeamStatistics - villainsTeamStatistics < 0) {
+    } else if (villainsAreStronger) {
       dispatch(setWinners("villains"));
-      setIsFight(true);
     } else {
       dispatch(setWinners(""));
-      setIsFight(true);
     }
+    setFightFinished(true);
   };
 
   const handleNewFight = () => {
-    setIsFight(false);
+    setErrorMessage(false);
+    setFightFinished(false);
     dispatch(setWinners(""));
   };
 
@@ -45,7 +43,7 @@ function Battle() {
       </div>
 
       <div className="battle__result-button">
-        {!isFight && (
+        {!FightFinished && (
           <Fade>
             <button className="battle__button-fight" onClick={handleFight}>
               Fight!
@@ -53,7 +51,7 @@ function Battle() {
           </Fade>
         )}
 
-        {isFight && (
+        {FightFinished && (
           <div className="battle__result">
             <Fade>
               {resultMessage}
