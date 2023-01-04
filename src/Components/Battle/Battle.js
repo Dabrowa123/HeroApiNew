@@ -10,7 +10,7 @@ import Fade from "react-reveal/Fade.js";
 
 function Battle() {
   const dispatch = useDispatch();
-  const [FightFinished, setFightFinished] = useState(false);
+  const [fightFinished, setFightFinished] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [resultMessage] = useBattleMessage();
   const [heroesAreStronger, villainsAreStronger, noCharacterChoosen] = usePerformFigth();
@@ -43,7 +43,7 @@ function Battle() {
       </div>
 
       <div className="battle__result-button">
-        {!FightFinished && (
+        {!fightFinished && (
           <Fade>
             <button className="battle__button-fight" onClick={handleFight}>
               Fight!
@@ -51,7 +51,7 @@ function Battle() {
           </Fade>
         )}
 
-        {FightFinished && (
+        {fightFinished && (
           <div className="battle__result">
             <Fade>
               {resultMessage}

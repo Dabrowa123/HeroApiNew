@@ -18,7 +18,6 @@ function useBattleMessage() {
   }, [winners]);
 
   return [resultMessage];
-  //   return [resultMessage, errorMessage];
 }
 
 export default useBattleMessage;
