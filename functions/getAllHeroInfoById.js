@@ -3,12 +3,12 @@ import fetch from "node-fetch";
 exports.handler = async (event, context) => {
   const id = await event.queryStringParameters.id;
 
-  const URL = process.env.URL;
+  const API_URL = process.env.API_URL;
 
   let response;
   let data;
   try {
-    response = await fetch(`${URL}/${id}`);
+    response = await fetch(`${API_URL}/${id}`);
     data = await response.json();
   } catch (err) {
     return {
