@@ -1,8 +1,13 @@
-import React from 'react';
-import './Loader.css';
+import React from "react";
+import "./Loader.css";
 
 function Loader() {
-  return <div className="lds-ripple"><div></div><div></div></div>
+  return (
+    <div className="lds-ripple search__loader-container">
+      <div></div>
+      <div></div>
+    </div>
+  );
 }
 
 export default Loader;
