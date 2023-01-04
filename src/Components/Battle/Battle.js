@@ -12,10 +12,10 @@ function Battle() {
   const [noCharacterChoosen, setNoCharacterChoosen] = useState(false);
 
   const heroesList = useSelector((state) => {
-    return state.heroesBattle;
+    return state.heroesTeam;
   });
   const villainsList = useSelector((state) => {
-    return state.villainsBattle;
+    return state.villainsTeam;
   });
 
   let heroesStatsSum = heroesList
@@ -54,14 +54,6 @@ function Battle() {
     setIsFight(false);
     dispatch(setWinners(""));
   };
-
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   if (window.location.pathname === "/") {
-  //     dispatch(searchNameToBattle(""));
-  //   }
-  // });
 
   return (
     <section className="battle">

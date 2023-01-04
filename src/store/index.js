@@ -5,15 +5,15 @@ import {
   turnOffBattleMode,
 } from "./slices/battleModeSlice.js";
 import {
-  heroesBattleReducer,
-  addHeroBattle,
-  removeHeroBattle,
-} from "./slices/heroesBattleSlice.js";
+  heroesTeamReducer,
+  addToHeroesTeam,
+  removeFromHeroesTeam,
+} from "./slices/heroesTeamSlice.js";
 import {
-  villainsBattleReducer,
-  addVillainBattle,
-  removeVillainBattle,
-} from "./slices/villainsBattleSlice.js";
+  villainsTeamReducer,
+  addToVillainsTeam,
+  removeFromVillainsTeam,
+} from "./slices/villainsTeamSlice.js";
 import {
   searchNameToBattle,
   searchedNameToBattleReducer,
@@ -24,9 +24,9 @@ import { reset } from "./actions.js";
 const store = configureStore({
   reducer: {
     battleMode: battleModeReducer,
-    heroesBattle: heroesBattleReducer,
-    villainsBattle: villainsBattleReducer,
     searchedNameToBattle: searchedNameToBattleReducer,
+    heroesTeam: heroesTeamReducer,
+    villainsTeam: villainsTeamReducer,
     winners: winnersReducer,
   },
 });
@@ -36,10 +36,10 @@ export {
   reset,
   turnOnBattleMode,
   turnOffBattleMode,
-  addHeroBattle,
-  removeHeroBattle,
-  addVillainBattle,
-  removeVillainBattle,
+  addToHeroesTeam,
+  removeFromHeroesTeam,
+  addToVillainsTeam,
+  removeFromVillainsTeam,
   searchNameToBattle,
   setWinners,
 };

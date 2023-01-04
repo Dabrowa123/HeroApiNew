@@ -1,14 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeHeroBattle, removeVillainBattle } from "../../../store/index.js";
+import {
+  removeFromHeroesTeam,
+  removeFromVillainsTeam,
+} from "../../../store/index.js";
 
 function BattleRemoveCharacterButton({ team, id }) {
   const dispatch = useDispatch();
   const handleHeroRemoveFromBattle = (id) => {
     if (team === "heroes") {
-      dispatch(removeHeroBattle(id));
+      dispatch(removeFromHeroesTeam(id));
     } else if (team === "villains") {
-      dispatch(removeVillainBattle(id));
+      dispatch(removeFromVillainsTeam(id));
     }
   };
 
