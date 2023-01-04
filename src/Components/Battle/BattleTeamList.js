@@ -5,9 +5,9 @@ import BattleHeroListItem from "./BattleTeamListItem.js";
 function BattleTeamList({ team }) {
   const teamList = useSelector((state) => {
     if (team === "heroes") {
-      return state.heroesBattle;
+      return state.heroesTeam;
     } else if (team === "villains") {
-      return state.villainsBattle;
+      return state.villainsTeam;
     }
   });
 
@@ -15,16 +15,18 @@ function BattleTeamList({ team }) {
     return state.winners[0];
   });
 
-  const renderedTeamList = teamList.map(({ name, imgUrl, powerstats, id }) => (
-    <BattleHeroListItem
-      key={id}
-      name={name}
-      imgUrl={imgUrl}
-      powerstats={powerstats}
-      id={id}
-      team={team}
-    />
-  ));
+  const renderedTeamList = teamList.map(
+    ({ name, imgUrl, powerstats, id }, index) => (
+      <BattleHeroListItem
+        key={index}
+        name={name}
+        imgUrl={imgUrl}
+        powerstats={powerstats}
+        id={id}
+        team={team}
+      />
+    )
+  );
 
   return (
     <section className="battle-heroes">

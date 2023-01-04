@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { reset } from "../actions.js";
 
-const villainsBattleSlice = createSlice({
-  name: "villainBattle",
+const villainsTeamSlice = createSlice({
+  name: "villainsTeam",
   initialState: [],
   reducers: {
-    addVillainBattle(state, action) {
+    addToVillainsTeam(state, action) {
       state.push(action.payload);
     },
-    removeVillainBattle(state, action) {
+    removeFromVillainsTeam(state, action) {
       const index = state.findIndex((hero) => hero.id === action.payload);
       state.splice(index, 1);
     },
@@ -20,6 +20,6 @@ const villainsBattleSlice = createSlice({
   },
 });
 
-export const { addVillainBattle, removeVillainBattle } =
-  villainsBattleSlice.actions;
-export const villainsBattleReducer = villainsBattleSlice.reducer;
+export const { addToVillainsTeam, removeFromVillainsTeam } =
+  villainsTeamSlice.actions;
+export const villainsTeamReducer = villainsTeamSlice.reducer;

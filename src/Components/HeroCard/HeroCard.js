@@ -5,19 +5,20 @@ import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch } from "react-redux";
-import { addHeroBattle, addVillainBattle } from "../../store/index.js";
+import { addToHeroesTeam, addToVillainsTeam } from "../../store/index.js";
 import renderPowerstats from "../../helpers/renderPowerstats.js";
 import useBattleMode from "../../hooks/useBattleMode.js";
 
 function HeroCard({ name, imgUrl, powerstats, id }) {
   const [battleMode] = useBattleMode();
   const dispatch = useDispatch();
-  const hero = { name, imgUrl, powerstats, id };
   const handleAddToHeroes = () => {
-    dispatch(addHeroBattle(hero));
+    const hero = { name, imgUrl, powerstats, id };
+    dispatch(addToHeroesTeam(hero));
   };
   const handleAddToVillains = () => {
-    dispatch(addVillainBattle(hero));
+    const hero = { name, imgUrl, powerstats, id };
+    dispatch(addToVillainsTeam(hero));
   };
 
   return (
