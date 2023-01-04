@@ -14,15 +14,18 @@ function BattleMainPage() {
     <section className="battle-mainpage" id="battle">
       <div className="battle-mainpage__info">
         <h2 className="battle-mainpage__heading">SUPERHERO BATTLE</h2>
+
         <h2 className="battle-mainpage__description">
           Create championship of your favourite characters
         </h2>
+
         {isDesktop && (
           <div className="battle-mainpage__button">
             <BattleButton />
           </div>
         )}
       </div>
+
       <div className="battle-mainpage__image">
         {isMobile && (
           <>
@@ -42,6 +45,7 @@ function BattleMainPage() {
             </div>
           </>
         )}
+
         {isDesktop && (
           <Fade left duration={1000} delay={600} distance="70px">
             <LazyLoadImage
