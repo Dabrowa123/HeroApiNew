@@ -3,13 +3,13 @@ import fetch from "node-fetch";
 exports.handler = async (event, context) => {
   const id = await event.queryStringParameters.id;
 
-  const API_KEY = process.env.API_KEY;
+  const URL = process.env.URL;
 
   let response;
   let data;
   try {
     response = await fetch(
-      `https://www.superheroapi.com/api.php/${API_KEY}/${id}/image`
+      `${URL}/${id}/image`
     );
     data = await response.json();
   } catch (err) {
