@@ -3,13 +3,13 @@ import fetch from "node-fetch";
 exports.handler = async (event, context) => {
   const name = await event.queryStringParameters.name;
 
-  const URL = process.env.URL;
+  const API_URL = process.env.API_URL;
 
   let response;
   let data;
   try {
     response = await fetch(
-      `${URL}/search/${name}`
+      `${API_URL}/search/${name}`
     );
     data = await response.json();
   } catch (err) {
