@@ -18,12 +18,6 @@ function Battle() {
     return state.villainsTeam;
   });
 
-  // let heroesTeamStatistics = heroesTeam.map(({ powerstats }) =>
-  //   Object.values(powerstats)
-  // );
-  // let parsedHeroesTeamStatistics = heroesTeamStatistics.map(powerstats => )
-  // console.log(parsedHeroesStatistics);
-
   let heroesStatsSum = heroesTeam
     .map((hero) => Object.values(hero.powerstats).reduce((a, b) => a + +b, 0))
     .reduce((a, b) => a + +b, 0);
