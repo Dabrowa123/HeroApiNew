@@ -6,7 +6,8 @@ import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch } from "react-redux";
-import { addHeroBattle, addVillainBattle} from "../../store/index.js";
+import { addHeroBattle, addVillainBattle } from "../../store/index.js";
+import renderPowerstats from "../../helpers/renderPowerstats.js";
 
 function BattleHeroCard({ name, imgUrl, powerstats, id }) {
   const dispatch = useDispatch();
@@ -51,52 +52,7 @@ function BattleHeroCard({ name, imgUrl, powerstats, id }) {
           </Link>
         </div>
         <div className="hero-card__stats">
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.combat}
-              alt="combat icon"
-            />
-            <p>{powerstats.combat === "null" ? "?" : powerstats.combat}</p>
-          </div>
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.durability}
-              alt="durability icon"
-            />
-            <p>
-              {powerstats.durability === "null" ? "?" : powerstats.durability}
-            </p>
-          </div>
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.intelligence}
-              alt="intelligence icon"
-            />
-            <p>
-              {powerstats.intelligence === "null"
-                ? "?"
-                : powerstats.intelligence}
-            </p>
-          </div>
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.speed}
-              alt="combat speed"
-            />
-            <p>{powerstats.speed === "null" ? "?" : powerstats.speed}</p>
-          </div>
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.strength}
-              alt="strength icon"
-            />
-            <p>{powerstats.strength === "null" ? "?" : powerstats.strength}</p>
-          </div>
+          {renderPowerstats(powerstats, "hero-card")}
         </div>
       </div>
     </Fade>

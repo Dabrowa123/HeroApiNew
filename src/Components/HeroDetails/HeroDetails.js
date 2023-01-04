@@ -16,7 +16,6 @@ function HeroDetails() {
   const [heroData, setHeroData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const powerstats = heroData.powerstats;
-  console.log(heroData);
 
   useEffect(() => {
     const fetchAndRenderHeroData = async (id) => {
