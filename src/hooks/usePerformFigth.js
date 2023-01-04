@@ -33,7 +33,7 @@ function usePerformFigth() {
       setVillainsAreStronger(true);
       setHeroesAreStronger(false);
     }
-  });
+  }, [heroesTeamStatistics, villainsTeamStatistics]);
 
   // Checking if any character is choosen
   const noHeroChosen = heroesTeam.length === 0;
