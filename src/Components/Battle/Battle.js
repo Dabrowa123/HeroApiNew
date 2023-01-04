@@ -11,18 +11,18 @@ function Battle() {
   const [isFight, setIsFight] = useState(false);
   const [noCharacterChoosen, setNoCharacterChoosen] = useState(false);
 
-  const heroesList = useSelector((state) => {
+  const heroesTeam = useSelector((state) => {
     return state.heroesTeam;
   });
-  const villainsList = useSelector((state) => {
+  const villainsTeam = useSelector((state) => {
     return state.villainsTeam;
   });
 
-  let heroesStatsSum = heroesList
+  let heroesStatsSum = heroesTeam
     .map((hero) => Object.values(hero.powerstats).reduce((a, b) => a + +b, 0))
     .reduce((a, b) => a + +b, 0);
 
-  let villainsStatsSum = villainsList
+  let villainsStatsSum = villainsTeam
     .map((hero) => Object.values(hero.powerstats).reduce((a, b) => a + +b, 0))
     .reduce((a, b) => a + +b, 0);
 
@@ -30,7 +30,7 @@ function Battle() {
   const dispatch = useDispatch();
 
   const handleFight = () => {
-    if (heroesStatsSum + villainsStatsSum === 0) {
+    if (heroesTeam.length === 0 || villainsTeam.length === 0) {
       setNoCharacterChoosen(true);
     } else if (heroesStatsSum - villainsStatsSum > 0) {
       setNoCharacterChoosen(false);
