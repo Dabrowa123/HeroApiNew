@@ -50,19 +50,19 @@ function BattleSearchView() {
       {pageInitState && (
         <div className="battle-search__heading">
           <h3>Find characters and add them to battle</h3>
-          <span className="search__uppercase-name-span">{uppercaseName}</span>
         </div>
       )}
-      {!isLoading && (
+
+      {isLoading && <Loader />}
+
+      {!isLoading && !pageInitState && (
         <section className="battle-search">
-          {!pageInitState && !characterNotFound && (
-            <h2 className="battle-search__heading">
-              We found below heroes matching name:{" "}
-              <span className="search_uppercase-name-span">
-                &nbsp;{uppercaseName}
-              </span>
-            </h2>
-          )}
+          <h2 className="battle-search__heading">
+            We found below heroes matching name:{" "}
+            <span className="search_uppercase-name-span">
+              &nbsp;{uppercaseName}
+            </span>
+          </h2>
           <div className="search__list-wrapper">
             {searchList.map(({ powerstats, image, name, id }) => {
               return (
@@ -77,12 +77,8 @@ function BattleSearchView() {
             })}
           </div>
         </section>
-      )}{" "}
-      {isLoading && (
-        <div className="battle-search__loader-container">
-          <Loader />
-        </div>
       )}
+
       {!pageInitState && characterNotFound && !isLoading && (
         <div>
           <h3 className="battle-search__heading">
