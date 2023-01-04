@@ -3,9 +3,11 @@ import "./Loader.css";
 
 function Loader() {
   return (
-    <div className="lds-ripple search__loader-container">
-      <div></div>
-      <div></div>
+    <div className="loader-container">
+      <div className="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 }

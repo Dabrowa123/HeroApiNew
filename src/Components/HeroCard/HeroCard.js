@@ -12,12 +12,11 @@ import useBattleMode from "../../hooks/useBattleMode.js";
 function HeroCard({ name, imgUrl, powerstats, id }) {
   const [battleMode] = useBattleMode();
   const dispatch = useDispatch();
+  const hero = { name, imgUrl, powerstats, id };
   const handleAddToHeroes = () => {
-    const hero = { name, imgUrl, powerstats, id };
     dispatch(addToHeroesTeam(hero));
   };
   const handleAddToVillains = () => {
-    const hero = { name, imgUrl, powerstats, id };
     dispatch(addToVillainsTeam(hero));
   };
 
