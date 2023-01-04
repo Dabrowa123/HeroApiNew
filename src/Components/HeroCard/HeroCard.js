@@ -12,34 +12,33 @@ import useBattleMode from "../../hooks/useBattleMode.js";
 function HeroCard({ name, imgUrl, powerstats, id }) {
   const [battleMode] = useBattleMode();
   const dispatch = useDispatch();
+  const hero = { name, imgUrl, powerstats, id };
   const handleAddToHeroes = () => {
-    const hero = { name, imgUrl, powerstats, id };
     dispatch(addHeroBattle(hero));
   };
   const handleAddToVillains = () => {
-    const hero = { name, imgUrl, powerstats, id };
     dispatch(addVillainBattle(hero));
   };
 
   return (
     <Fade>
       <div className="hero-card">
-      {battleMode && (
-        <div className="battle-hero-card__buttons-container">
-          <span
-            className="battle-hero-card__btn battle-hero-card__btn--add"
-            onClick={handleAddToHeroes}
-          >
-            Add to Heroes
-          </span>
-          <span
-            className="battle-hero-card__btn battle-hero-card__btn--remove"
-            onClick={handleAddToVillains}
-          >
-            Add to Villains
-          </span>
-        </div>
-      )}
+        {battleMode && (
+          <div className="battle-hero-card__buttons-container">
+            <span
+              className="battle-hero-card__btn battle-hero-card__btn--add"
+              onClick={handleAddToHeroes}
+            >
+              Add to Heroes
+            </span>
+            <span
+              className="battle-hero-card__btn battle-hero-card__btn--remove"
+              onClick={handleAddToVillains}
+            >
+              Add to Villains
+            </span>
+          </div>
+        )}
         <h2 className="hero-card__heading">{name}</h2>
         <div className="hero-card__img-container">
           <Link to={`/hero/${id}`}>
