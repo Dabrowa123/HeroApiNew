@@ -167,15 +167,16 @@
     background-color: $main-color3;
   }
 
-  &__stats-container {
+  &__list-item-stats {
     padding: 20px;
   }
 
   &__stats-icon {
-    width: 25px;
+    width: 33px;
   }
 
   &__stats-info {
     margin: 0;
+    font-size: 20px;
   }
 }

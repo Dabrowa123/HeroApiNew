@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { searchHeroesByName } from "../../requests.js";
 import { useSelector } from "react-redux";
-import BattleHeroCard from "./BattleHeroCard.js";
+import HeroCard from "../HeroCard/HeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
 
 function BattleSearchView() {
@@ -66,7 +66,7 @@ function BattleSearchView() {
           <div className="search__list-wrapper">
             {searchList.map(({ powerstats, image, name, id }) => {
               return (
-                <BattleHeroCard
+                <HeroCard
                   key={id}
                   powerstats={powerstats}
                   imgUrl={image.url}

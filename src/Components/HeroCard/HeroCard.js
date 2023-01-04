@@ -1,15 +1,44 @@
 import React from "react";
 import Fade from "react-reveal/Fade.js";
-import * as icon from "../../assets/icons/index.js";
 import { Link } from "react-router-dom";
 import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useDispatch } from "react-redux";
+import { addHeroBattle, addVillainBattle } from "../../store/index.js";
+import renderPowerstats from "../../helpers/renderPowerstats.js";
+import useBattleMode from "../../hooks/useBattleMode.js";
 
 function HeroCard({ name, imgUrl, powerstats, id }) {
+  const [battleMode] = useBattleMode();
+  const dispatch = useDispatch();
+  const hero = { name, imgUrl, powerstats, id };
+  const handleAddToHeroes = () => {
+    dispatch(addHeroBattle(hero));
+  };
+  const handleAddToVillains = () => {
+    dispatch(addVillainBattle(hero));
+  };
+
   return (
     <Fade>
       <div className="hero-card">
+        {battleMode && (
+          <div className="battle-hero-card__buttons-container">
+            <span
+              className="battle-hero-card__btn battle-hero-card__btn--add"
+              onClick={handleAddToHeroes}
+            >
+              Add to Heroes
+            </span>
+            <span
+              className="battle-hero-card__btn battle-hero-card__btn--remove"
+              onClick={handleAddToVillains}
+            >
+              Add to Villains
+            </span>
+          </div>
+        )}
         <h2 className="hero-card__heading">{name}</h2>
         <div className="hero-card__img-container">
           <Link to={`/hero/${id}`}>
@@ -25,52 +54,7 @@ function HeroCard({ name, imgUrl, powerstats, id }) {
           </Link>
         </div>
         <div className="hero-card__stats">
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.combat}
-              alt="combat icon"
-            />
-            <p>{powerstats.combat === "null" ? "?" : powerstats.combat}</p>
-          </div>
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.durability}
-              alt="durability icon"
-            />
-            <p>
-              {powerstats.durability === "null" ? "?" : powerstats.durability}
-            </p>
-          </div>
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.intelligence}
-              alt="intelligence icon"
-            />
-            <p>
-              {powerstats.intelligence === "null"
-                ? "?"
-                : powerstats.intelligence}
-            </p>
-          </div>
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.speed}
-              alt="combat speed"
-            />
-            <p>{powerstats.speed === "null" ? "?" : powerstats.speed}</p>
-          </div>
-          <div>
-            <img
-              className="hero-card__stats-icon"
-              src={icon.strength}
-              alt="strength icon"
-            />
-            <p>{powerstats.strength === "null" ? "?" : powerstats.strength}</p>
-          </div>
+          {renderPowerstats(powerstats, "hero-card")}
         </div>
       </div>
     </Fade>
