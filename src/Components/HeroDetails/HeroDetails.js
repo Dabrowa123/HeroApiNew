@@ -9,11 +9,14 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useNavigate } from "react-router-dom";
+import renderPowerstats from "../../helpers/renderPowerstats.js";
 
 function HeroDetails() {
   const { id } = useParams();
   const [heroData, setHeroData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const powerstats = heroData.powerstats;
+  console.log(heroData);
 
   useEffect(() => {
     const fetchAndRenderHeroData = async (id) => {
@@ -115,7 +118,7 @@ function HeroDetails() {
                       <span className="details__rendered-info">
                         {heroData.work?.occupation === "-"
                           ? "unknown"
-                          : heroData.appearance?.["eye-color"]}
+                          : heroData.work?.occupation}
                       </span>
                     </Roll>
                   </h4>
@@ -132,71 +135,7 @@ function HeroDetails() {
                 </div>
               </div>
               <div className="details__stats">
-                <div className="details__stats-container">
-                  <img
-                    className="details__stats-icon"
-                    src={icon.combat}
-                    alt="combat icon"
-                  />
-                  <p className="details__stats-info">
-                    Combat:{" "}
-                    {heroData.powerstats?.combat === "null"
-                      ? "unknown"
-                      : heroData.powerstats?.combat}
-                  </p>
-                </div>
-                <div className="details__stats-container">
-                  <img
-                    className="details__stats-icon"
-                    src={icon.durability}
-                    alt="durability icon"
-                  />
-                  <p className="details__stats-info">
-                    Durability:{" "}
-                    {heroData.powerstats?.combat === "null"
-                      ? "unknown"
-                      : heroData.powerstats?.combat}
-                  </p>
-                </div>
-                <div className="details__stats-container">
-                  <img
-                    className="details__stats-icon"
-                    src={icon.intelligence}
-                    alt="intelligence icon"
-                  />
-                  <p className="details__stats-info">
-                    Intelligence:{" "}
-                    {heroData.powerstats?.intelligence === "null"
-                      ? "unknown"
-                      : heroData.powerstats?.intelligence}
-                  </p>
-                </div>
-                <div className="details__stats-container">
-                  <img
-                    className="details__stats-icon"
-                    src={icon.speed}
-                    alt="combat speed"
-                  />
-                  <p className="details__stats-info">
-                    Speed:{" "}
-                    {heroData.powerstats?.speed === "null"
-                      ? "unknown"
-                      : heroData.powerstats?.speed}
-                  </p>
-                </div>
-                <div className="details__stats-container">
-                  <img
-                    className="details__stats-icon"
-                    src={icon.strength}
-                    alt="strength icon"
-                  />
-                  <p className="details__stats-info">
-                    Strength:{" "}
-                    {heroData.powerstats?.strength === "null"
-                      ? "unknown"
-                      : heroData.powerstats?.strength}
-                  </p>
-                </div>
+                {renderPowerstats(powerstats, "details")}
               </div>
             </div>
           </Fade>

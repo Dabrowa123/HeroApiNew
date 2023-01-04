@@ -11,7 +11,7 @@ function renderPowerstats(powerstats, classBlockName) {
           src={icon[keyName]}
           alt={`${keyName} icon`}
         />
-        <p>
+        <p className={`${classBlockName}__stats-info`}>
           {restPowerstats[keyName] === "null" ? "?" : restPowerstats[keyName]}
         </p>
       </div>
