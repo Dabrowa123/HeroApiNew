@@ -12,7 +12,7 @@ function BattleTeamListItem({ name, imgUrl, powerstats, id, team }) {
           <BattleRemoveCharacterButton id={id} team={team} />
         </div>
         <div className="battle-heroes__list-item-info-details">
-          {renderPowerstats(powerstats)}
+          {renderPowerstats(powerstats, "battle-heroes")}
         </div>
       </div>
     </li>
