@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { searchNameToBattle } from "../../src/store/index.js";
+import { searchNameToBattle } from "../store/index.js";
 
-function useSearch(searchFormId) {
+function usePerformSearch(searchFormId) {
   const [searchInputValue, setSearchInputValue] = useState("");
 
   const input = document.getElementById(searchFormId);
@@ -35,4 +35,4 @@ function useSearch(searchFormId) {
   return [handleChange, handleSubmit];
 }
 
-export default useSearch;
+export default usePerformSearch;

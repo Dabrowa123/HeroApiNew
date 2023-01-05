@@ -1,49 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { searchHeroesByName } from "../../requests.js";
+import React from "react";
 import { useSelector } from "react-redux";
 import HeroCard from "../HeroCard/HeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
+import useSearchResults from "../../hooks/useSearchResults.js";
 
 function BattleSearchView() {
-  const [searchList, setSearchListContent] = useState([]);
-  const [characterNotFound, setCharacterNotFound] = useState(false);
-  const [isLoading, setLoadingState] = useState(false);
-  const [pageInitState, setPageInitState] = useState(true);
-
   const name = useSelector((state) => {
     return state.searchedNameToBattle[0];
   });
-  const uppercaseName = name.charAt(0).toUpperCase() + name.slice(1);
-
-  useEffect(() => {
-    if (name === "") {
-      return;
-    }
-    setPageInitState(false);
-    setLoadingState(true);
-    searchHeroesByName(name).then((searchResults) => {
-      const { data } = searchResults;
-
-      if (data.error) {
-        setSearchListContent([]);
-        setCharacterNotFound(true);
-        setLoadingState(false);
-        return;
-      }
-
-      const { results } = data;
-
-      // Do not render heroes with empty powerstats
-      const validatedResults = results.flatMap((hero) =>
-        Object.values(hero.powerstats).includes("null", 0) ? [] : hero
-      );
-
-      setSearchListContent(validatedResults);
-      setPageInitState(false);
-      setCharacterNotFound(false);
-      setLoadingState(false);
-    });
-  }, [name]);
+  const [
+    searchList,
+    characterNotFound,
+    isLoading,
+    uppercaseName,
+    pageInitState,
+  ] = useSearchResults(name);
 
   return (
     <>
