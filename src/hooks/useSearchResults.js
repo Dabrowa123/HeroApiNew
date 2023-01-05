@@ -44,6 +44,7 @@ function useSearchResults(name) {
       setCharacterNotFound(false);
       setLoadingState(false);
     });
+    // eslint-disable-next-line
   }, [name]);
 
   return [
