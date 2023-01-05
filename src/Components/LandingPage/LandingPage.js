@@ -1,10 +1,10 @@
 import React from "react";
-import supermanDesktop from "../../assets/img/superman-desktop.png";
-import supermanMobile from "../../assets/img/superman-mobile.png";
+import supermanDesktop from "../../pictures/img/superman-desktop.png";
+import supermanMobile from "../../pictures/img/superman-mobile.png";
 import Searchform from ".././UI/Searchform/Searchform.js";
 import Fade from "react-reveal/Fade.js";
 import FeaturedHeroesButton from "../UI/Buttons/FeaturedHeroesButton.js";
-import PlaceholderImage from "../../assets/img/superman-placeholder.png";
+import PlaceholderImage from "../../pictures/img/superman-placeholder.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import useScreenSizeCheck from "../../hooks/useScreenSizeCheck.js";

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import HeroCard from "../HeroCard/HeroCard.js";
-import chevronLeft from "../../assets/icons/chevron-left.png";
-import chevronRight from "../../assets/icons/chevron-right.png";
+import chevronLeft from "../../pictures/icons/chevron-left.png";
+import chevronRight from "../../pictures/icons/chevron-right.png";
 import featuredHeroesArray from "../Assets/PreloadedData/FeaturedHeroData.js";
 import swiperCustomSettings from "../../helpers/swiperCustomSettings.js";
 import { Swiper, SwiperSlide } from "swiper/react";

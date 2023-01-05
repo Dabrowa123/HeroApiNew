@@ -5,7 +5,7 @@ import Loader from "../Assets/Loader/Loader.js";
 import Fade from "react-reveal/Fade.js";
 import Roll from "react-reveal/Roll.js";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
+import PlaceholderImage from "../../pictures/img/400x500_placeholder.jpg";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useNavigate } from "react-router-dom";
 import renderPowerstats from "../../helpers/renderPowerstats.js";

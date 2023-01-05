@@ -1,10 +1,10 @@
-import batmanImg from "../../../assets/img/batman.jpg";
-import freezeImg from "../../../assets/img/freeze.jpg";
-import penguinImg from "../../../assets/img/penguin.jpg";
-import hulkImg from "../../../assets/img/hulk.jpg";
-import supermanImg from "../../../assets/img/superman.jpg";
-import wonderwomanImg from "../../../assets/img/wonderwoman.jpg";
-import spidermanImg from "../../../assets/img/spiderman.jpg";
+import batmanImg from "../../../pictures/img/batman.jpg";
+import freezeImg from "../../../pictures/img/freeze.jpg";
+import penguinImg from "../../../pictures/img/penguin.jpg";
+import hulkImg from "../../../pictures/img/hulk.jpg";
+import supermanImg from "../../../pictures/img/superman.jpg";
+import wonderwomanImg from "../../../pictures/img/wonderwoman.jpg";
+import spidermanImg from "../../../pictures/img/spiderman.jpg";
 
 const featuredHeroesArray = [
   {
