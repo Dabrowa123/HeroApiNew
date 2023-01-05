@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { searchHeroesByName } from "../../requests.js";
+import React from "react";
 import { useSelector } from "react-redux";
 import HeroCard from "../HeroCard/HeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
