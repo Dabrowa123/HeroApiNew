@@ -1,8 +1,8 @@
 import React from "react";
-import useSearch from "../../../hooks/useSearch.js";
+import usePerformSearch from "../../../hooks/usePerformSearch.js";
 
 function Searchform({ formId, classBlockName }) {
-  const [handleChange, handleSubmit] = useSearch("search-input-landing");
+  const [handleChange, handleSubmit] = usePerformSearch("search-input-landing");
 
   return (
     <form className={`${classBlockName}`} onSubmit={handleSubmit}>

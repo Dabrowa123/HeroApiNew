@@ -1,34 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router";
-import { searchHeroesByName } from "../../requests.js";
 import HeroCard from "../HeroCard/HeroCard.js";
 import Loader from "../Assets/Loader/Loader.js";
+import useSearchResults from "../../hooks/useSearchResults.js";
 
 function SearchView() {
-  const [searchList, setSearchListContent] = useState([]);
-  const [characterNotFound, setcharacterNotFound] = useState(false);
-  const [isLoading, setLoadingState] = useState(true);
   const { name } = useParams();
-  const uppercaseName = name.charAt(0).toUpperCase() + name.slice(1);
-
-  useEffect(() => {
-    setLoadingState(true);
-    searchHeroesByName(name).then((searchResults) => {
-      const { data } = searchResults;
-
-      if (data.error) {
-        setSearchListContent([]);
-        setcharacterNotFound(true);
-        setLoadingState(false);
-        return;
-      }
-
-      const { results } = data;
-
-      setSearchListContent(results);
-      setLoadingState(false);
-    });
-  }, [name]);
+  const [searchList, characterNotFound, isLoading, uppercaseName] =
+    useSearchResults(name);
 
   return (
     <>
