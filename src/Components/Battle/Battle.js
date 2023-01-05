@@ -13,7 +13,8 @@ function Battle() {
   const [fightFinished, setFightFinished] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [resultMessage] = useBattleMessage();
-  const [heroesAreStronger, villainsAreStronger, noCharacterChoosen] = usePerformFigth();
+  const [heroesAreStronger, villainsAreStronger, noCharacterChoosen] =
+    usePerformFigth();
 
   const handleFight = () => {
     if (noCharacterChoosen) {
@@ -27,10 +28,10 @@ function Battle() {
       dispatch(setWinners(""));
     }
     setFightFinished(true);
+    setErrorMessage(false);
   };
 
   const handleNewFight = () => {
-    setErrorMessage(false);
     setFightFinished(false);
     dispatch(setWinners(""));
   };
