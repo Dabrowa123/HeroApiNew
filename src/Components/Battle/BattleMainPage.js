@@ -1,8 +1,9 @@
 import React from "react";
-import battle from "../../assets/img/battle2.png";
+import battleMobile from "../../assets/img/battleMobile.png";
+import battleDesktop from "../../assets/img/battleDesktop.jpg";
 import Fade from "react-reveal/Fade.js";
 import BattleButton from "../UI/Buttons/BattleButton.js";
-import PlaceholderImage from "../../assets/img/superman-placeholder.png";
+import PlaceholderImage from "../../assets/img/battle-placeholder.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import useScreenSizeCheck from "../../hooks/useScreenSizeCheck.js";
@@ -31,8 +32,7 @@ function BattleMainPage() {
           <>
             <Fade left duration={1000} delay={600} distance="70px">
               <LazyLoadImage
-                className=""
-                src={battle}
+                src={battleMobile}
                 width={"320px"}
                 height={"auto"}
                 alt="Wonder Woman"
@@ -49,9 +49,8 @@ function BattleMainPage() {
         {isDesktop && (
           <Fade left duration={1000} delay={600} distance="70px">
             <LazyLoadImage
-              className=""
-              src={battle}
-              width={"490px"}
+              src={battleDesktop}
+              width={"340px"}
               height={"auto"}
               alt="Wonder Woman"
               placeholderSrc={PlaceholderImage}
