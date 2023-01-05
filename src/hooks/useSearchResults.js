@@ -12,6 +12,7 @@ function useSearchResults(name) {
 
   useEffect(() => {
     if (name === "") {
+      setLoadingState(false);
       return;
     }
     setPageInitState(false);

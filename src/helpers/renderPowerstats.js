@@ -1,4 +1,4 @@
-import * as icon from "../../src/assets/icons/index.js";
+import * as icon from "../pictures/icons/index.js";
 
 function renderPowerstats(powerstats, classBlockName) {
   const { power, ...restPowerstats } = powerstats;

@@ -1,7 +1,7 @@
 import React from "react";
 import Fade from "react-reveal/Fade.js";
 import { Link } from "react-router-dom";
-import PlaceholderImage from "../../assets/img/400x500_placeholder.jpg";
+import PlaceholderImage from "../../pictures/img/400x500_placeholder.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch } from "react-redux";
