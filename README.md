@@ -32,7 +32,4 @@ Components logic is separated in **helpers functions** and **custom hooks**.
 
 <br /><br />
 
-![alt text](https://github.com/Dabrowa123/HeroApiNew/blob/main/src/assets/img/superhero-database.png?raw=true)
-
-
 
